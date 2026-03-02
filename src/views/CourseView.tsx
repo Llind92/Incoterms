@@ -54,24 +54,24 @@ export const CourseView: React.FC = () => {
     );
 
     return (
-        <div className="p-4 md:p-8 flex flex-col md:flex-row gap-6 transition-colors duration-200">
+        <div className="flex flex-col min-h-full pb-32 md:pb-8 p-4 md:p-8 md:flex-row gap-6 transition-colors duration-200">
 
             {/* Colonne de Gauche : Liste de navigation */}
-            <div className="w-full md:w-1/3 max-w-sm flex-shrink-0 flex flex-col h-auto md:h-[calc(100vh-6rem)] relative">
+            <div className="w-full md:w-1/3 md:max-w-sm flex-shrink-0 flex flex-col relative w-screen -mx-4 px-4 md:w-auto md:mx-0 md:px-0">
 
                 <div className="mb-6">
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">{t('course.title')}</h1>
                     <p className="text-slate-500 dark:text-slate-400 text-sm transition-colors">{t('course.subtitle')}</p>
                 </div>
 
-                <div className="overflow-y-auto pr-2 pb-8 flex-1 custom-scrollbar">
+                <div className="pr-2 pb-8 flex-1">
                     {/* Multimodal Section */}
                     <div className="mb-8">
                         <div className="flex items-center text-slate-500 dark:text-slate-400 font-semibold mb-3 sticky top-0 bg-slate-50 dark:bg-slate-950 py-2 z-10 border-b border-slate-200 dark:border-slate-800 transition-colors">
                             <Truck size={18} className="mr-2" />
                             <h3>{t('course.multimodal')}</h3>
                         </div>
-                        <div className="flex md:flex-col gap-3 space-y-0 md:space-y-2 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory w-full custom-scrollbar-hide">
+                        <div className="flex md:flex-col gap-3 space-x-0 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory flex-nowrap w-full custom-scrollbar-hide">
                             {multimodal.map(incoterm => (
                                 <button
                                     key={incoterm.code}
@@ -89,7 +89,7 @@ export const CourseView: React.FC = () => {
                                             {incoterm.fullNameFR}
                                         </div>
                                     </div>
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-colors
+                                    <div className={`w-8 h-8 rounded-full flex shrink-0 items-center justify-center font-bold text-sm transition-colors
                                         ${selectedCode === incoterm.code ? 'bg-white/20 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/30 group-hover:text-blue-500 dark:group-hover:text-blue-400'}`}>
                                         {incoterm.group}
                                     </div>
@@ -104,7 +104,7 @@ export const CourseView: React.FC = () => {
                             <Ship size={18} className="mr-2" />
                             <h3>{t('course.maritime')}</h3>
                         </div>
-                        <div className="flex md:flex-col gap-3 space-y-0 md:space-y-2 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory w-full custom-scrollbar-hide">
+                        <div className="flex md:flex-col gap-3 space-x-0 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory flex-nowrap w-full custom-scrollbar-hide">
                             {maritime.map(incoterm => (
                                 <button
                                     key={incoterm.code}
@@ -122,7 +122,7 @@ export const CourseView: React.FC = () => {
                                             {incoterm.fullNameFR}
                                         </div>
                                     </div>
-                                    <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition-colors
+                                    <div className={`w-8 h-8 rounded-full flex shrink-0 items-center justify-center font-bold text-sm transition-colors
                                         ${selectedCode === incoterm.code ? 'bg-white/20 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 group-hover:bg-cyan-50 dark:group-hover:bg-cyan-900/30 group-hover:text-cyan-600 dark:group-hover:text-cyan-400'}`}>
                                         {incoterm.group}
                                     </div>
@@ -134,7 +134,7 @@ export const CourseView: React.FC = () => {
             </div>
 
             {/* Colonne de Droite : Fiche Détaillée */}
-            <div className="flex-1 overflow-y-auto h-[calc(100vh-4rem)] md:h-[calc(100vh-6rem)] custom-scrollbar pb-8">
+            <div className="flex-1 pb-8">
                 <AnimatePresence mode="wait">
                     {selectedIncoterm ? (
                         <motion.div
@@ -250,7 +250,7 @@ export const CourseView: React.FC = () => {
                             </div>
                         </motion.div>
                     ) : (
-                        <div className="h-full flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+                        <div className="flex flex-col py-20 items-center justify-center text-slate-400 dark:text-slate-500">
                             <div className="w-24 h-24 mb-6 opacity-20 bg-slate-200 dark:bg-slate-700 rounded-3xl flex items-center justify-center transition-colors">
                                 <Info size={48} className="text-slate-500 dark:text-slate-400" />
                             </div>

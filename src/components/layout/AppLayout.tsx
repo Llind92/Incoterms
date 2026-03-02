@@ -39,17 +39,18 @@ export const AppLayout: React.FC = () => {
             </aside>
 
             {/* MOBILE BOTTOM NAV (visible only on small screens) */}
-            <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flex justify-around p-3 z-50 pb-safe transition-colors duration-200">
+            <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-t border-slate-200/50 dark:border-slate-800/50 flex justify-around p-3 z-50 pb-safe transition-colors duration-200">
                 <MobileNavItem to="/" icon={<Home size={22} />} label={t('nav.dashboard')} exact />
                 <MobileNavItem to="/course" icon={<BookOpen size={22} />} label={t('nav.course')} />
                 <MobileNavItem to="/calculator" icon={<Calculator size={22} />} label={t('nav.calculator')} />
+                <MobileNavItem to="/practice" icon={<PenTool size={22} />} label={t('nav.practice')} />
                 <MobileNavItem to="/quiz" icon={<PlayCircle size={22} />} label={t('nav.quiz')} />
                 <MobileNavItem to="/settings" icon={<Settings size={22} />} label={t('nav.settings')} />
             </nav>
 
             {/* MAIN CONTENT AREA */}
-            <main className="flex-1 relative overflow-y-auto overflow-x-hidden">
-                <div className="w-full h-full pb-20 sm:pb-0">
+            <main className="flex-1 relative overflow-y-auto overflow-x-hidden scrollbar-hide">
+                <div className="w-full h-full pb-24 sm:pb-0">
                     <Outlet />
                 </div>
             </main>
@@ -100,7 +101,7 @@ const MobileNavItem = ({ to, icon, label, exact = false }: { to: string, icon: R
             }
         >
             <div className="mb-1">{icon}</div>
-            <span className="text-[10px] font-medium">{label}</span>
+            <span className="text-[10px] font-medium text-center leading-tight">{label}</span>
         </NavLink>
     );
 };

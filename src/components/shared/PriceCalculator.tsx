@@ -24,9 +24,10 @@ export type TransportMode = 'MULTIMODAL' | 'MARITIME';
 export const PriceCalculator: React.FC = () => {
     const { t } = useTranslation();
     // --- ÉTAT DU FORMULAIRE ---
-    const [mode, setMode] = useState<TransportMode>('MULTIMODAL');
+    const [mode, setMode] = useState<'MULTIMODAL' | 'MARITIME'>('MULTIMODAL');
+    const [activeTab, setActiveTab] = useState<'saisie' | 'resultats'>('saisie');
 
-    // Valeurs saisies (en euros pour simplifier)
+    // -- COÛTS DE BASE --(en euros pour simplifier)
     const [coutRevient, setCoutRevient] = useState<number>(10000);
     const [emballageExport, setEmballageExport] = useState<number>(200);
     const [preAcheminement, setPreAcheminement] = useState<number>(500);
@@ -146,7 +147,7 @@ export const PriceCalculator: React.FC = () => {
     };
 
     return (
-        <div className="w-full max-w-6xl mx-auto p-4 md:p-8 bg-slate-50 dark:bg-slate-900 transition-colors duration-200 min-h-screen font-sans">
+        <div className="w-full max-w-6xl mx-auto pb-32 md:pb-8 p-4 md:p-8 bg-slate-50 dark:bg-slate-900 transition-colors duration-200 min-h-screen font-sans">
             <div className="mb-6 sm:mb-8 flex flex-col md:flex-row md:items-start justify-between gap-3 sm:gap-4">
                 <div>
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">{t('calculator.title')}</h1>
@@ -179,8 +180,24 @@ export const PriceCalculator: React.FC = () => {
 
             <div className="flex flex-col lg:flex-row gap-8">
 
+                {/* MOBILE TABS (sm and md only) */}
+                <div className="flex lg:hidden bg-slate-200 dark:bg-slate-800 p-1 rounded-xl mb-4">
+                    <button
+                        onClick={() => setActiveTab('saisie')}
+                        className={`flex-1 py-3 text-sm font-semibold rounded-lg transition-colors ${activeTab === 'saisie' ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-sm' : 'text-slate-600 dark:text-slate-400'}`}
+                    >
+                        Saisie des Coûts
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('resultats')}
+                        className={`flex-1 py-3 text-sm font-semibold rounded-lg transition-colors ${activeTab === 'resultats' ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-sm' : 'text-slate-600 dark:text-slate-400'}`}
+                    >
+                        Résultats Cascade
+                    </button>
+                </div>
+
                 {/* COLONNE GAUCHE : INPUTS */}
-                <div className="w-full lg:w-1/3 space-y-6">
+                <div className={`w-full lg:w-1/3 space-y-6 ${activeTab === 'saisie' ? 'block' : 'hidden lg:block'}`}>
                     <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 transition-colors">
                         <h2 className="text-lg font-semibold mb-4 text-slate-800 dark:text-slate-200 border-b border-slate-100 dark:border-slate-700 pb-2 transition-colors">{t('calculator.base_params')}</h2>
 
@@ -275,7 +292,7 @@ export const PriceCalculator: React.FC = () => {
                 </div>
 
                 {/* COLONNE DROITE : CASCADE */}
-                <div className="w-full lg:w-2/3">
+                <div className={`w-full lg:w-2/3 ${activeTab === 'resultats' ? 'block' : 'hidden lg:block'}`}>
                     <div className="bg-slate-100 dark:bg-slate-800/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 sticky top-8 transition-colors">
                         <h2 className="text-xl font-bold mb-6 text-slate-900 dark:text-white border-b-2 border-slate-300 dark:border-slate-700 pb-2 transition-colors">{t('calculator.price_cascade')}</h2>
 

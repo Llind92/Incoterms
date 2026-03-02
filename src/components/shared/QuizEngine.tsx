@@ -105,8 +105,8 @@ export const QuizEngine: React.FC = () => {
     <div className="w-full max-w-3xl mx-auto p-4 md:p-6 font-sans">
 
       {/* En-tête du Quiz */}
-      <div className="py-8">
-        <div className="max-w-3xl mx-auto px-3 sm:px-4 md:px-6 mb-6 sm:mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+      <div className="pt-4 pb-2 sm:py-8">
+        <div className="max-w-3xl mx-auto px-3 sm:px-4 md:px-6 mb-3 sm:mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-0">
           <div>
             <h1 className="text-2xl font-bold text-slate-900 dark:text-white transition-colors">{t('quiz.title')}</h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 transition-colors">{t('quiz.subtitle', { count: questions.length })}</p>
@@ -115,7 +115,7 @@ export const QuizEngine: React.FC = () => {
             <ArrowLeft size={16} className="mr-2" /> {t('nav.back')}
           </Link>
         </div>
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center mb-2 sm:mb-4 px-1">
           <span className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider transition-colors">
             {t('quiz.question_progress', { current: currentIndex + 1, total: questions.length })}
           </span>
@@ -149,10 +149,10 @@ export const QuizEngine: React.FC = () => {
           transition={{ duration: 0.3 }}
           className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-colors"
         >
-          <div className="p-4 sm:p-6 md:p-8">
+          <div className="p-3 sm:p-6 md:p-8">
             {/* Badge Source */}
             {currentQuestion.source && (
-              <div className="mb-4">
+              <div className="mb-2 sm:mb-4">
                 {currentQuestion.source.includes('Annale') ? (
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border bg-amber-100 text-amber-800 border-amber-300 dark:bg-amber-900/30 dark:text-amber-300 dark:border-amber-700/50 transition-colors">
                     <Award size={13} />
@@ -165,8 +165,8 @@ export const QuizEngine: React.FC = () => {
                 )}
               </div>
             )}
-            <div className="bg-slate-50 dark:bg-slate-800/40 p-4 sm:p-6 rounded-xl border-l-4 border-blue-500 mb-8 shadow-sm">
-              <div className="text-sm sm:text-[1.05rem] leading-relaxed text-slate-800 dark:text-slate-200">
+            <div className="bg-slate-50 dark:bg-slate-800/40 p-3 sm:p-6 rounded-xl border-l-4 border-blue-500 mb-4 sm:mb-8 shadow-sm">
+              <div className="text-[13px] sm:text-[1.05rem] leading-relaxed text-slate-800 dark:text-slate-200">
                 {formatRichText(currentQuestion.question)}
               </div>
             </div>
@@ -196,7 +196,7 @@ export const QuizEngine: React.FC = () => {
                     onClick={() => handleSelectOption(index)}
                     disabled={isAnswered}
                     whileHover={!isAnswered ? { scale: 1.01 } : {}}
-                    whileTap={!isAnswered ? { scale: 0.98 } : {}}
+                    whileTap={!isAnswered ? { scale: 0.97 } : {}}
                     variants={showAsWrong ? shakeAnimation : undefined}
                     animate={showAsWrong ? "shake" : undefined}
                     className={`w-full text-left p-3 sm:p-4 rounded-xl border-2 min-h-[44px] transition-colors duration-200 ${buttonStyle}`}
