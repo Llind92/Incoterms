@@ -57,10 +57,10 @@ export const CourseView: React.FC = () => {
         <div className="p-4 md:p-8 flex flex-col md:flex-row gap-6 transition-colors duration-200">
 
             {/* Colonne de Gauche : Liste de navigation */}
-            <div className="w-full md:w-1/3 max-w-sm flex-shrink-0 flex flex-col h-[calc(100vh-4rem)] md:h-[calc(100vh-6rem)] relative">
+            <div className="w-full md:w-1/3 max-w-sm flex-shrink-0 flex flex-col h-auto md:h-[calc(100vh-6rem)] relative">
 
                 <div className="mb-6">
-                    <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">{t('course.title')}</h1>
+                    <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">{t('course.title')}</h1>
                     <p className="text-slate-500 dark:text-slate-400 text-sm transition-colors">{t('course.subtitle')}</p>
                 </div>
 
@@ -71,12 +71,12 @@ export const CourseView: React.FC = () => {
                             <Truck size={18} className="mr-2" />
                             <h3>{t('course.multimodal')}</h3>
                         </div>
-                        <div className="space-y-2">
+                        <div className="flex md:flex-col gap-3 space-y-0 md:space-y-2 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory w-full custom-scrollbar-hide">
                             {multimodal.map(incoterm => (
                                 <button
                                     key={incoterm.code}
                                     onClick={() => setSelectedCode(incoterm.code)}
-                                    className={`w-full text-left p-4 rounded-xl border transition-all duration-200 ease-in-out flex items-center justify-between group
+                                    className={`shrink-0 w-[240px] md:w-full snap-start text-left p-4 rounded-xl border transition-all duration-200 ease-in-out flex items-center justify-between group
                                         ${selectedCode === incoterm.code
                                             ? 'bg-blue-600 dark:bg-blue-700 border-blue-600 dark:border-blue-700 shadow-md shadow-blue-500/20'
                                             : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-sm'}`}
@@ -104,12 +104,12 @@ export const CourseView: React.FC = () => {
                             <Ship size={18} className="mr-2" />
                             <h3>{t('course.maritime')}</h3>
                         </div>
-                        <div className="space-y-2">
+                        <div className="flex md:flex-col gap-3 space-y-0 md:space-y-2 overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory w-full custom-scrollbar-hide">
                             {maritime.map(incoterm => (
                                 <button
                                     key={incoterm.code}
                                     onClick={() => setSelectedCode(incoterm.code)}
-                                    className={`w-full text-left p-4 rounded-xl border transition-all duration-200 ease-in-out flex items-center justify-between group
+                                    className={`shrink-0 w-[240px] md:w-full snap-start text-left p-4 rounded-xl border transition-all duration-200 ease-in-out flex items-center justify-between group
                                         ${selectedCode === incoterm.code
                                             ? 'bg-cyan-700 dark:bg-cyan-800 border-cyan-700 dark:border-cyan-800 shadow-md shadow-cyan-500/20'
                                             : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-cyan-300 dark:hover:border-cyan-600 hover:shadow-sm'}`}
@@ -146,7 +146,7 @@ export const CourseView: React.FC = () => {
                             className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden transition-colors"
                         >
                             {/* Header Fiche */}
-                            <div className={`p-6 md:p-8 text-white ${selectedIncoterm.transportMode === 'ALL' ? 'bg-blue-600' : 'bg-cyan-700'}`}>
+                            <div className={`p-4 sm:p-6 md:p-8 text-white ${selectedIncoterm.transportMode === 'ALL' ? 'bg-blue-600' : 'bg-cyan-700'}`}>
                                 <div className="flex items-center gap-3 mb-2">
                                     <span className="px-3 py-1 bg-white/20 rounded-full text-xs font-semibold backdrop-blur-sm">
                                         {t('course.group')} {selectedIncoterm.group}
@@ -155,12 +155,12 @@ export const CourseView: React.FC = () => {
                                         {selectedIncoterm.transportMode === 'ALL' ? <><Truck size={14} className="mr-1" /> {t('course.multimodal')}</> : <><Ship size={14} className="mr-1" /> {t('course.maritime')}</>}
                                     </span>
                                 </div>
-                                <h2 className="text-4xl font-extrabold mb-1">{selectedIncoterm.code}</h2>
+                                <h2 className="text-3xl sm:text-4xl font-extrabold mb-1">{selectedIncoterm.code}</h2>
                                 <p className="text-xl font-medium opacity-90">{selectedIncoterm.fullNameFR}</p>
                                 <p className="text-sm opacity-70 mt-1 italic">{selectedIncoterm.fullNameEN}</p>
                             </div>
 
-                            <div className="p-6 md:p-8 space-y-8">
+                            <div className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
 
                                 {/* Transfert des Risques (CRITIQUE BTS) */}
                                 <div className="bg-amber-50 dark:bg-amber-900/10 rounded-xl p-5 border border-amber-200 dark:border-amber-800/50 relative overflow-hidden transition-colors">

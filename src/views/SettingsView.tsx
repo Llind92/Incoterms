@@ -50,7 +50,7 @@ export const SettingsView: React.FC = () => {
                                     <div className="font-semibold text-slate-900 dark:text-white">{t('settings.theme_title')}</div>
                                     <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">{t('settings.theme_desc')}</div>
                                 </div>
-                                <div className="flex bg-slate-100 dark:bg-slate-900 p-1 rounded-xl">
+                                <div className="flex flex-wrap bg-slate-100 dark:bg-slate-900 p-1 rounded-xl gap-1">
                                     {themeOptions.map((option) => {
                                         const Icon = option.icon;
                                         const isActive = theme === option.value;
@@ -89,7 +89,7 @@ export const SettingsView: React.FC = () => {
                                         <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">{t('settings.language_desc')}</div>
                                     </div>
                                 </div>
-                                <div className="flex bg-slate-100 dark:bg-slate-900 p-1 rounded-xl">
+                                <div className="flex flex-wrap bg-slate-100 dark:bg-slate-900 p-1 rounded-xl gap-1">
                                     {languageOptions.map((option) => {
                                         const isActive = language === option.value;
                                         return (

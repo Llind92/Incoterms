@@ -43,8 +43,8 @@ export const AppLayout: React.FC = () => {
                 <MobileNavItem to="/" icon={<Home size={22} />} label={t('nav.dashboard')} exact />
                 <MobileNavItem to="/course" icon={<BookOpen size={22} />} label={t('nav.course')} />
                 <MobileNavItem to="/calculator" icon={<Calculator size={22} />} label={t('nav.calculator')} />
-                <MobileNavItem to="/practice" icon={<PenTool size={22} />} label={t('nav.practice')} />
                 <MobileNavItem to="/quiz" icon={<PlayCircle size={22} />} label={t('nav.quiz')} />
+                <MobileNavItem to="/settings" icon={<Settings size={22} />} label={t('nav.settings')} />
             </nav>
 
             {/* MAIN CONTENT AREA */}

@@ -136,7 +136,7 @@ export const CascadePracticeView: React.FC = () => {
                             <Calculator size={28} />
                         </div>
                         <div>
-                            <h1 className="text-2xl font-bold text-slate-900 dark:text-white transition-colors">{t('practice.title')}</h1>
+                            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white transition-colors">{t('practice.title')}</h1>
                             <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 transition-colors">
                                 {t('practice.subtitle')}
                             </p>
@@ -165,15 +165,15 @@ export const CascadePracticeView: React.FC = () => {
                     >
                         {/* Type de scénario Badge */}
                         <div className={`px-6 py-4 flex justify-between items-center transition-colors ${mode === 'maritime'
-                                ? 'bg-indigo-50 dark:bg-indigo-900/20 border-b border-indigo-100 dark:border-indigo-800/50'
-                                : 'bg-emerald-50 dark:bg-emerald-900/20 border-b border-emerald-100 dark:border-emerald-800/50'
+                            ? 'bg-indigo-50 dark:bg-indigo-900/20 border-b border-indigo-100 dark:border-indigo-800/50'
+                            : 'bg-emerald-50 dark:bg-emerald-900/20 border-b border-emerald-100 dark:border-emerald-800/50'
                             }`}>
                             <span className="font-semibold text-slate-900 dark:text-white transition-colors">
                                 {t('practice.statement')}
                             </span>
                             <span className={`px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full transition-colors ${mode === 'maritime'
-                                    ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300'
-                                    : 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300'
+                                ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300'
+                                : 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300'
                                 }`}>
                                 {mode === 'maritime' ? t('calculator.mode_maritime') : t('calculator.mode_multimodal')}
                             </span>
@@ -316,8 +316,8 @@ export const CascadePracticeView: React.FC = () => {
                                     initial={{ opacity: 0, height: 0 }}
                                     animate={{ opacity: 1, height: 'auto' }}
                                     className={`rounded-2xl border overflow-hidden shadow-sm transition-colors ${allCorrect
-                                            ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800/40'
-                                            : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800/40'
+                                        ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800/40'
+                                        : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800/40'
                                         }`}
                                 >
                                     <div className="p-6 md:p-8">
@@ -342,7 +342,7 @@ export const CascadePracticeView: React.FC = () => {
                                                 <div className="text-slate-500 dark:text-slate-400 mb-1">
                                                     {step1Name} = EXW + Emballage + Pré-acheminement + Douane Exp.{mode === 'maritime' ? ' + Manutention Dép.' : ''}
                                                 </div>
-                                                <div className="font-mono text-slate-900 dark:text-white font-medium whitespace-nowrap">
+                                                <div className="font-mono text-slate-900 dark:text-white font-medium text-xs sm:text-sm break-all sm:break-normal">
                                                     <span className="font-bold text-blue-600 dark:text-blue-400">{step1Name}</span> = {scenario.exw} + {scenario.exportPackaging} + {scenario.preCarriage} + {scenario.exportCustoms}{mode === 'maritime' ? ` + ${scenario.fobHandling}` : ''} = <span className={isStep1Correct ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400 font-bold'}>{formatter.format(trueStep1)}</span>
                                                 </div>
                                             </div>
@@ -352,7 +352,7 @@ export const CascadePracticeView: React.FC = () => {
                                                 <div className="text-slate-500 dark:text-slate-400 mb-1">
                                                     {step2Name} = {step1Name} + Fret Principal
                                                 </div>
-                                                <div className="font-mono text-slate-900 dark:text-white font-medium whitespace-nowrap">
+                                                <div className="font-mono text-slate-900 dark:text-white font-medium text-xs sm:text-sm break-all sm:break-normal">
                                                     <span className="font-bold text-blue-600 dark:text-blue-400">{step2Name}</span> = {trueStep1} + {scenario.mainFreight} = <span className={isStep2Correct ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400 font-bold'}>{formatter.format(trueStep2)}</span>
                                                 </div>
                                             </div>
@@ -362,7 +362,7 @@ export const CascadePracticeView: React.FC = () => {
                                                 <div className="text-slate-500 dark:text-slate-400 mb-1">
                                                     {step3Name} = {step2Name} / (1 - (1.10 × Assurance))
                                                 </div>
-                                                <div className="font-mono text-slate-900 dark:text-white font-medium whitespace-nowrap">
+                                                <div className="font-mono text-slate-900 dark:text-white font-medium text-xs sm:text-sm break-all sm:break-normal">
                                                     <span className="font-bold text-blue-600 dark:text-blue-400">{step3Name}</span> = {trueStep2} / (1 - (1.10 × {scenario.insuranceRate / 100})) = <span className={isStep3Correct ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400 font-bold'}>{formatter.format(trueStep3)}</span>
                                                 </div>
                                             </div>

@@ -147,9 +147,9 @@ export const PriceCalculator: React.FC = () => {
 
     return (
         <div className="w-full max-w-6xl mx-auto p-4 md:p-8 bg-slate-50 dark:bg-slate-900 transition-colors duration-200 min-h-screen font-sans">
-            <div className="mb-8 flex flex-col md:flex-row md:items-start justify-between gap-4">
+            <div className="mb-6 sm:mb-8 flex flex-col md:flex-row md:items-start justify-between gap-3 sm:gap-4">
                 <div>
-                    <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">{t('calculator.title')}</h1>
+                    <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">{t('calculator.title')}</h1>
                     <p className="text-slate-500 dark:text-slate-400 transition-colors">{t('calculator.subtitle')}</p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
@@ -283,7 +283,7 @@ export const PriceCalculator: React.FC = () => {
                             {/* Ligne visuelle connectant la cascade */}
                             <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-slate-300 dark:bg-slate-700 z-0 hidden sm:block"></div>
 
-                            <div className="relative z-10 flex flex-col gap-1">
+                            <div className="relative z-10 flex flex-col gap-1 overflow-x-auto pb-4 sm:pb-0 custom-scrollbar-hide">
                                 <AnimatePresence mode="popLayout">
                                     <Row key="EXW" label="EXW" value={cascade.EXW} />
 

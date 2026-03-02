@@ -6,4 +6,35 @@
     body {
         @apply bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-50 font-sans antialiased;
     }
+
+    /* Touch target minimum (norme Apple HIG + Material 3) */
+    button,
+    a,
+    [role="button"] {
+        @apply min-h-[44px] min-w-[44px];
+    }
+
+    /* Smooth scrolling mobile */
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+/* Safe area pour iPhone X+ */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Hide scrollbar for horizontal chips */
+@layer utilities {
+    .custom-scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .custom-scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
 }

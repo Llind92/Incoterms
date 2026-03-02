@@ -54,8 +54,8 @@ const ScoreGauge: React.FC<{ score: number; total: number }> = ({ score, total }
     else if (percentage >= 50) { color = 'text-amber-500 dark:text-amber-400'; strokeColor = '#f59e0b'; }
 
     return (
-        <div className="relative w-36 h-36 mx-auto">
-            <svg className="w-36 h-36 -rotate-90" viewBox="0 0 128 128">
+        <div className="relative w-[140px] h-[140px] sm:w-[200px] sm:h-[200px] mx-auto">
+            <svg className="w-[140px] h-[140px] sm:w-[200px] sm:h-[200px] -rotate-90" viewBox="0 0 128 128">
                 {/* Background circle */}
                 <circle cx="64" cy="64" r="58" fill="none"
                     className="stroke-slate-200 dark:stroke-slate-800 transition-colors"
@@ -185,7 +185,7 @@ export const QuizResults: React.FC<QuizResultsProps> = ({ onRestart }) => {
                                 }`}
                         >
                             {/* Question Header */}
-                            <div className="p-5 md:p-6">
+                            <div className="p-4 sm:p-5 md:p-6">
                                 <div className="flex items-start gap-3">
                                     <div className="flex-shrink-0 mt-0.5">
                                         {isCorrect ? (
@@ -234,7 +234,7 @@ export const QuizResults: React.FC<QuizResultsProps> = ({ onRestart }) => {
                             </div>
 
                             {/* Explication Pédagogique */}
-                            <div className="bg-slate-50 dark:bg-slate-800/60 border-t border-slate-100 dark:border-slate-800 px-5 md:px-6 py-4 transition-colors">
+                            <div className="bg-slate-50 dark:bg-slate-800/60 border-t border-slate-100 dark:border-slate-800 px-4 sm:px-5 md:px-6 py-3 sm:py-4 transition-colors">
                                 <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed transition-colors">
                                     <span className="font-semibold text-slate-700 dark:text-slate-300 mr-1 transition-colors">
                                         💡

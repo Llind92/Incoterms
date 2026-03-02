@@ -106,7 +106,7 @@ export const QuizEngine: React.FC = () => {
 
       {/* En-tête du Quiz */}
       <div className="py-8">
-        <div className="max-w-3xl mx-auto px-4 md:px-6 mb-8 flex items-center justify-between">
+        <div className="max-w-3xl mx-auto px-3 sm:px-4 md:px-6 mb-6 sm:mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
           <div>
             <h1 className="text-2xl font-bold text-slate-900 dark:text-white transition-colors">{t('quiz.title')}</h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 transition-colors">{t('quiz.subtitle', { count: questions.length })}</p>
@@ -149,7 +149,7 @@ export const QuizEngine: React.FC = () => {
           transition={{ duration: 0.3 }}
           className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-colors"
         >
-          <div className="p-6 md:p-8">
+          <div className="p-4 sm:p-6 md:p-8">
             {/* Badge Source */}
             {currentQuestion.source && (
               <div className="mb-4">
@@ -165,8 +165,8 @@ export const QuizEngine: React.FC = () => {
                 )}
               </div>
             )}
-            <div className="bg-slate-50 dark:bg-slate-800/40 p-6 rounded-xl border-l-4 border-blue-500 mb-8 shadow-sm">
-              <div className="text-[1.05rem] leading-relaxed text-slate-800 dark:text-slate-200">
+            <div className="bg-slate-50 dark:bg-slate-800/40 p-4 sm:p-6 rounded-xl border-l-4 border-blue-500 mb-8 shadow-sm">
+              <div className="text-sm sm:text-[1.05rem] leading-relaxed text-slate-800 dark:text-slate-200">
                 {formatRichText(currentQuestion.question)}
               </div>
             </div>
@@ -199,7 +199,7 @@ export const QuizEngine: React.FC = () => {
                     whileTap={!isAnswered ? { scale: 0.98 } : {}}
                     variants={showAsWrong ? shakeAnimation : undefined}
                     animate={showAsWrong ? "shake" : undefined}
-                    className={`w-full text-left p-4 rounded-xl border-2 transition-colors duration-200 ${buttonStyle}`}
+                    className={`w-full text-left p-3 sm:p-4 rounded-xl border-2 min-h-[44px] transition-colors duration-200 ${buttonStyle}`}
                   >
                     <div className="flex items-start">
                       <div className="flex-shrink-0 mr-4 mt-0.5 font-mono text-sm font-bold opacity-50">
@@ -222,7 +222,7 @@ export const QuizEngine: React.FC = () => {
                 animate="visible"
                 className="bg-indigo-50/60 dark:bg-indigo-950/30 border-t border-indigo-100 dark:border-indigo-900/50 transition-colors"
               >
-                <div className="p-6 md:p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 mt-1">
                       {/* Icône d'information (Lucide-React style outline) */}
