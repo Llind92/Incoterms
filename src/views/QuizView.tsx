@@ -50,7 +50,7 @@ export const QuizView: React.FC = () => {
 
     // ---------- ÉCRAN DE QUIZ EN COURS ----------
     return (
-        <div className="py-8 pb-32 md:pb-8">
+        <div className="py-8 pb-40 md:pb-8">
             <div className="max-w-3xl mx-auto px-4 md:px-6 mb-8">
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-white transition-colors">{t('quiz.title')}</h1>
                 <p className="text-slate-500 dark:text-slate-400 text-sm mt-1 transition-colors">{t('quiz.subtitle', { count: questions.length })}</p>

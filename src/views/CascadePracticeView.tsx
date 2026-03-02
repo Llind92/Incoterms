@@ -126,7 +126,7 @@ export const CascadePracticeView: React.FC = () => {
     const step3Name = mode === 'multimodal' ? 'CIP' : 'CIF';
 
     return (
-        <div className="py-8 pb-32 md:pb-8">
+        <div className="py-8 pb-40 md:pb-8">
             <div className="max-w-6xl mx-auto px-4 md:px-6">
 
                 {/* HEADER */}

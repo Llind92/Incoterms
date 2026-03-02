@@ -7,7 +7,7 @@ export const AppLayout: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <div className="flex h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden font-sans transition-colors duration-200">
+        <div className="flex h-[100dvh] bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden font-sans transition-colors duration-200">
 
             {/* SIDEBAR */}
             <aside className="w-20 md:w-64 bg-white dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 flex flex-col justify-between hidden sm:flex shrink-0 z-20 shadow-sm transition-colors duration-200">
@@ -39,7 +39,7 @@ export const AppLayout: React.FC = () => {
             </aside>
 
             {/* MOBILE BOTTOM NAV (visible only on small screens) */}
-            <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-t border-slate-200/50 dark:border-slate-800/50 flex justify-around p-3 z-50 pb-safe transition-colors duration-200">
+            <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-t border-slate-200/50 dark:border-slate-800/50 flex justify-around p-3 z-50 pb-[env(safe-area-inset-bottom)] transition-colors duration-200">
                 <MobileNavItem to="/" icon={<Home size={22} />} label={t('nav.dashboard')} exact />
                 <MobileNavItem to="/course" icon={<BookOpen size={22} />} label={t('nav.course')} />
                 <MobileNavItem to="/calculator" icon={<Calculator size={22} />} label="Calcul" />

@@ -31,7 +31,7 @@ export const SettingsView: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen pb-32 md:pb-8 bg-slate-50 dark:bg-slate-900 transition-colors duration-200 p-4 md:p-8">
+        <div className="min-h-[100dvh] pb-40 md:pb-8 bg-slate-50 dark:bg-slate-900 transition-colors duration-200 p-4 md:p-8">
             <div className="max-w-2xl mx-auto">
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">{t('nav.settings')}</h1>

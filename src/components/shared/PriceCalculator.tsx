@@ -147,7 +147,7 @@ export const PriceCalculator: React.FC = () => {
     };
 
     return (
-        <div className="w-full max-w-6xl mx-auto pb-32 md:pb-8 p-4 md:p-8 bg-slate-50 dark:bg-slate-900 transition-colors duration-200 min-h-screen font-sans">
+        <div className="w-full max-w-6xl mx-auto pb-40 md:pb-8 p-4 md:p-8 bg-slate-50 dark:bg-slate-900 transition-colors duration-200 min-h-[100dvh] font-sans">
             <div className="mb-6 sm:mb-8 flex flex-col md:flex-row md:items-start justify-between gap-3 sm:gap-4">
                 <div>
                     <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 transition-colors">{t('calculator.title')}</h1>

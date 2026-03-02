@@ -54,7 +54,7 @@ export const CourseView: React.FC = () => {
     );
 
     return (
-        <div className="flex flex-col min-h-full pb-32 md:pb-8 p-4 md:p-8 md:flex-row gap-6 transition-colors duration-200">
+        <div className="flex flex-col min-h-full pb-40 md:pb-8 p-4 md:p-8 md:flex-row gap-6 transition-colors duration-200">
 
             {/* Colonne de Gauche : Liste de navigation */}
             <div className="w-full md:w-1/3 md:max-w-sm flex-shrink-0 flex flex-col relative w-screen -mx-4 px-4 md:w-auto md:mx-0 md:px-0">
