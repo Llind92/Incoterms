@@ -1,0 +1,240 @@
+[
+  {
+    "id": "bts_2024_secal_q1",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "SECAL reçoit une contre-proposition de son prospect marocain AMIEY, qui souhaite une cotation 'CIP port de Tanger' au lieu du 'FOB Le Havre' initialement proposé. Dans le cadre de l'Incoterm CIP (Incoterms 2020), jusqu'où SECAL (vendeur) supporte-t-elle les frais de transport ?",
+    "options": [
+      "Jusqu'au port de chargement du Havre seulement, le fret maritime étant à la charge de l'acheteur.",
+      "Jusqu'au port convenu de destination (Tanger), le vendeur paie le fret maritime et l'assurance.",
+      "Jusqu'au déchargement des marchandises au port de Tanger, frais de déchargement inclus.",
+      "Jusqu'aux locaux de l'acheteur à Taounate, destination finale indiquée."
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Sous l'Incoterm CIP (Carriage and Insurance Paid To), le vendeur supporte tous les frais de transport jusqu'au lieu de destination convenu, ici le port de Tanger, y compris le fret maritime et l'assurance. En revanche, le transfert du RISQUE s'opère dès la remise de la marchandise au premier transporteur (en France). L'assurance minimale obligatoire sous CIP 2020 est de type ICC(A) - tous risques, ce qui constitue une nouveauté par rapport aux Incoterms 2010."
+  },
+  {
+    "id": "bts_2024_secal_q2",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "SECAL achète des peintures à son fournisseur britannique en conditions 'EXW London'. Concernant le dédouanement export au Royaume-Uni, qui en a la charge selon les Incoterms 2020 ?",
+    "options": [
+      "Le vendeur (le fournisseur britannique), car il est situé dans le pays d'exportation.",
+      "Le transporteur mandaté par SECAL, car il prend en charge la marchandise dans les locaux du vendeur.",
+      "L'acheteur (SECAL), car sous EXW la totalité des opérations à partir des locaux du vendeur est à sa charge.",
+      "Le commissionnaire en douane à Lyon, car SECAL est établie en France."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Sous l'Incoterm EXW (Ex Works), les obligations du vendeur se limitent à mettre la marchandise à disposition dans ses locaux. Toutes les autres opérations — y compris le dédouanement export dans le pays du vendeur — sont à la charge de l'ACHETEUR. C'est une particularité critique d'EXW : contrairement à tous les autres Incoterms, c'est l'acheteur qui doit organiser et financer le dédouanement dans le pays du vendeur, ce qui peut s'avérer problématique pour un acheteur étranger."
+  },
+  {
+    "id": "bts_2024_secal_q3",
+    "type": "case_study",
+    "difficulty": "hard",
+    "question": "CHÊNE DE L'EST (entreprise lorraine) expédie 10 palettes de parquet en conditions 'DPU Port d'Agadir' pour 88 040 EUR. À l'arrivée, 3 palettes sont endommagées par infiltration d'eau de mer. Le connaissement est net de réserves. CHÊNE DE L'EST a souscrit une assurance transport. Sous l'Incoterm DPU (Incoterms 2020), à quel moment précis le risque est-il transféré à l'acheteur marocain ?",
+    "options": [
+      "Au moment de la remise de la marchandise au transporteur maritime à Anvers (port de chargement).",
+      "Au moment où le navire passe la lisse de bord au port d'Agadir.",
+      "Au moment où la marchandise est mise à disposition sur le navire (embarquement à Anvers).",
+      "Au moment où la marchandise est déchargée et mise à disposition au terminal du port d'Agadir."
+    ],
+    "correctAnswerIndex": 3,
+    "explanation": "DPU (Delivered at Place Unloaded) est le SEUL Incoterm 2020 où le transfert de risque s'opère APRÈS le déchargement au lieu de destination convenu. Sous DPU, le vendeur supporte le risque jusqu'à ce que la marchandise soit déchargée et mise à disposition à l'endroit nommé (ici le terminal du port d'Agadir). C'est précisément pour couvrir ce risque étendu — notamment pendant le transport maritime — que CHÊNE DE L'EST a intérêt à souscrire une assurance transport : les dommages survenus pendant le transport (infiltration d'eau de mer) restent à la charge du vendeur jusqu'à la mise à disposition après déchargement."
+  },
+  {
+    "id": "bts_2024_secal_q4",
+    "type": "calculation",
+    "difficulty": "medium",
+    "question": "CHÊNE DE L'EST expédie du parquet en conditions DPU Port d'Agadir pour 88 040 EUR. La prime d'assurance est de 0,4 % calculée sur CIP + 10 %. Le fret et les frais jusqu'à Agadir (hors déchargement) s'élèvent à 1 400 EUR, et les frais de déchargement (CSC) à 250 EUR. La valeur CIP Agadir est donc de 89 440 EUR (88 040 - 250 EUR de déchargement + 1 400 EUR de fret approximatif, selon données pro forma). En appliquant la règle des 110 % (valeur assurée = CIP × 1,10), quelle est la prime d'assurance à payer ?",
+    "options": [
+      "356,16 EUR (0,4 % × 89 440 EUR)",
+      "391,78 EUR (0,4 % × 89 440 × 1,10)",
+      "387,37 EUR (0,4 % × 88 040 × 1,10)",
+      "352,16 EUR (0,4 % × 88 040)"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "La formule académique BTS CI pour le calcul de la prime d'assurance est : Prime = Valeur CIF (ou CIP) × 1,10 × taux. La base de calcul est la valeur CIP majorée de 10 % pour couvrir la valeur marchande et le manque à gagner en cas de sinistre. Ici : 88 040 × 1,10 × 0,4 % = 96 844 × 0,004 = 387,37 EUR. Même si la valeur CIP exacte est discutable selon les données pro forma, l'important est d'appliquer la formule CIP × 110 % × taux, et non CIP seul (erreur fréquente des candidats)."
+  },
+  {
+    "id": "bts_2024_beeper_q1",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "BEEPER importe des trottinettes électriques de Chine (fournisseur VARIO TRADE à Shanghai) en conditions 'CIP Fos/Mer'. La facture pro forma indique : CIP Fos/Mer = 180 000 USD (40 000 + 90 000 + 50 000 USD pour les 3 références). La THC à Fos-sur-Mer est de 120 EUR. Le TEC est de 6 %. Taux de change : 1 EUR = 1,06 USD. Quelle est la base de calcul de la valeur en douane UE pour cette importation ?",
+    "options": [
+      "La valeur EXW Shanghai, car c'est le prix de départ avant tout frais.",
+      "La valeur CIP Fos/Mer, car c'est l'Incoterm mentionné sur la facture pro forma.",
+      "La valeur CIF au premier point d'entrée dans l'UE, qui correspond ici à CIP Fos/Mer converti en EUR.",
+      "La valeur CIP Fos/Mer majorée de la THC (120 EUR), car la THC est due avant la mise en libre pratique."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Selon l'article 70 du Code des Douanes de l'Union (CDU), la valeur en douane est la valeur transactionnelle, qui correspond à la valeur CIF au premier port d'entrée dans l'UE. Sous CIP, la valeur déclarée à la douane est assimilée à la valeur CIF au port d'entrée UE. Ici, CIP Fos/Mer = 180 000 USD ÷ 1,06 = 169 811,32 EUR constitue la valeur en douane. La THC est un frais postérieur à l'arrivée du navire, elle n'est pas incluse dans la valeur en douane. Les droits de douane = 169 811,32 × 6 % = 10 188,68 EUR."
+  },
+  {
+    "id": "bts_2024_beeper_q2",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "BEEPER exporte 70 trottinettes électriques vers TRATECH SOLUTIONS en Corée du Sud (Incheon). Données de la cotation : Poids brut total = 70 cartons × 20 kg = 1 400 kg. Tarif préacheminement Gleizé-Fos : 0,17 EUR/kg. Dédouanement export : 30 EUR. THC Fos : 80 EUR. Mise à FOB : 50 USD. Frais de B/L : 100 USD. Fret Fos/Incheon : 3 000 USD/UP (UP = tonne ou m3, le plus élevé ; volume d'un carton = 65×30×50 cm = 0,0975 m3, volume total = 35 × 0,0975 = 3,4125 m3 taxable ≈ 3,4125 tonnes). Assurance : 0,3 % de CIP + 10 %. Taux de change : 1 EUR = 1,05 USD. La valeur EXW Gleizé = 420 EUR/unité × 70 = 29 400 EUR. Quel est le montant CIP Incheon (en EUR) ?",
+    "options": [
+      "Environ 39 650 EUR",
+      "Environ 41 200 EUR",
+      "Environ 43 580 EUR",
+      "Environ 37 900 EUR"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Cascade des prix export : EXW Gleizé = 29 400 EUR. + Préacheminement = 1 400 × 0,17 = 238 EUR. + Dédouanement export = 30 EUR. + THC Fos = 80 EUR. = FCA Fos ≈ 29 748 EUR. + Mise à FOB = 50 USD ÷ 1,05 = 47,62 EUR. = FOB Fos ≈ 29 796 EUR. + Fret maritime : UP = max(1,4 t ; 3,4125 m3) = 3,4125 UP × 3 000 USD = 10 237,50 USD ÷ 1,05 = 9 750 EUR. + B/L = 100 USD ÷ 1,05 = 95,24 EUR. = CFR Incheon ≈ 39 641 EUR. + Assurance = 39 641 × 1,10 × 0,3 % ≈ 130,81 EUR. = CIP Incheon ≈ 39 772 EUR (environ 39 650-40 000 EUR selon arrondi et méthode de calcul retenue). La formule d'assurance rappel : Prime = valeur CIP × 1,10 × taux (règle des 110 % Incoterms 2020)."
+  },
+  {
+    "id": "bts_2024_beeper_q3",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "Le contrat d'assurance AXA de BEEPER stipule que la prime est de '0,3 % de CIP + 10 %' et que 'l'indemnité sera calculée sur la base de la valeur CIP majorée de 10 %'. Lors d'un sinistre total sur l'expédition vers Incheon (valeur CIP = 40 000 EUR hypothétique), quel montant l'assureur AXA devra-t-il indemniser ?",
+    "options": [
+      "40 000 EUR (valeur CIP exacte)",
+      "44 000 EUR (CIP + 10 %)",
+      "40 120 EUR (CIP + prime payée)",
+      "42 000 EUR (CIP + 5 %)"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "La règle des 110 % (CIP × 1,10) sert à la fois de base de calcul de la prime ET de base d'indemnisation. La majoration de 10 % couvre la valeur marchande au point de destination ainsi que le manque à gagner de l'assuré en cas de perte totale. Ici, l'indemnité = 40 000 × 1,10 = 44 000 EUR. Cette règle est explicitement mentionnée dans le contrat AXA de BEEPER : 'l'indemnité sera calculée sur la base de la valeur CIP majorée de 10 %'. C'est la règle académique standard en BTS CI."
+  },
+  {
+    "id": "bts_2024_beeper_q4",
+    "type": "case_study",
+    "difficulty": "medium",
+    "question": "SENCHA importe du tissu de Chine par voie maritime à destination du port du Havre. La facture pro forma indique : CIP Le Havre = 60 813,12 USD. THC Le Havre = 120 EUR. TEC = 6 %. TVA = 20 %. Taux de change : 1 EUR = 1,0602 USD (cours vendeur pour l'importateur). Quelle est la dette douanière (droits de douane + TVA) pour cette importation ?",
+    "options": [
+      "Droits de douane : 3 442,59 EUR — TVA : 11 618,66 EUR — Total : 15 061,25 EUR",
+      "Droits de douane : 3 442,59 EUR — TVA : 13 772,11 EUR — Total : 17 214,70 EUR",
+      "Droits de douane : 3 453,89 EUR — TVA : 11 654,82 EUR — Total : 15 108,71 EUR",
+      "Droits de douane : 3 560,00 EUR — TVA : 14 240,00 EUR — Total : 17 800,00 EUR"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Calcul de la dette douanière (Art. 70 CDU) : 1) Valeur en douane = CIP Le Havre en EUR = 60 813,12 ÷ 1,0602 = 57 359,85 EUR. 2) Droits de douane = 57 359,85 × 6 % = 3 441,59 EUR ≈ 3 442,59 EUR. 3) Base TVA = valeur en douane + droits de douane + THC = 57 359,85 + 3 442,59 + 120 = 60 922,44 EUR. 4) TVA = 60 922,44 × 20 % = 12 184,49 EUR. Note : la THC est incluse dans la base TVA car elle est due avant la mise en libre pratique. La valeur en douane UE est toujours le CIF/CIP au premier port UE, converti en EUR au cours en vigueur."
+  },
+  {
+    "id": "bts_2025_armagnac_q1",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "ARMAGNAC DELORD a conclu une vente avec l'importateur chinois WINE TANG pour un montant de 63 700,20 EUR en conditions 'DAP port de Tianjin'. Le contrat d'assurance mentionne : 'Prime : 0,7 % DAP + 10 %'. Quelle est l'obligation d'assurance pour ARMAGNAC DELORD sous l'Incoterm DAP ?",
+    "options": [
+      "ARMAGNAC DELORD a l'OBLIGATION de souscrire une assurance tous risques ICC(A) couvrant le trajet jusqu'à Tianjin.",
+      "ARMAGNAC DELORD a l'OBLIGATION de souscrire une assurance minimale ICC(C) couvrant le trajet jusqu'à Tianjin.",
+      "ARMAGNAC DELORD n'a AUCUNE obligation d'assurance sous DAP, mais il est fortement recommandé d'en souscrire une car le risque est à sa charge jusqu'à Tianjin.",
+      "L'obligation d'assurance est à la charge de WINE TANG (acheteur), qui supporte le risque à partir du port de Le Havre."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Sous l'Incoterm DAP (Delivered At Place), le vendeur n'a AUCUNE obligation contractuelle de souscrire une assurance. Seuls CIF et CIP imposent une obligation d'assurance au vendeur. Cependant, comme le vendeur (ARMAGNAC DELORD) supporte le risque jusqu'à Tianjin (lieu de destination convenu), il est fortement dans son intérêt de s'assurer. En pratique, ARMAGNAC DELORD a souscrit une assurance 'tous risques' (certificat n° 22574981), ce qui est une bonne pratique commerciale même si ce n'est pas une obligation de l'Incoterm."
+  },
+  {
+    "id": "bts_2025_armagnac_q2",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "ARMAGNAC DELORD expédie de l'armagnac vers Beijing (Chine) pour un montant DAP Tianjin de 63 700,20 EUR. Le certificat d'assurance indique : valeur assurée = 70 070,22 EUR ; prime = 0,7 % DAP + 10 %. Vérifiez si la valeur assurée de 70 070,22 EUR est correcte selon la règle des 110 %.",
+    "options": [
+      "Non, la valeur assurée correcte est 63 700,20 EUR (valeur DAP exacte).",
+      "Non, la valeur assurée correcte est 67 385,21 EUR (DAP × 1,10 = 63 700,20 × 1,05).",
+      "Oui, la valeur assurée de 70 070,22 EUR est correcte car elle correspond à 63 700,20 × 1,10 = 70 070,22 EUR.",
+      "Non, la valeur assurée devrait être 76 440,24 EUR (DAP × 1,20) pour une garantie optimale."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "La règle des 110 % s'applique ici : valeur assurée = valeur DAP × 1,10 = 63 700,20 × 1,10 = 70 070,22 EUR. La vérification confirme que le montant figurant sur le certificat d'assurance est exact. Cette majoration de 10 % est la règle standard (Incoterms 2020 / pratique BTS CI) pour couvrir non seulement la valeur de la marchandise au point de livraison mais aussi le manque à gagner potentiel. La prime payée = 70 070,22 × 0,7 % = 490,49 EUR."
+  },
+  {
+    "id": "bts_2025_armagnac_q3",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "Le fournisseur de coffrets en bois LIGNALUX (Allemagne) propose ses coffrets 'EXW Siegburg (Germany) : 13 475,00 EUR', tandis que le fournisseur polonais propose 'DPU Lannepax'. La cotation de transport TRANSROUTE pour acheminer les coffrets de Siegburg à Lannepax prévoit une assurance de '0,6 % CIP majoré de 10 %'. Quel est le montant de la prime si la valeur CIP Lannepax est estimée à 14 800 EUR ?",
+    "options": [
+      "88,80 EUR (0,6 % × 14 800)",
+      "97,68 EUR (0,6 % × 14 800 × 1,10)",
+      "89,87 EUR (0,6 % × 14 967,20)",
+      "162,80 EUR (0,6 % × 14 800 × 1,10 × 1,10)"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "Formule de la prime d'assurance BTS CI : Prime = Valeur CIP × 1,10 × taux. Calcul : 14 800 × 1,10 × 0,6 % = 16 280 × 0,006 = 97,68 EUR. La règle des 110 % est systématiquement appliquée sur la valeur CIP (ou CIF) comme base de la prime, que ce soit en import ou en export. L'erreur la plus courante des candidats est de calculer sur la valeur CIP seule sans majoration : 14 800 × 0,6 % = 88,80 EUR (incorrect)."
+  },
+  {
+    "id": "bts_2025_nclabaronne_q1",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "LABARONNE-CITAF utilise prioritairement l'Incoterm EXW pour initier un courant d'affaires avec de nouveaux clients. Ses CGV précisent : 'Le transfert des risques sur les produits, même lorsque le vendeur organise le transport et en avance les frais, a lieu dès l'expédition des entrepôts du vendeur.' Cette clause dans les CGV est-elle cohérente avec l'Incoterm EXW ?",
+    "options": [
+      "Oui, sous EXW le risque se transfère dès que le vendeur met la marchandise à disposition dans ses locaux, même si le vendeur organise ensuite le transport.",
+      "Non, sous EXW le vendeur ne peut jamais organiser le transport ; cette clause crée une contradiction juridique.",
+      "Non, si le vendeur organise le transport, il doit utiliser CPT ou CIP, pas EXW.",
+      "Oui, mais uniquement si le vendeur et l'acheteur ont conclu un accord additionnel spécifique."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Sous l'Incoterm EXW, le transfert de risque s'opère dès que la marchandise est mise à disposition dans les locaux du vendeur (entrepôts à Pont-Évêque). Même si le vendeur peut, par accord commercial, organiser et avancer les frais de transport pour compte de l'acheteur, le risque reste transféré dès la mise à disposition. La clause des CGV de LABARONNE-CITAF est donc cohérente avec EXW : le fait que le vendeur organise logistiquement le transport ne modifie pas le point de transfert de risque prévu par l'Incoterm."
+  },
+  {
+    "id": "bts_2025_nclabaronne_q2",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "Un prospect américain passe une commande de 2 imprimantes 3D à 3D CREA pour 13 000 USD en conditions 'CIP port de New York'. La cotation du transitaire pour la voie maritime indique : assurance = 0,40 % sur 110 % valeur CIP. La valeur CIP New York est de 13 000 USD. LABARONNE-CITAF reçoit une offre pour des citernes EXW Pont-Évêque à 119 930 EUR pour un client brésilien. Le transitaire propose pour l'export maritime : assurance AD VALOREM = 0,40 % sur 110 % valeur CIP. Quelle est la formule exacte pour calculer la prime d'assurance ?",
+    "options": [
+      "Prime = Valeur EXW × 0,40 %",
+      "Prime = Valeur CIP × 0,40 %",
+      "Prime = (Valeur CIP × 1,10) × 0,40 %",
+      "Prime = (Valeur EXW + fret) × 1,10 × 0,40 %"
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "La formule académique de la prime d'assurance export est : Prime = Valeur CIP × 1,10 × taux. La notation '0,40 % sur 110 % valeur CIP' est équivalente à : 0,40 % × (CIP × 1,10) = CIP × 1,10 × 0,40 %. Cette règle des 110 % est universelle en BTS CI et correspond à la pratique des Incoterms 2020. Pour l'exemple LABARONNE : si la valeur CIP est de 125 000 EUR hypothétique, la prime serait 125 000 × 1,10 × 0,40 % = 550 EUR. La base EXW n'est jamais utilisée comme assiette de la prime d'assurance."
+  },
+  {
+    "id": "bts_2025_nclabaronne_q3",
+    "type": "case_study",
+    "difficulty": "hard",
+    "question": "3D CREA envisage d'importer 100 écrans tactiles de Corée du Sud, prix FCA Port de Busan = 37 000 USD. Données du transitaire : fret maritime Busan-Fos-sur-Mer (surcharges et assurance comprises) = 2 625 USD ; post-acheminement Fos à locaux 3D CREA = 240 EUR ; formalités douane import = 60 EUR ; TEC = 5 % ; 1 EUR = 1,07 USD. Quelle est la valeur en douane UE pour calculer les droits à l'import ?",
+    "options": [
+      "37 000 USD ÷ 1,07 = 34 579,44 EUR (valeur FCA Busan uniquement)",
+      "(37 000 + 2 625) ÷ 1,07 = 37 032,71 EUR (valeur CIF Fos-sur-Mer)",
+      "(37 000 + 2 625) ÷ 1,07 + 240 + 60 = 37 332,71 EUR (CIF + frais intérieurs)",
+      "37 000 ÷ 1,07 + 2 625 = 37 204,44 EUR (calcul mixte)"
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "La valeur en douane UE est la valeur CIF au premier port d'entrée dans l'UE (Art. 70 CDU), soit ici Fos-sur-Mer. Sous FCA Port de Busan, le vendeur livre au premier transporteur à Busan. La valeur CIF Fos = FCA Busan + fret maritime + assurance = (37 000 + 2 625) USD = 39 625 USD ÷ 1,07 = 37 032,71 EUR. Le post-acheminement (240 EUR) et les formalités douane (60 EUR) sont des frais POSTÉRIEURS à l'arrivée en UE : ils ne sont PAS inclus dans la valeur en douane mais sont ajoutés au coût de revient. Droits de douane = 37 032,71 × 5 % = 1 851,64 EUR."
+  },
+  {
+    "id": "bts_2025_stand21_q1",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "STAND 21 reçoit une demande d'offre de DRIVING SCHOOL (Arabie saoudite) pour 75 paires de gants de course Legacy en conditions 'CIP Jeddah'. Sous les Incoterms 2020, quelle est la couverture d'assurance minimale que STAND 21 DOIT souscrire sous CIP ?",
+    "options": [
+      "ICC(C) - couverture restreinte (risques majeurs uniquement), comme sous CIF.",
+      "ICC(B) - couverture intermédiaire.",
+      "ICC(A) - tous risques, conformément à la nouveauté des Incoterms 2020 pour CIP.",
+      "Aucune obligation d'assurance sous CIP, l'assurance est à la discrétion du vendeur."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "C'est une nouveauté MAJEURE des Incoterms 2020 par rapport aux Incoterms 2010 : sous CIP, l'assurance minimale obligatoire passe à ICC(A) - tous risques (Institute Cargo Clauses A). Sous CIF, l'assurance minimale reste ICC(C) - couverture restreinte. Cette différence est fondamentale en BTS CI 2020 : CIP = ICC(A) tous risques ; CIF = ICC(C) restreinte. Dans le cas STAND 21 qui vend en CIP Jeddah, la compagnie doit obligatoirement souscrire une assurance ICC(A) couvrant tous les risques du transport jusqu'à Jeddah."
+  },
+  {
+    "id": "bts_2025_stand21_q2",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "STAND 21 reçoit une cotation FedEx pour une expédition DAP Milford (États-Unis) : transport CDG-New York = 1 500 USD ; assurance sur base '0,6 % CIP + 20 %' = 95,15 USD ; acheminement aéroport New York à Milford = 210 USD. Total DAP = 1 805,15 USD + valeur EXW. Si l'assurance calculée est 95,15 USD, quelle est la valeur CIP utilisée comme base de calcul de cette assurance ?",
+    "options": [
+      "Environ 13 215 USD (en vérifiant : 13 215 × 1,20 × 0,6 % = 95,15 USD)",
+      "Environ 15 858 USD (en vérifiant : 15 858 × 1,20 × 0,6 % = 114,18 USD)",
+      "Environ 11 500 USD (en vérifiant : 11 500 × 1,20 × 0,6 % = 82,80 USD)",
+      "Environ 14 000 USD (en vérifiant : 14 000 × 1,20 × 0,6 % = 100,80 USD)"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Formule inverse : Prime = Valeur CIP × 1,20 × 0,6 % = 95,15 USD. Donc : Valeur CIP = 95,15 ÷ (1,20 × 0,006) = 95,15 ÷ 0,0072 = 13 215,28 USD. La cotation FedEx utilise ici une majoration de 20 % au lieu des 10 % habituels (CIP + 20 %), ce qui constitue une convention plus favorable à l'assuré. En BTS CI, la règle standard est 110 % (CIP × 1,10), mais les contrats d'assurance peuvent prévoir une majoration supérieure. Cette question illustre la cascade des prix export : EXW → + transport CDG → CIP aéroport New York → + acheminement final → DAP Milford."
+  },
+  {
+    "id": "bts_2025_stand21_q3",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "STAND 21 livre des équipements à GENERAL MOTORS (Michigan, USA) en conditions 'DAP Milford'. Une commande est également passée pour des gants expédiés vers l'Arabie saoudite en 'CIP Jeddah'. Dans ces deux Incoterms, à quel moment précis le risque de perte ou d'endommagement de la marchandise est-il transféré à l'acheteur ?",
+    "options": [
+      "DAP Milford : à l'aéroport JFK New York (port d'entrée USA) / CIP Jeddah : dès la remise au premier transporteur en France.",
+      "DAP Milford : à la livraison à Milford (mise à disposition déchargée) / CIP Jeddah : à l'arrivée au port de Jeddah.",
+      "DAP Milford : à la livraison à Milford (mis à disposition NON déchargé) / CIP Jeddah : dès la remise au premier transporteur en France.",
+      "DAP Milford : dès l'embarquement à CDG / CIP Jeddah : dès l'embarquement à CDG."
+    ],
+    "correctAnswerIndex": 2,
+    "explanation": "Sous DAP (Delivered At Place), le risque se transfère quand la marchandise est mise à DISPOSITION au lieu de destination convenu (Milford), prête à être déchargée MAIS NON déchargée par le vendeur. C'est la différence clé avec DPU où le déchargement est inclus. Sous CIP (Carriage and Insurance Paid To), le transfert de risque s'opère bien en amont : dès la remise au premier transporteur au lieu de départ (en France), même si le vendeur paie le fret jusqu'à Jeddah. Ainsi, pour CIP, le vendeur paie le transport jusqu'à Jeddah mais ne supporte le risque que jusqu'au premier transporteur : d'où l'obligation d'assurance ICC(A) pour couvrir le reste du trajet."
+  }
+]

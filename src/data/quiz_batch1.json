@@ -1,0 +1,240 @@
+[
+  {
+    "id": "bts_2023_kubota_q1",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "KUBOTA EUROPE (Bierne, France) vend un tracteur M7-152 Powershift à un client sud-africain basé au Cap. Ses CGV précisent : « tous les prix s'appliquent CIF (Incoterms 2020) pour le transport maritime grand export ». Le prix EXW Bierne est de 110 000 EUR. Sous l'Incoterm CIF Cape Town, à quel moment le risque de perte ou d'endommagement de la marchandise se transfère-t-il du vendeur (KUBOTA) à l'acheteur ?",
+    "options": [
+      "Au moment où le tracteur est chargé à bord du navire au port d'embarquement (ex. Zeebrugge ou Anvers)",
+      "Au moment où le tracteur arrive au port de Cape Town et est déchargé du navire",
+      "Au moment où KUBOTA remet la marchandise au premier transporteur à Bierne",
+      "Au moment où le connaissement est émis par la compagnie maritime"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Sous CIF (Incoterms 2020, règle C-2), le transfert du risque s'effectue au moment où la marchandise est mise à bord du navire au port d'embarquement (règle du « on board »), conformément à l'art. A5 des règles CCI 2020. Le vendeur assume les frais jusqu'au port de destination désigné (Cape Town), mais le risque passe à l'acheteur dès l'embarquement. C'est le piège classique des Incoterms de groupe C : frais et risques ne se transfèrent pas au même point."
+  },
+  {
+    "id": "bts_2023_kubota_q2",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "KUBOTA calcule sa prime d'assurance transport selon la règle de ses CGV : « 0,5 % CIF + 10 % ». Le prix CIF Cape Town pour 3 tracteurs est de 285 000 EUR. Quel est le montant de la prime d'assurance à payer par KUBOTA pour cette expédition ?",
+    "options": [
+      "1 567,50 EUR",
+      "1 425,00 EUR",
+      "1 282,50 EUR",
+      "3 135,00 EUR"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "La règle académique BTS CI pour le calcul de la prime d'assurance est : Prime = Valeur CIF × 1,10 × taux. Ici : Prime = 285 000 × 1,10 × 0,5 % = 285 000 × 1,10 × 0,005 = 313 500 × 0,005 = 1 567,50 EUR. La majoration de 10 % (coefficient 1,10) représente la marge bénéficiaire présumée, conformément aux usages du commerce international et aux exigences des crédits documentaires. Cette base majorée est également la base retenue pour le calcul de la valeur en douane UE (Art. 70 CDU) lorsque la valeur CIF est utilisée."
+  },
+  {
+    "id": "bts_2023_kubota_q3",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "Le client sud-africain avait initialement demandé un prix « CFR Cape Town » dans son appel d'offres. Or les CGV de KUBOTA stipulent CIF. Le transitaire propose dans sa cotation un poste « FOB Bierne – Antwerp : 480 EUR ». Pourquoi l'utilisation de l'Incoterm FOB est-elle déconseillée pour une expédition de tracteurs en conteneur (FCL) depuis Zeebrugge ou Anvers ?",
+    "options": [
+      "Parce qu'avec FOB, le risque se transfère quand la marchandise est remise à un terminal à conteneurs (avant l'embarquement), ce qui crée une zone non couverte entre la remise au terminal et le chargement à bord",
+      "Parce que FOB interdit le transport par navire Ro-Ro, seul mode adapté aux tracteurs",
+      "Parce que FOB impose à l'acheteur de souscrire une assurance de type ICC(A), plus coûteuse",
+      "Parce que FOB ne peut pas être utilisé pour des marchandises dont la valeur dépasse 100 000 EUR"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Depuis les Incoterms 2010 (confirmé en 2020), la CCI déconseille explicitement FOB pour les conteneurs. En pratique portuaire, le vendeur remet la marchandise au terminal à conteneurs (CY - Container Yard) bien avant l'embarquement effectif. Avec FOB, le risque ne se transfère qu'au passage du bastingage/mise à bord, ce qui signifie que le vendeur supporte le risque pendant la période de stockage au terminal sans en avoir le contrôle. La CCI recommande FCA [port/terminal désigné] à la place de FOB pour les expéditions conteneurisées."
+  },
+  {
+    "id": "bts_2023_kubota_q4",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "Le fournisseur espagnol de poignées de tracteur propose ses produits « EXW nos locaux (Valencia) ». KUBOTA Europe (Bierne, France) souhaite importer ces poignées. Avec l'Incoterm EXW Valencia, qui prend en charge les formalités et les frais de dédouanement à l'exportation depuis l'Espagne ?",
+    "options": [
+      "L'acheteur (KUBOTA Europe), car avec EXW toutes les opérations à partir des locaux du vendeur sont à la charge de l'acheteur, y compris le dédouanement export",
+      "Le vendeur espagnol, car il est situé dans le pays d'exportation et doit obligatoirement accomplir les formalités douanières",
+      "Le transitaire désigné par le vendeur, car c'est lui qui organise l'enlèvement",
+      "Les deux parties à parts égales, selon la réglementation douanière européenne"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Sous EXW (Ex Works, Incoterms 2020), le vendeur a l'obligation minimale : il met la marchandise à disposition dans ses locaux. TOUTES les opérations suivantes sont à la charge de l'acheteur, y compris le chargement sur le véhicule, le pré-acheminement, ET les formalités douanières d'exportation. C'est le piège majeur d'EXW : en pratique, un acheteur étranger ne peut pas toujours accomplir les formalités douanières dans le pays du vendeur. La CCI recommande d'utiliser FCA à la place d'EXW pour les ventes internationales, car FCA met à la charge du vendeur le dédouanement export."
+  },
+  {
+    "id": "bts_2023_kubota_q5",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "KUBOTA Europe achète des poignées de tracteur à un fournisseur japonais aux conditions « CIP Dunkerque : 8 220 JPY/poignée » (Incoterms 2020). Quelle couverture d'assurance minimale le vendeur japonais est-il obligé de souscrire pour l'expédition vers Dunkerque ?",
+    "options": [
+      "ICC(A) – Toutes risques, conformément aux Incoterms 2020 qui ont relevé le niveau minimal pour CIP",
+      "ICC(C) – Couverture minimale (pertes totales et avaries communes uniquement)",
+      "ICC(B) – Couverture intermédiaire incluant la chute par-dessus bord",
+      "Aucune assurance obligatoire, l'assurance est toujours facultative sous CIP"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "C'est une nouveauté majeure des Incoterms 2020 par rapport aux Incoterms 2010 : sous CIP (Carriage and Insurance Paid To), le vendeur doit souscrire une assurance de niveau ICC(A) – Toutes risques (Institute Cargo Clauses A), soit la couverture la plus large. Cela contraste avec CIF, qui n'exige toujours qu'un minimum ICC(C) (couverture minimale). Cette distinction CIP (ICC-A) / CIF (ICC-C) est un point clé du programme BTS CI et une question récurrente dans les annales. L'acheteur peut bien sûr convenir avec le vendeur d'une couverture différente, mais l'obligation minimale légale sous CIP 2020 est ICC(A)."
+  },
+  {
+    "id": "bts_2023_cafes_richard_q1",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "Cafés Richard achète des films de suremballage à un fournisseur chinois « FOB port de Guangzhou ». Le service Achats constate régulièrement des retards dans l'arrivée des produits à Gennevilliers. Cafés Richard organise lui-même le transport maritime en recourant à CMA-CGM pour des conteneurs de groupage (LCL). Quel est le problème principal posé par l'Incoterm FOB pour ce type d'expédition en groupage conteneurisé ?",
+    "options": [
+      "Avec FOB, Cafés Richard supporte le risque à partir du chargement à bord, mais en pratique, le fournisseur chinois remet la marchandise à un entrepôt de groupage (CFS) bien avant ; il y a donc une zone de risque non couverte entre la remise au CFS et la mise à bord réelle",
+      "FOB interdit les expéditions en LCL (groupage) ; seul le FCL (conteneur complet) est autorisé sous FOB",
+      "Avec FOB, le vendeur doit souscrire l'assurance pour l'ensemble du transport jusqu'à Gennevilliers",
+      "FOB impose à l'acheteur de payer les THC (Terminal Handling Charges) au port de Guangzhou en plus du prix FOB"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Pour les expéditions LCL (groupage), la marchandise est remise par le vendeur à un entrepôt de consolidation (Container Freight Station – CFS) avant d'être chargée dans un conteneur puis à bord. Avec FOB, le risque ne passe à l'acheteur qu'à la mise à bord effective, mais en réalité, le vendeur a déjà perdu le contrôle de la marchandise dès la remise au CFS. L'Incoterm recommandé par la CCI pour les groupages conteneurisés est FCA [lieu convenu/CFS] qui permet un transfert du risque clair au moment de la remise au premier transporteur. La CCI déconseille explicitement FOB pour les conteneurs depuis les Incoterms 2010."
+  },
+  {
+    "id": "bts_2023_cafes_richard_q2",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "French Sudist (sujet CAPTELS, questions complémentaires) importe 17 724 paires d'espadrilles de Chine. La valeur CIP Fos-sur-Mer est de 40 265 USD. Le taux de change est 1 EUR = 1,0177 USD. Les THC à Fos-sur-Mer sont de 125 EUR. Les formalités douane import sont de 65 EUR. Le TEC applicable est de 16,90 %. Quelle est la valeur en douane UE à retenir pour calculer les droits de douane ?",
+    "options": [
+      "39 565,33 EUR (valeur CIP Fos-sur-Mer convertie en EUR, car CIP au premier point d'entrée UE = valeur CIF pour le CDU)",
+      "39 690,33 EUR (valeur CIP + THC Fos-sur-Mer en EUR)",
+      "39 630,33 EUR (valeur CIP + formalités douane en EUR)",
+      "40 265,00 USD (valeur FOB en devise d'origine, sans conversion)"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Selon l'article 70 du Code des Douanes de l'Union (CDU), la valeur en douane est la valeur transactionnelle, soit le prix payé ou à payer pour les marchandises. Pour les marchandises importées par voie maritime, la valeur en douane UE inclut le prix des marchandises + le fret + l'assurance jusqu'au premier point d'entrée dans l'UE (valeur CIF ou équivalent CIP au port d'entrée). Ici, CIP Fos-sur-Mer = 40 265 USD ÷ 1,0177 = 39 565,33 EUR. Les THC et frais douaniers sont des frais postérieurs à l'arrivée en UE et ne sont PAS inclus dans la valeur en douane. Calcul des droits : 39 565,33 × 16,90 % = 6 686,54 EUR."
+  },
+  {
+    "id": "bts_2023_captels_q1",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "CAPTELS (Saint-Mathieu-de-Tréviers) pratique habituellement l'Incoterm EXW pour ses exportations terrestres, avec la possibilité de recourir à CIP pour le grand export. Le client TTS en Arabie saoudite demande dans son mail que « le transport par mer à Dammam et l'assurance soient à votre (CAPTELS) expense et que vous supportiez le risque ». CAPTELS souhaite répondre à cette demande avec l'Incoterm le plus adapté. Quel Incoterm recommandez-vous ?",
+    "options": [
+      "CIP Dammam – le vendeur organise et paie le transport et l'assurance jusqu'à Dammam, mais le risque se transfère à Fos-sur-Mer au chargement sur le premier transporteur",
+      "CIF Dammam – le vendeur supporte tous les risques et tous les frais jusqu'à l'arrivée à Dammam",
+      "DAP Dammam – le vendeur supporte tous les risques et tous les frais jusqu'à la mise à disposition à Dammam avant déchargement",
+      "DDP Dammam – le vendeur supporte tous les frais y compris les droits de douane saoudiens"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "CIP (Carriage and Insurance Paid To) est l'Incoterm recommandé par CAPTELS dans ses CGV pour le grand export. Sous CIP Dammam (Incoterms 2020) : le vendeur organise et paie le transport jusqu'à Dammam et souscrit une assurance ICC(A) – Toutes risques (nouveauté Incoterms 2020). Cependant, le risque se transfère à l'acheteur au moment de la remise de la marchandise au premier transporteur (à Fos-sur-Mer dans ce cas), pas à Dammam. Le client demande que CAPTELS supporte le risque et l'assurance, ce que CIP satisfait en termes financiers (CAPTELS paie l'assurance). La demande de l'acheteur est couverte par le fait que CAPTELS souscrit l'assurance même si juridiquement le risque passe à l'embarquement."
+  },
+  {
+    "id": "bts_2023_captels_q2",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "CAPTELS expédie un MOBILE TRUCK CONTROL SYSTEM (1 unité, prix EXW 46 000 EUR) vers Dammam. Le transitaire GEODIS cotise : pré-acheminement 1 400 EUR, empotage 490 EUR, traction Vitrolles–Fos 350 EUR, fret maritime 4 600 EUR, BAF 10%, frais B/L 80 EUR, frais DHL 60 EUR. L'assurance est calculée à « 0,2 % de CIP + 10 % ». Sachant que le prix CIP Dammam est de 53 480 EUR (EXW + tous les frais hors assurance), quel est le montant de la prime d'assurance ?",
+    "options": [
+      "117,66 EUR",
+      "106,96 EUR",
+      "53,48 EUR",
+      "58,83 EUR"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "La formule réglementaire BTS CI pour la prime d'assurance est : Prime = Valeur CIP × 1,10 × taux. Ici : Prime = 53 480 × 1,10 × 0,2 % = 53 480 × 1,10 × 0,002 = 58 828 × 0,002 = 117,66 EUR. La majoration de 10 % (coefficient 1,10) représente la marge commerciale présumée que l'assuré doit également couvrir. Cette règle est conforme aux pratiques du commerce international et aux exigences des Incoterms CIP 2020 (assurance ICC-A). Note : le taux de 0,2 % figurant dans la cotation GEODIS s'applique sur la valeur CIP majorée de 10 %."
+  },
+  {
+    "id": "bts_2009_sparcraft_q1",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "RDM Sparcraft (France) importe des pièces détachées de Charleston Spar Inc (États-Unis) aux conditions EXW Charlotte NC. La valeur marchandise est de 37 876,79 USD EXW. Le transitaire propose : CIP aéroport de Roissy pour 1 822,45 USD. Le taux de change est 1 EUR = 1,4814 USD. Le TEC est de 6 %. Quelle est la valeur en douane à utiliser pour le calcul des droits de douane à l'importation à Roissy ?",
+    "options": [
+      "26 742,49 EUR (valeur CIP Roissy convertie en EUR, égale à la valeur CIF au premier point d'entrée UE)",
+      "25 572,04 EUR (valeur EXW Charlotte convertie en EUR uniquement)",
+      "27 982,49 EUR (valeur CIP + frais de livraison Roissy/Périgny 740 EUR)",
+      "39 699,24 USD sans conversion, car la douane accepte les devises étrangères"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Selon l'Art. 70 du CDU, la valeur en douane UE est la valeur CIF au premier point d'entrée dans l'UE. CIP Roissy est l'équivalent de CIF pour le transport aérien (le CIP inclut le fret et l'assurance jusqu'à Roissy, premier point d'entrée UE). Valeur en douane = (37 876,79 + 1 822,45) USD = 39 699,24 USD ÷ 1,4814 = 26 797,09 EUR (arrondi selon les données). Note pédagogique : avec le coefficient d'aéroport de 80 % mentionné dans l'annexe 2, certaines douanes françaises appliquent un abattement forfaitaire sur le fret aérien pour se rapprocher du fret maritime (valeur ad valorem du transport aérien vs maritime). La valeur en douane reflète donc la valeur CIF/CIP au premier port/aéroport d'entrée UE."
+  },
+  {
+    "id": "bts_2009_sparcraft_q2",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "RDM Sparcraft envisage d'importer 10 000 vis inox d'un fournisseur chinois Tianjin Xin au prix de 5,88 USD FOB Shanghai. Pour calculer le coût de revient chez RDM Sparcraft (Périgny), l'assurance est cotée à « 0,6 % de la valeur CFR Le Havre + 10 % ». À quelle base de calcul correspond concrètement cette formule ?",
+    "options": [
+      "La prime est calculée sur la valeur CFR Le Havre multipliée par 1,10, soit (valeur CFR × 1,10) × 0,6 %",
+      "La prime est calculée sur la valeur CFR Le Havre seule, puis majorée de 10 % du montant de la prime obtenue",
+      "La prime est calculée sur la valeur FOB Shanghai seule, le CFR n'étant qu'indicatif",
+      "La prime est calculée sur 10 % de la valeur CFR Le Havre au taux de 0,6 %"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "La formule « 0,6 % de la valeur CFR + 10 % » signifie : Prime = Valeur CFR × 1,10 × 0,6 %. Le « + 10 % » correspond à une majoration de la base d'assurance pour couvrir la marge bénéficiaire présumée, conformément à l'usage international (Institute Cargo Clauses, pratique CCI). La base d'assurance est donc la valeur CIF théorique (CFR + marge de 10 %), et non la valeur CFR seule. Cette règle est identique pour tous les calculs d'assurance en BTS CI : Base = Valeur CIF (ou CFR/CPT) × 1,10, puis on applique le taux de prime à cette base majorée."
+  },
+  {
+    "id": "bts_2010_agco_q1",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "AGCO Beauvais (France) vend deux tracteurs Massey Ferguson à un client angolais. Le prix CFR Luanda est de 270 000 EUR. Le client, convaincu par AGCO, accepte finalement des conditions CIF Luanda. AGCO souscrit une assurance « tous risques » à « 0,8 % CIF + 10 % ». Quel est le montant de la prime d'assurance calculée sur la base du prix CFR Luanda de 270 000 EUR ?",
+    "options": [
+      "2 376,00 EUR",
+      "2 160,00 EUR",
+      "2 970,00 EUR",
+      "4 320,00 EUR"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "La prime d'assurance se calcule sur la valeur CIF majorée de 10 %. Comme le prix de départ donné est CFR Luanda = 270 000 EUR, et que la prime fait partie du prix CIF, on utilise la formule approchée : Prime ≈ Valeur CFR × 1,10 × taux = 270 000 × 1,10 × 0,8 % = 270 000 × 1,10 × 0,008 = 297 000 × 0,008 = 2 376 EUR. Note : en pratique, on pourrait calculer le prix CIF exact par : CIF = CFR ÷ (1 - taux × 1,10), mais dans les annales BTS CI, la formule simplifiée CIF ≈ CFR × 1,10 × taux est systématiquement utilisée pour la prime, car la prime est faible par rapport à la valeur totale."
+  },
+  {
+    "id": "bts_2010_agco_q2",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "AGCO Beauvais vend deux tracteurs au client angolais. Les conditions initiales demandées sont CFR Luanda. Le texte précise : « Conscient des risques que cette condition internationale de vente (incoterm) fait supporter à l'acheteur, AGCO veut le sensibiliser sur la nécessité d'assurer cette expédition. » Quelle est la répartition des risques et des obligations d'assurance sous CFR Luanda ?",
+    "options": [
+      "Sous CFR, le vendeur (AGCO) n'a aucune obligation de souscrire une assurance ; le risque passe à l'acheteur angolais dès l'embarquement à bord du navire. L'acheteur supporte donc le risque sur toute la traversée sans être couvert si aucune assurance n'est souscrite",
+      "Sous CFR, le vendeur supporte le risque jusqu'à Luanda mais n'est pas tenu de souscrire une assurance",
+      "Sous CFR, le vendeur doit souscrire une assurance minimale ICC(C) et le risque se transfère à Luanda",
+      "Sous CFR, l'assurance est partagée entre vendeur et acheteur à parts égales"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "CFR (Cost and Freight) – Incoterms 2020, règle C-1 : le vendeur paie le fret maritime jusqu'au port de destination, mais le risque se transfère à l'acheteur dès la mise à bord au port d'embarquement (même règle que FOB pour le risque). Contrairement à CIF, CFR ne comprend PAS d'obligation d'assurance pour le vendeur. L'acheteur angolais supporte donc le risque sur toute la traversée (plusieurs semaines) sans couverture automatique. C'est pourquoi AGCO conseille à son client de souscrire une assurance, et pourquoi le client finira par accepter de passer en CIF (le vendeur souscrit l'assurance pour son compte)."
+  },
+  {
+    "id": "bts_2010_agco_q3",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "Un fournisseur américain facture des pièces à AGCO France en « FCA Germantown » (Incoterms 2020). Sous l'Incoterm FCA (Free Carrier), dans quel cas peut-on l'utiliser pour les expéditions maritimes en conteneur, et quel avantage offre-t-il par rapport à FOB ?",
+    "options": [
+      "FCA peut être utilisé pour tous modes de transport incluant le maritime conteneurisé ; l'avantage est que le risque se transfère à la remise au transporteur désigné, ce qui couvre correctement la période de stockage au terminal avant embarquement, contrairement à FOB",
+      "FCA ne peut être utilisé que pour les transports terrestres et aériens, pas pour le maritime",
+      "FCA et FOB sont strictement équivalents pour les expéditions maritimes conteneurisées",
+      "FCA est déconseillé car il oblige l'acheteur à organiser le transport depuis l'entrepôt du vendeur"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "FCA (Free Carrier) est un Incoterm multimodal utilisable pour tous les modes de transport (Art. A1 Incoterms 2020). Son avantage clé pour les expéditions conteneurisées : le risque se transfère à l'acheteur au moment où le vendeur remet la marchandise au transporteur désigné par l'acheteur (ou à un lieu convenu, ex. terminal à conteneurs). Cela évite le problème du FOB où le risque ne passe qu'à la mise à bord, alors que le vendeur a déjà perdu le contrôle de la marchandise au terminal. Les Incoterms 2020 ont d'ailleurs introduit une nouveauté : avec FCA, les parties peuvent convenir que le transporteur émette un connaissement « on board » au bénéfice du vendeur, facilitant ainsi l'utilisation de FCA dans les crédits documentaires."
+  },
+  {
+    "id": "bts_2012_doublet_q1",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "La société Doublet (Avelin, France) exporte des poteaux en inox vers la Guinée (Conakry) en conditions « CIP Conakry » (Incoterms 2020). Elle s'approvisionne en Asie auprès de fournisseurs en « FCA port chinois ». Un fournisseur polonais lui vend des jardinières en « DAP Prouvy ». Pour l'Incoterm DPU (anciennement DAT), quelle est sa caractéristique unique parmi tous les Incoterms 2020 ?",
+    "options": [
+      "DPU est le seul Incoterm où le risque se transfère après le déchargement au lieu de destination : le vendeur supporte le risque jusqu'à ce que la marchandise soit déchargée du moyen de transport à destination",
+      "DPU est le seul Incoterm où l'acheteur doit organiser le transport principal",
+      "DPU est le seul Incoterm multimodal qui inclut le dédouanement import à la charge du vendeur",
+      "DPU est le seul Incoterm qui ne peut pas être utilisé pour le transport maritime"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "DPU (Delivered at Place Unloaded) – anciennement DAT (Delivered at Terminal) dans les Incoterms 2010 – est unique parmi les 11 Incoterms 2020 : c'est le SEUL Incoterm où le transfert du risque s'effectue APRÈS le déchargement de la marchandise au lieu de destination convenu. Pour tous les autres Incoterms du groupe D (DAP, DDP), le risque passe au moment où la marchandise est mise à disposition sur le moyen de transport, prête à être déchargée par l'acheteur. Avec DPU, le vendeur supporte le risque pendant le déchargement lui-même, ce qui implique qu'il doit s'assurer de pouvoir décharger la marchandise au point convenu. Cette distinction DPU/DAP est un point clé du programme BTS CI Incoterms 2020."
+  },
+  {
+    "id": "bts_2012_doublet_q2",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "Doublet réexpédie par voie aérienne 5 paires de poteaux Eco inox endommagés vers Conakry en conditions CIP Conakry. Le coût de réexpédition comprend : douane export 70 EUR, pré-acheminement 85 EUR, frais LTA 45 EUR, frais dossier 55 EUR, fuel surcharge 1,10 EUR/kg taxable, security surcharge 0,15 EUR/kg taxable. Poids taxable : 125 kg. Le fret aérien pour 125 kg : +45 kg à 6,10 EUR/kg. L'assurance est à « 0,2 % sur CPT majoré de 10 % ». Le prix CPT (frais hors assurance) est de 1 225 EUR. Quel est le montant de la prime d'assurance ?",
+    "options": [
+      "2,70 EUR",
+      "2,45 EUR",
+      "3,68 EUR",
+      "1,35 EUR"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "La formule est : Prime = Valeur CPT × 1,10 × taux = 1 225 × 1,10 × 0,2 % = 1 225 × 1,10 × 0,002 = 1 347,50 × 0,002 = 2,695 EUR ≈ 2,70 EUR. Le principe est identique pour CIP (base CPT) et CIF (base CFR) : la valeur de la base d'assurance est toujours majorée de 10 % avant application du taux, conformément aux usages du commerce international. Le montant est faible car il s'agit d'une petite réexpédition de remplacement. Note : sous CIP Conakry, Doublet doit souscrire une assurance de niveau ICC(A) – Toutes risques, conformément aux Incoterms 2020."
+  },
+  {
+    "id": "bts_2012_doublet_q3",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "Doublet s'approvisionne en Asie selon deux modalités : soit en FCL/FCL selon l'Incoterm « FCA port chinois », soit en LCL/FCL selon l'Incoterm « FCA plateforme de consolidation ». Un fournisseur chinois Jintail Metal (Qingdao) facture en « FCA Qingdao ». Un crédit documentaire est émis avec « Incoterm et Lieu associé : FCA Any port of China ». Pourquoi Doublet choisit-il FCA plutôt que FOB pour ses acheminements conteneurisés depuis la Chine ?",
+    "options": [
+      "Parce que FCA place le transfert du risque au moment de la remise au transporteur (ou à la plateforme de consolidation), ce qui est adapté à la logistique conteneurisée et au groupage LCL ; avec FOB, le transfert au passage du bastingage crée une zone de risque non contrôlée en conteneur",
+      "Parce que FCA oblige le fournisseur chinois à payer le fret maritime jusqu'en Belgique (Zeebrugge)",
+      "Parce que FCA est obligatoire pour les crédits documentaires émis par des banques non-chinoises",
+      "Parce que FCA interdit les transshipments, ce qui sécurise la chaîne logistique"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Doublet utilise FCA (Free Carrier) pour ses achats en Chine car cet Incoterm est parfaitement adapté aux expéditions conteneurisées. Sous FCA : le risque se transfère quand le vendeur chinois remet la marchandise au transporteur désigné par Doublet (au port ou à la plateforme de consolidation). Cela couvre correctement la réalité logistique des conteneurs où la marchandise est remise au terminal (CY) ou à un entrepôt de groupage (CFS) bien avant la mise à bord physique. Avec FOB, le transfert au passage du bastingage est inadapté à la conteneurisation car le vendeur a déjà perdu le contrôle avant ce moment. Les Incoterms 2020 ont renforcé cette recommandation et ajouté la possibilité pour le transporteur d'émettre un B/L « on board » sous FCA, facilitant l'utilisation de FCA dans les crédits documentaires."
+  }
+]

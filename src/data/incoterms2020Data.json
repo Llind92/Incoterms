@@ -1,0 +1,463 @@
+{
+  "_meta": {
+    "source": "Chambre de Commerce Internationale (CCI) - ICC Incoterms® 2020",
+    "edition": "2020",
+    "effectiveDate": "2020-01-01",
+    "totalRules": 11,
+    "groups": {
+      "E": "Départ (Departure) — Minimum d'obligations pour le vendeur",
+      "F": "Franco (Main carriage unpaid) — Vendeur remet la marchandise à un transporteur désigné par l'acheteur",
+      "C": "Coût principal (Main carriage paid) — Vendeur paie le fret principal mais le risque se transfère au départ",
+      "D": "Arrivée (Arrival) — Maximum d'obligations pour le vendeur"
+    }
+  },
+  "incoterms": [
+    {
+      "code": "EXW",
+      "fullNameEN": "Ex Works",
+      "fullNameFR": "À l'Usine",
+      "group": "E",
+      "transportMode": "ALL",
+      "riskTransferPoint": {
+        "description": "Le risque se transfère dès que la marchandise est mise à disposition de l'acheteur dans les locaux du vendeur (ou autre lieu nommé), non déchargée des véhicules de collecte.",
+        "namedPlace": "Locaux du vendeur (usine, entrepôt) — pays d'exportation"
+      },
+      "costTransferPoint": {
+        "description": "Identique au point de risque : l'acheteur supporte TOUS les frais à partir du lieu nommé.",
+        "namedPlace": "Locaux du vendeur — pays d'exportation"
+      },
+      "customsObligations": {
+        "exportClearance": "BUYER",
+        "importClearance": "BUYER",
+        "importDutiesPaidBy": "BUYER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "NONE",
+        "minimumCoverage": "NONE",
+        "note": "Aucune obligation d'assurance pour l'une ou l'autre des parties. L'acheteur assume tous les risques et a tout intérêt à s'assurer."
+      },
+      "cascadeLevel": 1,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST"
+      ],
+      "academicNotes": [
+        "Incoterm représentant le MINIMUM d'obligations pour le vendeur.",
+        "PIÈGE BTS : Avec EXW, le vendeur n'est même pas obligé de charger la marchandise sur le véhicule de collecte de l'acheteur. Le chargement en usine est à la charge de l'acheteur.",
+        "EXW est déconseillé pour les exportations hors UE car l'acheteur doit effectuer les formalités d'exportation du pays du vendeur, ce qui est souvent impraticable.",
+        "Incoterms 2020 recommandent FCA à la place d'EXW dans la plupart des cas."
+      ]
+    },
+    {
+      "code": "FCA",
+      "fullNameEN": "Free Carrier",
+      "fullNameFR": "Franco Transporteur",
+      "group": "F",
+      "transportMode": "ALL",
+      "riskTransferPoint": {
+        "description": "Le risque se transfère lorsque la marchandise est remise au transporteur (ou à une autre personne désignée par l'acheteur) au lieu nommé. Si le lieu nommé est les locaux du vendeur, la marchandise est livrée chargée sur le véhicule collecteur.",
+        "namedPlace": "Lieu nommé convenu dans le pays d'exportation (peut être locaux du vendeur, terminal, entrepôt transitaire)"
+      },
+      "costTransferPoint": {
+        "description": "Identique au point de risque.",
+        "namedPlace": "Lieu nommé dans le pays d'exportation"
+      },
+      "customsObligations": {
+        "exportClearance": "SELLER",
+        "importClearance": "BUYER",
+        "importDutiesPaidBy": "BUYER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "NONE",
+        "minimumCoverage": "NONE",
+        "note": "Aucune obligation contractuelle d'assurance. Chaque partie a intérêt à assurer ce qui est à sa charge."
+      },
+      "cascadeLevel": 2,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST",
+        "EXPORT_PACKAGING",
+        "LOADING_AT_FACTORY",
+        "INLAND_TRANSPORT_EXPORT",
+        "EXPORT_CUSTOMS_FEES"
+      ],
+      "academicNotes": [
+        "NOUVEAUTÉ INCOTERMS 2020 : Possibilité pour le vendeur d'obtenir un connaissement 'à bord' (on-board B/L) lorsque le lieu nommé FCA est le port d'embarquement. Cette clause a été ajoutée pour répondre aux exigences des crédits documentaires.",
+        "FCA est l'Incoterm tous modes recommandé en remplacement de FOB pour les conteneurs, car avec FOB le risque se transfère sur le pont du navire alors que la marchandise est déjà sous contrôle du transporteur au terminal.",
+        "Le dédouanement export est à la charge du VENDEUR, contrairement à EXW."
+      ]
+    },
+    {
+      "code": "CPT",
+      "fullNameEN": "Carriage Paid To",
+      "fullNameFR": "Port Payé Jusqu'à",
+      "group": "C",
+      "transportMode": "ALL",
+      "riskTransferPoint": {
+        "description": "Le risque se transfère dès la remise de la marchandise au PREMIER transporteur au lieu d'expédition (pays d'export). Le risque se transfère AVANT le lieu de destination.",
+        "namedPlace": "Lieu de remise au premier transporteur — pays d'exportation"
+      },
+      "costTransferPoint": {
+        "description": "Les frais de transport principal sont payés par le vendeur jusqu'au lieu de destination nommé.",
+        "namedPlace": "Lieu de destination nommé (pays d'importation)"
+      },
+      "customsObligations": {
+        "exportClearance": "SELLER",
+        "importClearance": "BUYER",
+        "importDutiesPaidBy": "BUYER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "NONE",
+        "minimumCoverage": "NONE",
+        "note": "Aucune obligation d'assurance. L'acheteur supporte le risque pendant le transport principal (après remise au premier transporteur) et a tout intérêt à s'assurer."
+      },
+      "cascadeLevel": 3,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST",
+        "EXPORT_PACKAGING",
+        "LOADING_AT_FACTORY",
+        "INLAND_TRANSPORT_EXPORT",
+        "EXPORT_CUSTOMS_FEES",
+        "MAIN_FREIGHT"
+      ],
+      "academicNotes": [
+        "POINT CLÉ BTS : CPT comporte DEUX lieux nommés : le lieu de transfert des risques (remise au premier transporteur, souvent non indiqué) ET le lieu de destination (obligatoirement indiqué).",
+        "Le risque se transfère au DÉPART, mais le vendeur paie le fret jusqu'à DESTINATION. C'est le 'paradoxe des Incoterms C'.",
+        "CPT = version tous modes de CFR. À préférer pour le transport multimodal / conteneurisé. Les frais de manutention au départ sont inclus dans le contrat de fret multimodal (pas de THC séparé comme en maritime)."
+      ]
+    },
+    {
+      "code": "CIP",
+      "fullNameEN": "Carriage and Insurance Paid To",
+      "fullNameFR": "Port Payé, Assurance Comprise, Jusqu'à",
+      "group": "C",
+      "transportMode": "ALL",
+      "riskTransferPoint": {
+        "description": "Identique à CPT : le risque se transfère dès la remise au premier transporteur au lieu d'expédition.",
+        "namedPlace": "Lieu de remise au premier transporteur — pays d'exportation"
+      },
+      "costTransferPoint": {
+        "description": "Frais de transport ET d'assurance payés par le vendeur jusqu'au lieu de destination nommé.",
+        "namedPlace": "Lieu de destination nommé (pays d'importation)"
+      },
+      "customsObligations": {
+        "exportClearance": "SELLER",
+        "importClearance": "BUYER",
+        "importDutiesPaidBy": "BUYER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "SELLER",
+        "minimumCoverage": "ICC_A",
+        "note": "NOUVEAUTÉ INCOTERMS 2020 : Le vendeur doit obligatoirement souscrire une assurance de niveau ICC(A) — Toutes risques (couverture maximale). Anciennement ICC(C) dans les Incoterms 2010. L'acheteur peut demander une couverture encore plus étendue à ses frais."
+      },
+      "cascadeLevel": 4,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST",
+        "EXPORT_PACKAGING",
+        "LOADING_AT_FACTORY",
+        "INLAND_TRANSPORT_EXPORT",
+        "EXPORT_CUSTOMS_FEES",
+        "MAIN_FREIGHT",
+        "INSURANCE"
+      ],
+      "academicNotes": [
+        "NOUVEAUTÉ 2020 MAJEURE : CIP passe à la couverture ICC(A) 'Toutes Risques' (contre ICC(C) en 2010). CIF reste en ICC(C) — attention à ne pas confondre.",
+        "CIP est la version tous modes de CIF. Recommandé pour le transport conteneurisé multimodal.",
+        "Formule assurance BTS CI : Valeur à assurer = Prix CIP × 1,10 × taux_assurance. La majoration de 10% couvre le bénéfice escompté de l'acheteur."
+      ]
+    },
+    {
+      "code": "DAP",
+      "fullNameEN": "Delivered At Place",
+      "fullNameFR": "Rendu au Lieu de Destination",
+      "group": "D",
+      "transportMode": "ALL",
+      "riskTransferPoint": {
+        "description": "Le risque se transfère lorsque la marchandise est mise à disposition de l'acheteur sur le véhicule d'approche, prête à être déchargée, au lieu de destination nommé.",
+        "namedPlace": "Lieu de destination nommé dans le pays d'importation (avant déchargement)"
+      },
+      "costTransferPoint": {
+        "description": "Identique au point de risque.",
+        "namedPlace": "Lieu de destination nommé dans le pays d'importation"
+      },
+      "customsObligations": {
+        "exportClearance": "SELLER",
+        "importClearance": "BUYER",
+        "importDutiesPaidBy": "BUYER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "NONE",
+        "minimumCoverage": "NONE",
+        "note": "Aucune obligation contractuelle d'assurance. Le vendeur supporte le risque jusqu'à destination et a tout intérêt à s'assurer pour son propre compte."
+      },
+      "cascadeLevel": 5,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST",
+        "EXPORT_PACKAGING",
+        "LOADING_AT_FACTORY",
+        "INLAND_TRANSPORT_EXPORT",
+        "EXPORT_CUSTOMS_FEES",
+        "ORIGIN_PORT_FEES",
+        "MAIN_FREIGHT",
+        "INSURANCE",
+        "DESTINATION_PORT_FEES",
+        "INLAND_TRANSPORT_IMPORT"
+      ],
+      "academicNotes": [
+        "Avec DAP, le DÉCHARGEMENT est à la charge de l'ACHETEUR. C'est la différence clé avec DPU.",
+        "Le dédouanement import et les droits de douane restent à la charge de l'ACHETEUR. C'est la différence clé avec DDP.",
+        "DAP existait déjà dans les Incoterms 2010 (où il avait remplacé l'ancien DDU). Ne pas confondre : c'est DPU qui a remplacé l'ancien DAT (Delivered At Terminal) dans les Incoterms 2020."
+      ]
+    },
+    {
+      "code": "DPU",
+      "fullNameEN": "Delivered at Place Unloaded",
+      "fullNameFR": "Rendu au Lieu de Destination Déchargé",
+      "group": "D",
+      "transportMode": "ALL",
+      "riskTransferPoint": {
+        "description": "Le risque se transfère APRÈS le déchargement de la marchandise au lieu de destination nommé (terminal, entrepôt, quai, etc.).",
+        "namedPlace": "Lieu de destination nommé dans le pays d'importation (après déchargement)"
+      },
+      "costTransferPoint": {
+        "description": "Identique au point de risque : après déchargement.",
+        "namedPlace": "Lieu de destination nommé dans le pays d'importation"
+      },
+      "customsObligations": {
+        "exportClearance": "SELLER",
+        "importClearance": "BUYER",
+        "importDutiesPaidBy": "BUYER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "NONE",
+        "minimumCoverage": "NONE",
+        "note": "Aucune obligation contractuelle d'assurance. Le vendeur supporte le risque jusqu'à la fin du déchargement."
+      },
+      "cascadeLevel": 6,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST",
+        "EXPORT_PACKAGING",
+        "LOADING_AT_FACTORY",
+        "INLAND_TRANSPORT_EXPORT",
+        "EXPORT_CUSTOMS_FEES",
+        "ORIGIN_PORT_FEES",
+        "MAIN_FREIGHT",
+        "INSURANCE",
+        "DESTINATION_PORT_FEES",
+        "UNLOADING",
+        "INLAND_TRANSPORT_IMPORT"
+      ],
+      "academicNotes": [
+        "NOUVEAUTÉ INCOTERMS 2020 : DPU remplace l'ancien DAT (Delivered At Terminal) et s'applique désormais à TOUT lieu de destination, pas seulement les terminaux.",
+        "DPU est le SEUL Incoterm où le risque se transfère APRÈS le déchargement. Pour tous les autres Incoterms du groupe D, le déchargement est à la charge de l'acheteur.",
+        "Le dédouanement import et les droits de douane restent à la charge de l'ACHETEUR."
+      ]
+    },
+    {
+      "code": "DDP",
+      "fullNameEN": "Delivered Duty Paid",
+      "fullNameFR": "Rendu Droits Acquittés",
+      "group": "D",
+      "transportMode": "ALL",
+      "riskTransferPoint": {
+        "description": "Le risque se transfère lorsque la marchandise est mise à disposition de l'acheteur, dédouanée à l'import, prête à être déchargée au lieu de destination nommé.",
+        "namedPlace": "Lieu de destination nommé dans le pays d'importation (avant déchargement, après dédouanement)"
+      },
+      "costTransferPoint": {
+        "description": "Identique au point de risque.",
+        "namedPlace": "Lieu de destination nommé dans le pays d'importation"
+      },
+      "customsObligations": {
+        "exportClearance": "SELLER",
+        "importClearance": "SELLER",
+        "importDutiesPaidBy": "SELLER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "NONE",
+        "minimumCoverage": "NONE",
+        "note": "Aucune obligation contractuelle d'assurance. Le vendeur supporte tous les risques jusqu'à destination et a tout intérêt à s'assurer."
+      },
+      "cascadeLevel": 7,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST",
+        "EXPORT_PACKAGING",
+        "LOADING_AT_FACTORY",
+        "INLAND_TRANSPORT_EXPORT",
+        "EXPORT_CUSTOMS_FEES",
+        "ORIGIN_PORT_FEES",
+        "MAIN_FREIGHT",
+        "INSURANCE",
+        "DESTINATION_PORT_FEES",
+        "INLAND_TRANSPORT_IMPORT",
+        "IMPORT_CUSTOMS_FEES",
+        "IMPORT_DUTIES"
+      ],
+      "academicNotes": [
+        "DDP représente le MAXIMUM d'obligations pour le vendeur : il paie TOUT, y compris le dédouanement import et les droits de douane dans le pays de l'acheteur.",
+        "ATTENTION : DDP peut être problématique si le vendeur n'est pas autorisé à opérer comme importateur dans le pays de destination (habilitation douanière requise).",
+        "Le déchargement final reste à la charge de l'ACHETEUR (contrairement à DPU).",
+        "La TVA à l'importation est généralement payée par le vendeur en DDP, sauf accord contraire entre les parties."
+      ]
+    },
+    {
+      "code": "FAS",
+      "fullNameEN": "Free Alongside Ship",
+      "fullNameFR": "Franco le Long du Navire",
+      "group": "F",
+      "transportMode": "SEA",
+      "riskTransferPoint": {
+        "description": "Le risque se transfère lorsque la marchandise est placée le long du navire désigné (sur le quai ou sur allège) au port d'embarquement nommé.",
+        "namedPlace": "Port d'embarquement nommé — le long du navire"
+      },
+      "costTransferPoint": {
+        "description": "Identique au point de risque.",
+        "namedPlace": "Port d'embarquement nommé"
+      },
+      "customsObligations": {
+        "exportClearance": "SELLER",
+        "importClearance": "BUYER",
+        "importDutiesPaidBy": "BUYER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "NONE",
+        "minimumCoverage": "NONE",
+        "note": "Aucune obligation contractuelle. L'acheteur supporte le risque après que la marchandise est le long du navire."
+      },
+      "cascadeLevel": 2,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST",
+        "EXPORT_PACKAGING",
+        "LOADING_AT_FACTORY",
+        "INLAND_TRANSPORT_EXPORT",
+        "EXPORT_CUSTOMS_FEES"
+      ],
+      "academicNotes": [
+        "FAS est utilisé pour les marchandises en vrac ou lourdes qui ne passent pas par des terminaux à conteneurs (ex : céréales, minerais, bois, machines hors gabarit).",
+        "Le risque se transfère 'le long du navire' et non 'à bord', contrairement à FOB.",
+        "Réservé exclusivement au transport maritime et voies navigables intérieures."
+      ]
+    },
+    {
+      "code": "FOB",
+      "fullNameEN": "Free On Board",
+      "fullNameFR": "Franco à Bord",
+      "group": "F",
+      "transportMode": "SEA",
+      "riskTransferPoint": {
+        "description": "Le risque se transfère lorsque la marchandise est placée à bord du navire désigné au port d'embarquement nommé, ou lorsque la marchandise est déjà ainsi livrée (ex : achat en transit).",
+        "namedPlace": "Port d'embarquement nommé — à bord du navire"
+      },
+      "costTransferPoint": {
+        "description": "Identique au point de risque.",
+        "namedPlace": "Port d'embarquement nommé"
+      },
+      "customsObligations": {
+        "exportClearance": "SELLER",
+        "importClearance": "BUYER",
+        "importDutiesPaidBy": "BUYER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "NONE",
+        "minimumCoverage": "NONE",
+        "note": "Aucune obligation contractuelle. L'acheteur supporte le risque après la mise à bord."
+      },
+      "cascadeLevel": 2,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST",
+        "EXPORT_PACKAGING",
+        "LOADING_AT_FACTORY",
+        "INLAND_TRANSPORT_EXPORT",
+        "EXPORT_CUSTOMS_FEES",
+        "ORIGIN_PORT_FEES"
+      ],
+      "academicNotes": [
+        "FOB est l'Incoterm le plus utilisé dans les échanges mondiaux, mais souvent MAL UTILISÉ pour les conteneurs.",
+        "PIÈGE MAJEUR BTS : Pour les conteneurs, utiliser FCA (port) plutôt que FOB. En FOB, le risque se transfère 'à bord' alors que le conteneur est déjà sous contrôle du terminal portuaire avant embarquement — le vendeur supporte donc un risque sur une période où il n'a plus accès à la marchandise.",
+        "FOB reste pertinent pour les marchandises conventionnelles (vrac, charges partielles de navire).",
+        "Réservé exclusivement au transport maritime et voies navigables intérieures."
+      ]
+    },
+    {
+      "code": "CFR",
+      "fullNameEN": "Cost and Freight",
+      "fullNameFR": "Coût et Fret",
+      "group": "C",
+      "transportMode": "SEA",
+      "riskTransferPoint": {
+        "description": "Identique à FOB : le risque se transfère lorsque la marchandise est mise à bord du navire au port d'embarquement.",
+        "namedPlace": "Port d'embarquement — à bord du navire"
+      },
+      "costTransferPoint": {
+        "description": "Le vendeur paie le fret maritime jusqu'au port de destination nommé.",
+        "namedPlace": "Port de destination nommé"
+      },
+      "customsObligations": {
+        "exportClearance": "SELLER",
+        "importClearance": "BUYER",
+        "importDutiesPaidBy": "BUYER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "NONE",
+        "minimumCoverage": "NONE",
+        "note": "Aucune obligation contractuelle d'assurance. L'acheteur supporte le risque pendant la traversée maritime (car le risque se transfère à l'embarquement) et a tout intérêt à s'assurer."
+      },
+      "cascadeLevel": 3,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST",
+        "EXPORT_PACKAGING",
+        "LOADING_AT_FACTORY",
+        "INLAND_TRANSPORT_EXPORT",
+        "EXPORT_CUSTOMS_FEES",
+        "ORIGIN_PORT_FEES",
+        "MAIN_FREIGHT"
+      ],
+      "academicNotes": [
+        "CFR = FOB + Fret maritime payé par le vendeur. La différence avec CIF est l'absence d'assurance obligatoire.",
+        "Même paradoxe que CPT : le risque se transfère au DÉPART (port d'embarquement) mais le vendeur paie le fret jusqu'à DESTINATION.",
+        "Réservé exclusivement au transport maritime et voies navigables intérieures.",
+        "CONSEIL : Pour les conteneurs, préférer CPT à CFR."
+      ]
+    },
+    {
+      "code": "CIF",
+      "fullNameEN": "Cost Insurance and Freight",
+      "fullNameFR": "Coût, Assurance et Fret",
+      "group": "C",
+      "transportMode": "SEA",
+      "riskTransferPoint": {
+        "description": "Identique à FOB et CFR : le risque se transfère lorsque la marchandise est mise à bord du navire au port d'embarquement.",
+        "namedPlace": "Port d'embarquement — à bord du navire"
+      },
+      "costTransferPoint": {
+        "description": "Le vendeur paie le fret et l'assurance maritimes jusqu'au port de destination nommé.",
+        "namedPlace": "Port de destination nommé"
+      },
+      "customsObligations": {
+        "exportClearance": "SELLER",
+        "importClearance": "BUYER",
+        "importDutiesPaidBy": "BUYER"
+      },
+      "insuranceObligation": {
+        "obligatedParty": "SELLER",
+        "minimumCoverage": "ICC_C",
+        "note": "Le vendeur doit obligatoirement souscrire une assurance maritime de niveau minimum ICC(C) — couverture restreinte (FPA — Franchise Particulière d'Avarie). L'acheteur peut demander une couverture ICC(A) ou (B) à ses frais. Note : CIF reste en ICC(C), contrairement à CIP qui est passé en ICC(A) en 2020."
+      },
+      "cascadeLevel": 4,
+      "sellerChargesIncluded": [
+        "PRODUCTION_COST",
+        "EXPORT_PACKAGING",
+        "LOADING_AT_FACTORY",
+        "INLAND_TRANSPORT_EXPORT",
+        "EXPORT_CUSTOMS_FEES",
+        "ORIGIN_PORT_FEES",
+        "MAIN_FREIGHT",
+        "INSURANCE"
+      ],
+      "academicNotes": [
+        "CIF est l'Incoterm de RÉFÉRENCE pour le calcul de la VALEUR EN DOUANE dans l'Union Européenne. La valeur en douane UE = valeur CIF au premier point d'entrée.",
+        "POINT CLÉ : Même si le vendeur paie l'assurance, le risque se transfère à l'EMBARQUEMENT. L'assurance bénéficie donc... à l'acheteur (qui supporte le risque pendant la traversée).",
+        "CIF maintient la couverture minimum ICC(C) contrairement à CIP qui est passé en ICC(A) en 2020.",
+        "Réservé exclusivement au transport maritime et voies navigables intérieures.",
+        "FORMULE VALEUR EN DOUANE UE : Valeur en douane = Coût marchandise + Fret + Assurance (CIF au premier port UE)."
+      ]
+    }
+  ]
+}

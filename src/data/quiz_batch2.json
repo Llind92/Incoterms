@@ -1,0 +1,198 @@
+[
+  {
+    "id": "bts_2014_q1",
+    "type": "case_study",
+    "difficulty": "medium",
+    "question": "CLEXTRAL achète des filtres à son fournisseur vietnamien THANG UY en Incoterm EXW (usine Ho Chi Minh Ville). L'entreprise paye par crédit documentaire irrévocable et souhaite sécuriser ses délais de livraison. Quel est le principal inconvénient de conserver l'Incoterm EXW dans ce contexte de crédit documentaire pour maîtriser les délais ?",
+    "options": [
+      "En EXW, c'est l'acheteur (CLEXTRAL) qui organise et supporte tous les frais et risques du transport dès l'usine du vendeur, ce qui lui retire tout contrôle sur la remise des documents de transport nécessaires à la réalisation du crédit documentaire.",
+      "En EXW, le vendeur THANG UY conserve les risques jusqu'au port de chargement, ce qui l'incite à retarder la mise à disposition des marchandises.",
+      "En EXW, le dédouanement à l'exportation est à la charge du vendeur, ce qui peut bloquer l'expédition en cas de retard administratif de sa part.",
+      "En EXW, l'assurance transport est obligatoirement souscrite par le vendeur, ce qui allonge les délais de traitement documentaire."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "En Incoterm EXW (Ex Works), l'acheteur supporte la totalité des frais et risques dès la mise à disposition des marchandises dans les locaux du vendeur. C'est l'acheteur qui doit organiser l'enlèvement, le transport, le dédouanement export ET obtenir les documents de transport. Dans le cadre d'un crédit documentaire, le vendeur est censé remettre les documents (B/L notamment) prouvant l'expédition. Or en EXW, c'est l'acheteur qui contrôle l'organisation du transport et la production de ces documents : si l'acheteur tarde à mandater son transitaire ou à enlever la marchandise, le vendeur ne peut pas présenter les documents requis dans les délais du crédit documentaire. De plus, en EXW, le dédouanement export est à la charge de l'ACHETEUR (règle CCI 2020), ce qui est une contrainte supplémentaire dans un pays tiers comme le Vietnam."
+  },
+  {
+    "id": "bts_2014_q2",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "CLEXTRAL exporte des pièces de rechange vers son client Foster à Tampa (Floride, USA) en Incoterm CIP Miami. La valeur des marchandises est de 55 000 EUR EXW Firminy. Le transitaire INTERTRANS propose une assurance transport à 0,2 % de la valeur CIP majorée de 10 %. Quelle formule permet de calculer correctement la prime d'assurance selon la règle standard ?",
+    "options": [
+      "Prime = Valeur CIP Miami × 1,10 × 0,2 %",
+      "Prime = Valeur EXW × 0,2 %",
+      "Prime = Valeur CIP Miami × 0,2 % (sans majoration)",
+      "Prime = (Valeur EXW + fret) × 0,2 %"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "La règle internationale standard de calcul de la prime d'assurance transport en commerce international est : Prime = Valeur CIP (ou CIF) × 1,10 × taux. La majoration de 10 % (coefficient 1,10) représente la marge bénéficiaire attendue par l'acheteur et couvre ainsi la valeur totale de l'intérêt assurable, conformément aux pratiques ICC. En Incoterm CIP 2020, le vendeur (CLEXTRAL) a l'obligation de souscrire une assurance de niveau ICC(A) — toutes risques — contrairement au CIF où le minimum est ICC(C). La formule correcte est donc : Prime = Valeur CIP Miami × 1,10 × 0,2 %. Cette règle est identique qu'il s'agisse de CIF ou CIP, maritime ou aérien."
+  },
+  {
+    "id": "bts_2014_q3",
+    "type": "case_study",
+    "difficulty": "medium",
+    "question": "Dans le contrat CPT Port d'Alger conclu entre CLEXTRAL et son client algérien CAPPAC, l'Article 7 stipule : 'Le transfert des risques des équipements s'effectuera au port d'embarquement.' L'assurance doit être souscrite par l'acheteur (CAPPAC) depuis le port d'embarquement. Cette clause est-elle cohérente avec l'Incoterm CPT utilisé ?",
+    "options": [
+      "Oui, car en CPT le risque est transféré au vendeur dès remise au premier transporteur, mais le contrat peut librement déroger à cette règle par une clause spécifique.",
+      "Non, car en CPT (Carriage Paid To) le risque transfère au premier transporteur mandaté par le vendeur, avant le port d'embarquement ; cette clause contractuelle est donc plus favorable à l'acheteur que la règle CPT standard.",
+      "Oui, car en CPT le risque transfère uniquement à l'arrivée au port de destination désigné (Alger), ce qui correspond à la clause du contrat.",
+      "Non, car en CPT le vendeur est responsable de tous les risques jusqu'au port de débarquement, l'acheteur n'a donc pas à souscrire d'assurance."
+    ],
+    "correctAnswerIndex": 1,
+    "explanation": "En Incoterm CPT (Carriage Paid To), selon les règles CCI 2020, le transfert des risques s'effectue au moment où le vendeur remet la marchandise au premier transporteur. Ce point de transfert de risque est dissocié du point jusqu'où le vendeur paie le transport (port de destination désigné). Ainsi, en CPT Port d'Alger, le vendeur (CLEXTRAL) paie le fret jusqu'à Alger, MAIS le risque est transféré dès la remise au premier transporteur en France. La clause contractuelle qui situe le transfert de risque 'au port d'embarquement' est donc légèrement différente de la règle CPT stricte (remise au premier transporteur), mais reste cohérente dans l'esprit : dans les deux cas, l'acheteur (CAPPAC) supporte les risques pendant le transport maritime. Cette dérogation contractuelle est permise car les Incoterms peuvent être adaptés par accord des parties."
+  },
+  {
+    "id": "bts_2015_q1",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "La société Pierre Fabre importe du pentafluorure d'antimoine depuis les USA (fournisseur ARC Inc.) en Incoterm FCA Catoosa. La facture est de 30 096 USD. Les éléments logistiques sont : mise à FOB Houston = 350 USD, fret maritime Houston/Fos-sur-Mer = 450 USD/UP avec BAF 20 % et CAF 5 % sur fret de base. L'assurance est de 0,30 % du CIF majoré de 10 %. Quel est le montant de la prime d'assurance (en USD, arrondi à l'unité) ?",
+    "options": [
+      "Environ 109 USD",
+      "Environ 99 USD",
+      "Environ 115 USD",
+      "Environ 90 USD"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Calcul étape par étape : 1) Valeur FOB Houston = Prix FCA Catoosa + mise à FOB = 30 096 + 350 = 30 446 USD. 2) Fret de base Houston/Fos = 450 USD. 3) BAF = 450 × 20 % = 90 USD. 4) CAF = 450 × 5 % = 22,50 USD. 5) Fret total = 450 + 90 + 22,50 = 562,50 USD. 6) Valeur CIF Fos = FOB + Fret + Assurance. Pour isoler l'assurance : CIF ≈ FOB + Fret = 30 446 + 562,50 = 31 008,50 USD (approximation sans assurance dans un premier temps). 7) Prime = CIF × 1,10 × 0,30 % = 31 008,50 × 1,10 × 0,003 ≈ 102,33 USD. Avec la valeur CIF exacte intégrant la prime : Prime ≈ (30 446 + 562,50 + Prime) × 1,10 × 0,003, ce qui donne Prime ≈ 109 USD. La règle : Prime assurance = Valeur CIF × 1,10 × taux, où la majoration de 10 % couvre la marge bénéficiaire de l'acheteur (pratique ICC standard)."
+  },
+  {
+    "id": "bts_2015_q2",
+    "type": "case_study",
+    "difficulty": "medium",
+    "question": "Pierre Fabre dermo-cosmétique exporte des pochettes 'découverte AVENE' vers Beauty Mumbai en Incoterm CIP Mumbai (aérien). La valeur FCA Muret d'un carton de 6 pochettes est de 145 EUR. Quels sont les deux avantages principaux de l'Incoterm CIP Mumbai pour Pierre Fabre exportateur par rapport à un Incoterm FCA Muret ?",
+    "options": [
+      "En CIP Mumbai, Pierre Fabre maîtrise l'organisation du transport et de l'assurance, peut négocier de meilleurs tarifs de fret, et la valeur de vente (prix CIP) intègre les frais de transport et d'assurance, augmentant ainsi la valeur facturée et la marge commerciale apparente.",
+      "En CIP Mumbai, le risque est transféré à Mumbai à la livraison physique, ce qui protège mieux Pierre Fabre contre les avaries pendant le transport.",
+      "En CIP Mumbai, Beauty Mumbai n'a aucune formalité à accomplir, ce qui simplifie la relation commerciale mais n'apporte aucun avantage financier à Pierre Fabre.",
+      "En CIP Mumbai, Pierre Fabre est dispensé de souscrire une assurance transport car c'est Beauty Mumbai qui en est responsable."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "En Incoterm CIP (Carriage and Insurance Paid to) Mumbai, le vendeur Pierre Fabre : 1) Organise et paie le transport jusqu'à Mumbai, ce qui lui permet de négocier des tarifs de fret compétitifs avec son transitaire habituel et de maîtriser l'ensemble de la chaîne logistique jusqu'à destination ; 2) Souscrit l'assurance transport (minimum ICC(A) — toutes risques — depuis la révision CIP 2020, contrairement au CIP 2010 où le minimum était ICC(C)) ; 3) Facture au client une valeur CIP qui inclut transport + assurance, augmentant la valeur apparente de la transaction. Attention : en CIP, le risque est transféré au PREMIER transporteur (comme en CPT), pas à Mumbai. Mumbai est uniquement le point jusqu'où le vendeur paie. L'acheteur Beauty Mumbai supporte donc les risques pendant le transport, mais dispose d'une assurance souscrite par le vendeur."
+  },
+  {
+    "id": "bts_2015_q3",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "Pour l'importation du pentafluorure d'antimoine depuis les USA, Pierre Fabre reçoit deux offres : le fournisseur ARC Inc. en FCA Catoosa (30 096 USD) et le fournisseur OPTIMAL en CIP Fos-sur-Mer (30 852 USD). Pour calculer la valeur en douane UE de l'importation ARC Inc., quelle valeur faut-il utiliser ?",
+    "options": [
+      "La valeur CIF Fos-sur-Mer (premier port d'entrée UE), calculée à partir du prix FCA en ajoutant les frais de transport et d'assurance jusqu'à Fos.",
+      "La valeur FCA Catoosa de 30 096 USD directement convertie en euros.",
+      "La valeur FOB Houston, sans inclure le fret maritime ni l'assurance.",
+      "La valeur CIP Fos-sur-Mer du concurrent OPTIMAL (30 852 USD) utilisée comme référence de marché."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Selon l'Article 70 du Code des Douanes de l'Union (CDU), la valeur en douane UE est la valeur transactionnelle CIF au premier point d'entrée dans le territoire douanier de l'Union européenne. Pour l'importation d'ARC Inc., Fos-sur-Mer est le premier port d'entrée UE : la valeur en douane est donc la valeur CIF Fos-sur-Mer, qui comprend : Prix FCA Catoosa + mise à FOB Houston + fret maritime Houston/Fos + assurance maritime. Cette valeur CIF sert de base de calcul des droits de douane (valeur en douane × taux de droits). Pour le fournisseur OPTIMAL en CIP Fos-sur-Mer, la valeur en douane est directement le prix CIP car il inclut déjà le transport et l'assurance jusqu'à Fos."
+  },
+  {
+    "id": "bts_2016_q1",
+    "type": "case_study",
+    "difficulty": "medium",
+    "question": "La société CRISTAL DE PARIS exporte 100 coffrets en Incoterm CIP Jeddah (Arabie Saoudite). Ses conditions générales de vente prévoient normalement un Incoterm EXW Montbronn. Pour cette commande Saudi Aramco, le prix final est de 62 000 USD CIP Jeddah. Le responsable logistique doit sensibiliser ses équipes sur les 'points de vigilance' en EXW et en CIP. Concernant le transfert des risques, quelle affirmation est correcte ?",
+    "options": [
+      "En EXW Montbronn, le risque transfère à l'acheteur dès que la marchandise est mise à disposition dans les locaux du vendeur à Montbronn ; en CIP Jeddah, le risque transfère au vendeur dès la remise au premier transporteur, mais le vendeur paie le transport et l'assurance jusqu'à Jeddah.",
+      "En EXW, le risque transfère à l'acheteur à l'embarquement au port du Havre ; en CIP, le risque transfère à l'acheteur à l'arrivée à Jeddah.",
+      "En EXW et en CIP, le risque transfère identiquement à l'embarquement sur le navire au port de chargement.",
+      "En CIP Jeddah, le vendeur supporte les risques jusqu'à Jeddah ; en EXW, le vendeur supporte les risques jusqu'au départ de son usine."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Transferts de risque selon les Incoterms CCI 2020 : EXW (Ex Works) : le risque transfère à l'acheteur dès la mise à disposition des marchandises dans les locaux du vendeur (usine de Montbronn). C'est l'Incoterm le moins engageant pour le vendeur. Le dédouanement export est à la charge de l'ACHETEUR en EXW. CIP (Carriage and Insurance Paid to) : le risque transfère au vendeur (CRISTAL DE PARIS) dès remise au premier transporteur (en France), mais le vendeur PAIE le transport et l'assurance jusqu'à Jeddah. L'assurance en CIP 2020 doit être de niveau ICC(A) — toutes risques — (nouveauté CIP 2020 vs CIP 2010 qui exigeait seulement ICC(C)). Le point crucial : en CIP, il y a dissociation entre point de transfert de risque (remise au 1er transporteur) et point jusqu'où le vendeur paie (Jeddah)."
+  },
+  {
+    "id": "bts_2016_q2",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "CRISTAL DE PARIS importe des bouchons en verre de Chine. Le fournisseur SOUTH PORT GLASS propose un prix CIF Anvers de 64 800 EUR pour 1 440 bouchons. Le transitaire indique : déchargement à Anvers = 85 EUR/t ou 40 EUR/m3 (min 80 EUR à l'avantage du transporteur), formalités de dédouanement import = 125 EUR, transport routier Anvers-Montbronn = 230 EUR. Pour calculer la valeur en douane UE, quelle valeur faut-il retenir comme base ?",
+    "options": [
+      "64 800 EUR (valeur CIF Anvers), car Anvers est le premier port d'entrée UE et la valeur en douane est la valeur CIF au point d'entrée UE, sans inclure les frais postérieurs au déchargement.",
+      "65 235 EUR (CIF Anvers + dédouanement), car les frais de douane font partie de la valeur en douane.",
+      "65 155 EUR (CIF Anvers + déchargement + dédouanement), car tous les frais jusqu'à Montbronn entrent dans la valeur en douane.",
+      "61 286 USD converti en euros au taux donné (valeur FOB Hong Kong), car c'est la valeur d'origine qui sert de base."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Selon l'Article 70 du Code des Douanes de l'Union (CDU), la valeur en douane est la valeur transactionnelle CIF au premier point d'entrée dans le territoire douanier de l'UE. Pour cette importation de Chine, Anvers (Belgique) est le premier port d'entrée UE : la valeur en douane est donc 64 800 EUR (valeur CIF Anvers). Les frais postérieurs à l'arrivée au premier point d'entrée UE (déchargement, transport interne, dédouanement) ne font PAS partie de la valeur en douane — ils sont exclus conformément à l'Article 72 CDU. Les droits de douane sont calculés sur : Valeur en douane (CIF Anvers) × taux de droits. Le coût de revient unitaire intègre ensuite tous ces éléments (CIF + droits + déchargement + dédouanement + transport interne)."
+  },
+  {
+    "id": "bts_2016_q3",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "Dans le crédit documentaire ouvert par CRISTAL DE PARIS pour l'achat de bouchons en verre à son fournisseur ZHENDAO (Hong Kong), le document n°6 des conditions du crédit exige : 'Insurance certificate showing 110% CIF value'. Que signifie concrètement cette exigence ?",
+    "options": [
+      "Le certificat d'assurance doit attester d'une valeur assurée égale à 110 % de la valeur CIF, ce qui correspond à la valeur CIF multipliée par 1,10 pour couvrir non seulement la marchandise mais aussi le bénéfice attendu par l'acheteur.",
+      "L'assureur doit indemniser 110 % du montant de la facture FOB Hong Kong en cas de sinistre total.",
+      "Le vendeur ZHENDAO doit payer une prime d'assurance représentant 110 % de la valeur CIF, ce qui correspond à une sur-prime pour marchandises fragiles.",
+      "L'acheteur CRISTAL DE PARIS doit souscrire une assurance valant 10 % de plus que le prix CIF négocié avec ZHENDAO."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "La mention '110 % de la valeur CIF' dans un crédit documentaire est une pratique internationale standard codifiée par les Règles et Usances Uniformes (RUU 600) pour les crédits documentaires. La valeur assurée = Valeur CIF × 1,10. Cette majoration de 10 % représente le bénéfice escompté par l'acheteur (CRISTAL DE PARIS) sur la marchandise. En cas de sinistre total, l'acheteur est ainsi indemnisé non seulement de la valeur de la marchandise mais aussi du bénéfice qu'il aurait réalisé en la revendant. La formule de calcul de la prime est donc : Prime = (Valeur CIF × 1,10) × taux de prime. Le crédit documentaire exige ce document car l'assurance est couverte par l'APPLICANT (l'acheteur CRISTAL DE PARIS) selon les conditions additionnelles (clause 47 du crédit)."
+  },
+  {
+    "id": "bts_2016_q4",
+    "type": "case_study",
+    "difficulty": "medium",
+    "question": "CRISTAL DE PARIS compare deux fournisseurs chinois : SOUTH PORT GLASS (CIF Anvers à 64 800 EUR) et ZHENDAO (FOB Hong Kong à 61 286,40 USD avec fret 'all-in' 1 652 EUR et assurance 150 EUR). Le cours est 1 EUR = 1,12 USD. Concernant l'Incoterm FOB Hong Kong de ZHENDAO, quel est le piège à éviter selon les recommandations CCI 2020 pour les expéditions en conteneur ?",
+    "options": [
+      "FOB est inadapté aux expéditions en conteneur car le risque transfère 'à bord du navire', alors que pour un conteneur le chargement réel est effectué bien avant (au terminal de conteneurs), créant une zone de risque non couverte ; l'Incoterm recommandé est FCA.",
+      "FOB est inadapté car il oblige l'acheteur à organiser le pré-acheminement depuis l'usine jusqu'au port, ce qui est complexe depuis la France.",
+      "FOB interdit toute inspection avant embarquement (SGS), ce qui contrevient aux exigences du crédit documentaire.",
+      "FOB en transport maritime conteneurisé impose que le vendeur fournisse un B/L original, ce qui est impossible avec les pratiques actuelles des compagnies maritimes."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Selon les recommandations CCI 2020, l'Incoterm FOB présente un problème majeur pour les expéditions en conteneur : le risque transfère 'à bord du navire' (passage du bastingage), mais dans le transport conteneurisé moderne, le vendeur remet la marchandise au terminal de conteneurs (CY - Container Yard) AVANT l'embarquement effectif. Il existe donc une zone temporelle où la marchandise est dans le terminal portuaire sans être couverte ni par le vendeur (qui considère avoir livré) ni par l'acheteur (qui attend le passage du bastingage). Les CCI 2020 recommandent d'utiliser FCA (Free Carrier) pour les conteneurs : en FCA, le risque transfère à la remise au transporteur désigné par l'acheteur, ce qui peut être le terminal de conteneurs, couvrant ainsi correctement toute la chaîne. Pour ZHENDAO, l'Incoterm FOB Hong Kong crée donc un risque non couvert au terminal CY de Hong Kong."
+  },
+  {
+    "id": "bts_2017_q1",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "La société Feyel-Artzner exporte 15 colis de foie gras vers le Chili en Incoterm CIP Valparaiso. Le transitaire SEAFRIGO propose une assurance 'tiers chargeur' à 0,80 % sur la base de 110 % de la valeur CIP. La valeur EXW Strasbourg est de 4 000 EUR. En transport maritime, les frais jusqu'à FOB Le Havre s'élèvent à 95 EUR (minimum appliqué) et le fret maritime FOB Le Havre / CPT Valparaiso est de 115 EUR (minimum appliqué). Quel est le montant approximatif de la prime d'assurance ?",
+    "options": [
+      "Environ 37,02 EUR",
+      "Environ 35,20 EUR",
+      "Environ 40,48 EUR",
+      "Environ 33,66 EUR"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Calcul de la prime d'assurance : 1) Valeur FOB Le Havre = EXW + mise à FOB = 4 000 + 95 = 4 095 EUR. 2) Valeur CPT Valparaiso (sans assurance) = FOB + fret maritime = 4 095 + 115 = 4 210 EUR. 3) En Incoterm CIP, la valeur CIP ≈ CPT + prime d'assurance. Pour le calcul de la prime : Base = Valeur CIP × 1,10 × 0,80 %. En approximation : Valeur CIP ≈ 4 210 EUR (en ignorant la prime dans la base pour simplifier). Prime ≈ 4 210 × 1,10 × 0,80 % = 4 210 × 0,0088 ≈ 37,05 EUR. La règle CCI 2020 : en Incoterm CIP, le vendeur (Feyel-Artzner) DOIT souscrire une assurance de niveau ICC(A) — toutes risques — (nouveauté CIP 2020 par rapport au CIP 2010 qui n'exigeait que ICC(C)). La formule standard : Prime = Valeur CIP × 1,10 × taux, où 1,10 représente la majoration de 10 % pour couvrir le bénéfice attendu par l'acheteur."
+  },
+  {
+    "id": "bts_2017_q2",
+    "type": "case_study",
+    "difficulty": "medium",
+    "question": "Feyel-Artzner importe des boites plastiques PET de son fournisseur 'Hong Kong Printed Co.' en Incoterm FCA Hong Kong (facture de 15 935 USD). Le transitaire Cargo-inter propose le fret maritime Hong Kong / Anvers pour 2 200 USD (1 conteneur 40'). Anvers est le premier port d'entrée UE. Quelle est la base de calcul de la valeur en douane UE pour cette importation ?",
+    "options": [
+      "La valeur CIF Anvers, soit : Prix FCA Hong Kong + fret maritime Hong Kong/Anvers + prime d'assurance jusqu'à Anvers, le tout converti en euros au taux en vigueur.",
+      "La valeur FCA Hong Kong de 15 935 USD directement convertie en euros, sans ajout du fret.",
+      "La valeur FOB Hong Kong uniquement, car le fret maritime est payé par Feyel-Artzner (acheteur) et n'entre pas dans la valeur en douane.",
+      "La valeur DDP Strasbourg, incluant tous les frais jusqu'au siège de Feyel-Artzner."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Selon l'Article 70 du Code des Douanes de l'Union (CDU), la valeur en douane est la valeur CIF au premier point d'entrée dans le territoire douanier de l'UE. Ici, Anvers (Belgique) est le premier port d'entrée UE. Depuis un Incoterm FCA Hong Kong, la valeur en douane CIF Anvers se calcule ainsi : Valeur CIF Anvers = Prix FCA Hong Kong (15 935 USD) + Fret maritime Hong Kong/Anvers (2 200 USD) + Prime d'assurance maritime. Le total est ensuite converti en euros au taux de change en vigueur. Les droits de douane sont calculés sur cette valeur CIF Anvers. Les frais postérieurs à Anvers (transport Anvers-Strasbourg, dédouanement en France, etc.) sont exclus de la valeur en douane. Cette règle est fondamentale en BTS CI : la valeur en douane UE = toujours CIF premier port/aéroport d'entrée UE, quel que soit l'Incoterm de la transaction commerciale."
+  },
+  {
+    "id": "bts_2017_q3",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "Un fournisseur de boites plastiques propose à Feyel-Artzner un service 'DAP (ICC 2010) pour les clients en Amérique du Nord et en Europe' selon le tableau comparatif des fournisseurs. En Incoterms 2020, quel est le point de transfert des risques en DAP et en quoi diffère-t-il de DPU ?",
+    "options": [
+      "En DAP (Delivered At Place), le risque transfère à l'acheteur quand la marchandise est prête à être déchargée au lieu de destination convenu ; en DPU (Delivered at Place Unloaded), le risque transfère APRÈS le déchargement, DPU étant le seul Incoterm où le vendeur supporte les risques du déchargement.",
+      "En DAP, le risque transfère au déchargement complet sur le quai ; en DPU, le risque transfère avant le déchargement, à l'arrivée du moyen de transport.",
+      "DAP et DPU ont le même point de transfert de risque ; la seule différence est que DPU inclut les frais de dédouanement import.",
+      "En DAP, le vendeur supporte les risques jusqu'au dédouanement import ; en DPU, le vendeur supporte les risques uniquement jusqu'au port de destination."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Distinction DAP / DPU selon les Incoterms CCI 2020 : DAP (Delivered At Place) : le vendeur livre la marchandise au lieu de destination convenu, prête à être déchargée du moyen de transport arrivant. Le risque transfère à l'acheteur quand la marchandise est mise à sa disposition, prête à être déchargée (mais PAS encore déchargée). L'acheteur organise et paie le déchargement. DPU (Delivered at Place Unloaded) — ancien DAT (Delivered At Terminal) des Incoterms 2010 : le vendeur livre la marchandise APRÈS déchargement au lieu de destination convenu. C'est le SEUL Incoterm des CCI 2020 où le risque transfère APRÈS le déchargement : le vendeur supporte donc les risques pendant l'opération de déchargement elle-même. Ni DAP ni DPU n'incluent le dédouanement import (contrairement à DDP). En DDP (Delivered Duty Paid), le vendeur assume tout, y compris les droits de douane à l'importation."
+  },
+  {
+    "id": "bts_2017_q4",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "Feyel-Artzner vend en Incoterm CIP Valparaiso pour 4 600 EUR (base de calcul de l'assurance-crédit Coface). L'agrément Coface couvre 85 % du risque. En cas d'impayé total, quel est le risque résiduel pour Feyel-Artzner ?",
+    "options": [
+      "690 EUR (15 % × 4 600 EUR), car Coface indemnise 85 % de la créance assurée et Feyel-Artzner supporte les 15 % restants.",
+      "3 910 EUR (85 % × 4 600 EUR), car Coface ne verse que le montant couvert.",
+      "920 EUR (20 % × 4 600 EUR), car l'assurance-crédit couvre toujours 80 % maximum.",
+      "0 EUR, car l'assurance-crédit Coface couvre 100 % du risque d'impayé."
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Calcul du risque résiduel en assurance-crédit : Coface accorde un agrément couvrant 85 % de la créance. En cas d'impayé total sur une vente de 4 600 EUR CIP Valparaiso : Indemnisation Coface = 4 600 × 85 % = 3 910 EUR. Risque résiduel (franchise) = 4 600 × 15 % = 690 EUR. Ce risque résiduel de 690 EUR est la part que Feyel-Artzner supporte en propre, quelle que soit l'assurance-crédit. C'est une limite structurelle des polices d'assurance-crédit : elles ne couvrent jamais 100 % du risque pour maintenir l'intérêt de l'exportateur à sélectionner soigneusement ses clients. En BTS CI, la formule est : Risque résiduel = Valeur de la créance × (1 - taux de couverture). Remarque : la valeur CIP Valparaiso (4 600 EUR) est la base de la créance, car c'est le prix de vente facturé au client chilien."
+  }
+]
