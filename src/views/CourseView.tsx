@@ -134,7 +134,7 @@ export const CourseView: React.FC = () => {
             </div>
 
             {/* Colonne de Droite : Fiche Détaillée */}
-            <div className="flex-1 pb-8">
+            <div className="flex-1 pb-8 flex flex-col">
                 <AnimatePresence mode="wait">
                     {selectedIncoterm ? (
                         <motion.div
@@ -143,7 +143,7 @@ export const CourseView: React.FC = () => {
                             animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
                             exit={{ opacity: 0, x: -20, filter: 'blur(4px)' }}
                             transition={{ duration: 0.3 }}
-                            className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden transition-colors"
+                            className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden transition-colors h-full flex flex-col"
                         >
                             {/* Header Fiche */}
                             <div className={`p-4 sm:p-6 md:p-8 text-white ${selectedIncoterm.transportMode === 'ALL' ? 'bg-blue-600' : 'bg-cyan-700'}`}>
@@ -236,11 +236,17 @@ export const CourseView: React.FC = () => {
                                                     {index + 1}
                                                 </div>
                                                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm md:text-base transition-colors">
-                                                    {note.split(/(BTS|ATTENTION|PIÈGE|NOUVEAUTÉ INCOTERMS 2020|NOUVEAUTÉ 2020 MAJEURE|POINT CLÉ|CONSEIL|FORMULE)/i).map((part, i) =>
-                                                        ['BTS', 'ATTENTION', 'PIÈGE', 'NOUVEAUTÉ INCOTERMS 2020', 'NOUVEAUTÉ 2020 MAJEURE', 'POINT CLÉ', 'CONSEIL', 'FORMULE'].includes(part.toUpperCase())
-                                                            ? <strong key={i} className="text-red-600 font-bold">{part}</strong>
-                                                            : part
-                                                    )}
+                                                    {(() => {
+                                                        const keywords = ['BTS', 'ATTENTION', 'PIÈGE', 'NOUVEAUTÉ INCOTERMS 2020', 'NOUVEAUTÉ 2020 MAJEURE', 'POINT CLÉ', 'CONSEIL', 'FORMULE'];
+                                                        const boundary = `(?<=^|[\\s.,''"()\\-:])`;
+                                                        const boundaryEnd = `(?=$|[\\s.,''"()\\-:])`;
+                                                        const regex = new RegExp(`(${boundary}(?:${keywords.join('|')})${boundaryEnd})`, 'gi');
+                                                        return note.split(regex).map((part, i) =>
+                                                            keywords.includes(part.trim().toUpperCase())
+                                                                ? <strong key={i} className="text-red-600 font-bold">{part}</strong>
+                                                                : part
+                                                        );
+                                                    })()}
                                                 </p>
                                             </li>
                                         ))}
@@ -250,7 +256,7 @@ export const CourseView: React.FC = () => {
                             </div>
                         </motion.div>
                     ) : (
-                        <div className="flex flex-col py-20 items-center justify-center text-slate-400 dark:text-slate-500">
+                        <div className="flex-1 flex flex-col py-20 items-center justify-center text-slate-400 dark:text-slate-500 bg-white dark:bg-slate-900 rounded-2xl border border-dashed border-slate-200 dark:border-slate-800">
                             <div className="w-24 h-24 mb-6 opacity-20 bg-slate-200 dark:bg-slate-700 rounded-3xl flex items-center justify-center transition-colors">
                                 <Info size={48} className="text-slate-500 dark:text-slate-400" />
                             </div>

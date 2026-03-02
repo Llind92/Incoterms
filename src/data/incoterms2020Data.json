@@ -41,10 +41,11 @@
         "PRODUCTION_COST"
       ],
       "academicNotes": [
-        "Incoterm représentant le MINIMUM d'obligations pour le vendeur.",
-        "PIÈGE BTS : Avec EXW, le vendeur n'est même pas obligé de charger la marchandise sur le véhicule de collecte de l'acheteur. Le chargement en usine est à la charge de l'acheteur.",
-        "EXW est déconseillé pour les exportations hors UE car l'acheteur doit effectuer les formalités d'exportation du pays du vendeur, ce qui est souvent impraticable.",
-        "Incoterms 2020 recommandent FCA à la place d'EXW dans la plupart des cas."
+        "Incoterm représentant le MINIMUM d'obligations pour le vendeur. C'est l'exact opposé du DDP.",
+        "PIÈGE BTS : Avec EXW, le vendeur n'est même pas obligé de charger la marchandise sur le véhicule de collecte de l'acheteur. Le chargement en usine est aux risques et aux frais de l'acheteur.",
+        "ATTENTION : EXW est fortement déconseillé à l'international car l'acheteur étranger doit effectuer les formalités de dédouanement EXPORT dans le pays du vendeur, ce qui est souvent juridiquement et pratiquement impossible.",
+        "CONSEIL : La CCI recommande officiellement d'utiliser FCA à la place d'EXW dans quasiment tous les cas de commerce international.",
+        "PIÈGE : Le dédouanement export incombe à l'ACHETEUR en EXW — c'est le SEUL Incoterm avec cette particularité. C'est un piège récurrent à l'examen BTS CI."
       ]
     },
     {
@@ -80,9 +81,10 @@
         "EXPORT_CUSTOMS_FEES"
       ],
       "academicNotes": [
-        "NOUVEAUTÉ INCOTERMS 2020 : Possibilité pour le vendeur d'obtenir un connaissement 'à bord' (on-board B/L) lorsque le lieu nommé FCA est le port d'embarquement. Cette clause a été ajoutée pour répondre aux exigences des crédits documentaires.",
-        "FCA est l'Incoterm tous modes recommandé en remplacement de FOB pour les conteneurs, car avec FOB le risque se transfère sur le pont du navire alors que la marchandise est déjà sous contrôle du transporteur au terminal.",
-        "Le dédouanement export est à la charge du VENDEUR, contrairement à EXW."
+        "POINT CLÉ BTS : FCA est l'Incoterm recommandé par la CCI pour remplacer à la fois l'EXW (trop risqué pour l'acheteur) et le FOB (inadapté aux conteneurs). C'est l'Incoterm polyvalent par excellence.",
+        "NOUVEAUTÉ INCOTERMS 2020 : Possibilité pour l'acheteur de donner instruction à son transporteur d'émettre un connaissement maritime 'à bord' (on-board B/L) au vendeur, lorsque le lieu nommé FCA est un port. Cette clause répond aux exigences des crédits documentaires (L/C) qui imposent un B/L embarqué.",
+        "PIÈGE : Le lieu nommé change les obligations de chargement. Si le lieu nommé = locaux du vendeur, celui-ci charge. Si le lieu nommé = tout autre lieu (terminal, entrepôt), le vendeur livre sans décharger du véhicule de collecte.",
+        "Le dédouanement export est à la charge du VENDEUR (contrairement à EXW), ce qui sécurise l'opération à l'international."
       ]
     },
     {
@@ -119,9 +121,10 @@
         "MAIN_FREIGHT"
       ],
       "academicNotes": [
-        "POINT CLÉ BTS : CPT comporte DEUX lieux nommés : le lieu de transfert des risques (remise au premier transporteur, souvent non indiqué) ET le lieu de destination (obligatoirement indiqué).",
-        "Le risque se transfère au DÉPART, mais le vendeur paie le fret jusqu'à DESTINATION. C'est le 'paradoxe des Incoterms C'.",
-        "CPT = version tous modes de CFR. À préférer pour le transport multimodal / conteneurisé. Les frais de manutention au départ sont inclus dans le contrat de fret multimodal (pas de THC séparé comme en maritime)."
+        "POINT CLÉ BTS : CPT comporte DEUX lieux nommés : le lieu de transfert des risques (remise au premier transporteur, souvent non indiqué dans le contrat) ET le lieu de destination (obligatoirement indiqué). Ne pas les confondre à l'examen.",
+        "PIÈGE : Le risque se transfère au DÉPART, mais le vendeur paie le fret jusqu'à DESTINATION. C'est le 'paradoxe des Incoterms C' — la dissociation entre le transfert des risques et le transfert des coûts. Ce piège est le plus fréquent à l'épreuve E5.",
+        "CPT = version tous modes de transport de CFR. À préférer systématiquement pour le transport multimodal et conteneurisé.",
+        "ATTENTION : L'acheteur supporte le risque pendant le transport principal sans que le vendeur ne soit tenu de l'assurer. L'acheteur a donc tout intérêt à souscrire sa propre assurance."
       ]
     },
     {
@@ -159,9 +162,10 @@
         "INSURANCE"
       ],
       "academicNotes": [
-        "NOUVEAUTÉ 2020 MAJEURE : CIP passe à la couverture ICC(A) 'Toutes Risques' (contre ICC(C) en 2010). CIF reste en ICC(C) — attention à ne pas confondre.",
-        "CIP est la version tous modes de CIF. Recommandé pour le transport conteneurisé multimodal.",
-        "Formule assurance BTS CI : Valeur à assurer = Prix CIP × 1,10 × taux_assurance. La majoration de 10% couvre le bénéfice escompté de l'acheteur."
+        "NOUVEAUTÉ 2020 MAJEURE : CIP passe à la couverture ICC(A) 'Tous Risques' (contre ICC(C) en Incoterms 2010). ATTENTION : CIF reste en ICC(C) — cette différence de niveau d'assurance entre CIP et CIF est un piège classique de l'examen.",
+        "CIP est la version tous modes de CIF. Recommandé pour le transport conteneurisé et multimodal en remplacement du CIF maritime.",
+        "FORMULE ASSURANCE BTS CI : Valeur assurée = Valeur CIP × 110 %. La majoration de 10 % couvre le bénéfice escompté (manque à gagner) de l'acheteur, conformément aux pratiques ICC.",
+        "PIÈGE : Même si le vendeur souscrit et paie l'assurance, c'est l'ACHETEUR qui en est le bénéficiaire, car c'est lui qui supporte le risque pendant le transport (paradoxe des Incoterms C)."
       ]
     },
     {
@@ -202,9 +206,10 @@
         "INLAND_TRANSPORT_IMPORT"
       ],
       "academicNotes": [
-        "Avec DAP, le DÉCHARGEMENT est à la charge de l'ACHETEUR. C'est la différence clé avec DPU.",
-        "Le dédouanement import et les droits de douane restent à la charge de l'ACHETEUR. C'est la différence clé avec DDP.",
-        "DAP existait déjà dans les Incoterms 2010 (où il avait remplacé l'ancien DDU). Ne pas confondre : c'est DPU qui a remplacé l'ancien DAT (Delivered At Terminal) dans les Incoterms 2020."
+        "POINT CLÉ : Avec DAP, le DÉCHARGEMENT est à la charge et aux risques de l'ACHETEUR. C'est la différence fondamentale avec DPU (où le vendeur décharge).",
+        "PIÈGE BTS : Le dédouanement import et les droits de douane restent à la charge de l'ACHETEUR. C'est la différence clé avec DDP. Ne pas confondre DAP et DDP à l'examen.",
+        "ATTENTION : DAP existait déjà dans les Incoterms 2010. Ne pas confondre avec le DPU : c'est DPU qui a remplacé l'ancien DAT (Delivered At Terminal) dans les Incoterms 2020. DAP, lui, avait remplacé l'ancien DDU (Delivered Duty Unpaid).",
+        "CONSEIL : DAP est l'Incoterm du groupe D le plus couramment utilisé car il offre un bon équilibre — le vendeur livre à destination sans avoir à gérer le dédouanement import ni le déchargement."
       ]
     },
     {
@@ -246,9 +251,10 @@
         "INLAND_TRANSPORT_IMPORT"
       ],
       "academicNotes": [
-        "NOUVEAUTÉ INCOTERMS 2020 : DPU remplace l'ancien DAT (Delivered At Terminal) et s'applique désormais à TOUT lieu de destination, pas seulement les terminaux.",
-        "DPU est le SEUL Incoterm où le risque se transfère APRÈS le déchargement. Pour tous les autres Incoterms du groupe D, le déchargement est à la charge de l'acheteur.",
-        "Le dédouanement import et les droits de douane restent à la charge de l'ACHETEUR."
+        "NOUVEAUTÉ INCOTERMS 2020 : DPU remplace l'ancien DAT (Delivered At Terminal). Changement majeur : le lieu de destination n'est plus limité à un 'terminal' — il peut être TOUT lieu convenu (entrepôt, usine, chantier, etc.).",
+        "POINT CLÉ BTS : DPU est le SEUL Incoterm des 11 règles ICC 2020 où le déchargement à destination est à la charge et aux risques du VENDEUR. Pour tous les autres Incoterms, le déchargement est à la charge de l'acheteur.",
+        "PIÈGE : Le dédouanement import et les droits de douane restent malgré tout à la charge de l'ACHETEUR (contrairement au DDP).",
+        "ATTENTION : Le vendeur doit s'assurer qu'il a la capacité de décharger au lieu de destination convenu. S'il n'en a pas la maîtrise, il vaut mieux utiliser DAP."
       ]
     },
     {
@@ -291,10 +297,10 @@
         "IMPORT_DUTIES"
       ],
       "academicNotes": [
-        "DDP représente le MAXIMUM d'obligations pour le vendeur : il paie TOUT, y compris le dédouanement import et les droits de douane dans le pays de l'acheteur.",
-        "ATTENTION : DDP peut être problématique si le vendeur n'est pas autorisé à opérer comme importateur dans le pays de destination (habilitation douanière requise).",
-        "Le déchargement final reste à la charge de l'ACHETEUR (contrairement à DPU).",
-        "La TVA à l'importation est généralement payée par le vendeur en DDP, sauf accord contraire entre les parties."
+        "POINT CLÉ : DDP représente le MAXIMUM d'obligations pour le vendeur. C'est l'exact opposé de l'EXW. Le vendeur paie TOUT, y compris le dédouanement import, les droits de douane ET les taxes (TVA) dans le pays de l'acheteur.",
+        "ATTENTION : DDP est problématique si le vendeur n'est pas enregistré comme importateur dans le pays de destination (numéro EORI ou habilitation douanière requis). Certains pays interdisent l'importation par des non-résidents.",
+        "PIÈGE BTS : Le déchargement final reste à la charge de l'ACHETEUR (contrairement à DPU). On peut utiliser 'DDP déchargé' si les parties conviennent que le vendeur décharge également.",
+        "CONSEIL : La TVA à l'importation est payée par le vendeur en DDP. Pour éviter ce surcoût, les parties peuvent convenir d'un 'DDP TVA non acquittée' (DDP exclusive of VAT), variante fréquente en commerce intra-UE."
       ]
     },
     {
@@ -330,9 +336,10 @@
         "EXPORT_CUSTOMS_FEES"
       ],
       "academicNotes": [
-        "FAS est utilisé pour les marchandises en vrac ou lourdes qui ne passent pas par des terminaux à conteneurs (ex : céréales, minerais, bois, machines hors gabarit).",
-        "Le risque se transfère 'le long du navire' et non 'à bord', contrairement à FOB.",
-        "Réservé exclusivement au transport maritime et voies navigables intérieures."
+        "FAS est réservé aux marchandises en vrac ou hors gabarit qui ne passent pas par des terminaux à conteneurs (ex : céréales, minerais, bois de coupe, machines lourdes).",
+        "PIÈGE : Le risque se transfère 'le long du navire' (sur le quai ou sur allège) et NON 'à bord du navire', contrairement à FOB. Le chargement à bord est donc aux frais et risques de l'acheteur.",
+        "ATTENTION : Réservé exclusivement au transport maritime et par voies navigables intérieures. Ne jamais utiliser FAS pour du transport conteneurisé ou multimodal.",
+        "POINT CLÉ : Le dédouanement export est à la charge du VENDEUR en FAS (contrairement aux anciennes versions Incoterms où c'était l'acheteur)."
       ]
     },
     {
@@ -369,10 +376,10 @@
         "ORIGIN_PORT_FEES"
       ],
       "academicNotes": [
-        "FOB est l'Incoterm le plus utilisé dans les échanges mondiaux, mais souvent MAL UTILISÉ pour les conteneurs.",
-        "PIÈGE MAJEUR BTS : Pour les conteneurs, utiliser FCA (port) plutôt que FOB. En FOB, le risque se transfère 'à bord' alors que le conteneur est déjà sous contrôle du terminal portuaire avant embarquement — le vendeur supporte donc un risque sur une période où il n'a plus accès à la marchandise.",
-        "FOB reste pertinent pour les marchandises conventionnelles (vrac, charges partielles de navire).",
-        "Réservé exclusivement au transport maritime et voies navigables intérieures."
+        "FOB est l'Incoterm le plus utilisé au monde, mais souvent MAL UTILISÉ pour les conteneurs. À utiliser UNIQUEMENT pour le transport maritime conventionnel (vrac, colis lourds), JAMAIS pour les conteneurs.",
+        "PIÈGE BTS : Pour les conteneurs, utiliser FCA (port) à la place de FOB. En FOB, le risque se transfère 'à bord du navire' alors que le conteneur est déjà sous contrôle du terminal portuaire avant embarquement — le vendeur supporte un risque pendant une période où il n'a plus aucun accès ni contrôle sur sa marchandise.",
+        "POINT CLÉ : FOB inclut les frais de mise à bord (frais de manutention portuaire côté chargement — THC origine). La différence avec FAS est que FAS s'arrête au quai, FOB va jusqu'à bord.",
+        "ATTENTION : Réservé exclusivement au transport maritime et par voies navigables intérieures. La CCI recommande FCA pour le multimodal et les conteneurs."
       ]
     },
     {
@@ -410,10 +417,10 @@
         "MAIN_FREIGHT"
       ],
       "academicNotes": [
-        "CFR = FOB + Fret maritime payé par le vendeur. La différence avec CIF est l'absence d'assurance obligatoire.",
-        "Même paradoxe que CPT : le risque se transfère au DÉPART (port d'embarquement) mais le vendeur paie le fret jusqu'à DESTINATION.",
-        "Réservé exclusivement au transport maritime et voies navigables intérieures.",
-        "CONSEIL : Pour les conteneurs, préférer CPT à CFR."
+        "POINT CLÉ : CFR = FOB + Fret maritime payé par le vendeur. La seule différence avec CIF est l'absence d'obligation d'assurance pour le vendeur.",
+        "PIÈGE BTS : Même paradoxe que CPT — le risque se transfère au DÉPART (embarquement) mais le vendeur paie le fret jusqu'à DESTINATION. L'acheteur supporte donc le risque maritime sans que le vendeur n'ait à l'assurer.",
+        "CONSEIL : Pour les conteneurs et le transport multimodal, préférer CPT à CFR. CFR est strictement réservé au transport maritime et voies navigables intérieures.",
+        "ATTENTION : Ne pas confondre CFR (anciennement C&F ou CNF) avec CIF. En CFR, il n'y a aucune assurance obligatoire — l'acheteur doit s'assurer lui-même."
       ]
     },
     {
@@ -452,11 +459,11 @@
         "INSURANCE"
       ],
       "academicNotes": [
-        "CIF est l'Incoterm de RÉFÉRENCE pour le calcul de la VALEUR EN DOUANE dans l'Union Européenne. La valeur en douane UE = valeur CIF au premier point d'entrée.",
-        "POINT CLÉ : Même si le vendeur paie l'assurance, le risque se transfère à l'EMBARQUEMENT. L'assurance bénéficie donc... à l'acheteur (qui supporte le risque pendant la traversée).",
-        "CIF maintient la couverture minimum ICC(C) contrairement à CIP qui est passé en ICC(A) en 2020.",
-        "Réservé exclusivement au transport maritime et voies navigables intérieures.",
-        "FORMULE VALEUR EN DOUANE UE : Valeur en douane = Coût marchandise + Fret + Assurance (CIF au premier port UE)."
+        "POINT CLÉ BTS : CIF est l'Incoterm de RÉFÉRENCE pour le calcul de la VALEUR EN DOUANE dans l'Union Européenne. La valeur en douane = valeur CIF au premier point d'entrée communautaire.",
+        "PIÈGE : Même si le vendeur paie l'assurance, le risque se transfère à l'EMBARQUEMENT (paradoxe des Incoterms C). L'assurance souscrite par le vendeur bénéficie donc à l'ACHETEUR, qui est celui qui supporte le risque pendant la traversée maritime.",
+        "ATTENTION : CIF maintient la couverture minimum ICC(C) (couverture restreinte) en Incoterms 2020, contrairement à CIP qui est passé en ICC(A) (tous risques). Cette différence de niveau d'assurance CIF vs CIP est un grand classique de l'examen BTS CI.",
+        "FORMULE VALEUR EN DOUANE UE : Valeur en douane = Coût marchandise + Fret maritime + Prime d'assurance = valeur CIF au premier port d'entrée UE. Les droits de douane (DD) sont ensuite calculés sur cette base.",
+        "ATTENTION : Réservé exclusivement au transport maritime et par voies navigables intérieures. Pour le multimodal et les conteneurs, utiliser CIP."
       ]
     }
   ]
