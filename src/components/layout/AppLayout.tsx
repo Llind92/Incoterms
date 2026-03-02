@@ -42,9 +42,9 @@ export const AppLayout: React.FC = () => {
             <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-t border-slate-200/50 dark:border-slate-800/50 flex justify-around p-3 z-50 pb-safe transition-colors duration-200">
                 <MobileNavItem to="/" icon={<Home size={22} />} label={t('nav.dashboard')} exact />
                 <MobileNavItem to="/course" icon={<BookOpen size={22} />} label={t('nav.course')} />
-                <MobileNavItem to="/calculator" icon={<Calculator size={22} />} label={t('nav.calculator')} />
-                <MobileNavItem to="/practice" icon={<PenTool size={22} />} label={t('nav.practice')} />
-                <MobileNavItem to="/quiz" icon={<PlayCircle size={22} />} label={t('nav.quiz')} />
+                <MobileNavItem to="/calculator" icon={<Calculator size={22} />} label="Calcul" />
+                <MobileNavItem to="/practice" icon={<PenTool size={22} />} label="Casco" />
+                <MobileNavItem to="/quiz" icon={<PlayCircle size={22} />} label="Quiz" />
                 <MobileNavItem to="/settings" icon={<Settings size={22} />} label={t('nav.settings')} />
             </nav>
 
