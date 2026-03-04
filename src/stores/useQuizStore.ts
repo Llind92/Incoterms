@@ -19,12 +19,17 @@ interface QuizState {
     // Statistiques de la session courante
     score: number;
     isFinished: boolean;
+
+    // Mode examen
+    isExamMode: boolean;
+    examStartTime: number | null;
+    examDurationMs: number;
 }
 
 // Séparation des actions (Actions)
 interface QuizActions {
     // Initialiser un nouveau quiz avec un set de questions
-    startQuiz: (questions: QuizQuestion[]) => void;
+    startQuiz: (questions: QuizQuestion[], examMode?: boolean) => void;
     // Soumettre une réponse pour la question courante
     answerQuestion: (optionIndex: number) => void;
     // Passer à la question suivante
@@ -45,6 +50,9 @@ const initialState: QuizState = {
     answers: [],
     score: 0,
     isFinished: false,
+    isExamMode: false,
+    examStartTime: null,
+    examDurationMs: 45 * 60 * 1000, // 45 minutes par défaut
 };
 
 // Création du store ÉPHÉMÈRE (pas de middleware persist ici !)
@@ -53,7 +61,7 @@ export const useQuizStore = create<QuizStore>((set, get) => ({
     ...initialState,
 
     // --- ACTIONS ---
-    startQuiz: (questions) =>
+    startQuiz: (questions, examMode = false) =>
         set({
             isActive: true,
             questions,
@@ -61,6 +69,8 @@ export const useQuizStore = create<QuizStore>((set, get) => ({
             answers: [],
             score: 0,
             isFinished: false,
+            isExamMode: examMode,
+            examStartTime: examMode ? Date.now() : null,
         }),
 
     answerQuestion: (optionIndex) => {

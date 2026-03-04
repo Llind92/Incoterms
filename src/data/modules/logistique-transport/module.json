@@ -1,0 +1,8 @@
+{
+  "id": "logistique-transport",
+  "order": 1,
+  "title": "Logistique & Transport International",
+  "description": "Modes de transport, documents, assurance transport, gestion des avaries",
+  "icon": "Truck",
+  "color": "blue"
+}

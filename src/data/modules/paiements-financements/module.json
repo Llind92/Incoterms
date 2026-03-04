@@ -1,0 +1,8 @@
+{
+  "id": "paiements-financements",
+  "order": 3,
+  "title": "Paiements Internationaux & Financements",
+  "description": "CREDOC, remise documentaire, virement SWIFT, financements export",
+  "icon": "CreditCard",
+  "color": "indigo"
+}

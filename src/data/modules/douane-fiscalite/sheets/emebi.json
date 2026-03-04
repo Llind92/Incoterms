@@ -1,0 +1,114 @@
+{
+  "id": "emebi",
+  "title": "L'EMEBI et la TVA Intracommunautaire",
+  "subtitle": "La réforme de la DEB et les échanges dans l'UE",
+  "examFrequency": "medium",
+  "tags": [
+    "EMEBI",
+    "DEB",
+    "TVA intracommunautaire",
+    "introduction",
+    "expédition",
+    "NC8",
+    "réforme 2022"
+  ],
+  "relatedSheets": [
+    "dette-douaniere",
+    "triptyque-eov"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition : La réforme de 2022",
+      "content": "Jusqu'en 2021, les entreprises françaises réalisaient une Déclaration d'Échanges de Biens (DEB) mensuelle regroupant l'aspect douanier/statistique et l'aspect fiscal (TVA). Depuis le 1er janvier 2022, la DEB est supprimée et remplacée par deux démarches distinctes obligatoires : l'État Récapitulatif TVA (aspect fiscal) et l'EMEBI (Enquête Mensuelle Statistique sur les Échanges de Biens Intracommunautaires).",
+      "keywords": [
+        "DEB",
+        "EMEBI",
+        "État Récapitulatif TVA",
+        "1er janvier 2022"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "1. L'État Récapitulatif TVA (Fiscal)"
+    },
+    {
+      "type": "bullet_list",
+      "content": "Cet état permet à l'administration fiscale de croiser les opérations de TVA entre les États membres :",
+      "items": [
+        "**Obligation dès le 1er euro** : La déclaration fiscale est obligatoire pour toute entreprise française réalisant des livraisons intracommunautaires (expéditions) dès le premier euro facturé.",
+        "**Exonération de TVA** : Une livraison intracommunautaire (à destination d'un pro dans l'UE) est facturée Hors Taxes (HT) à condition que les deux entreprises aient un numéro de TVA intracommunautaire valide et que la preuve du transport hors de France soit apportée."
+      ],
+      "keywords": [
+        "État Récapitulatif",
+        "1er euro",
+        "TVA intracommunautaire",
+        "Hors Taxes"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "2. L'EMEBI (Statistique)"
+    },
+    {
+      "type": "comparison",
+      "label": "Le volet statistique des douanes",
+      "content": "L'EMEBI (État Mensuel Statistique) sert à alimenter les données du commerce extérieur français. Contrairement à l'état fiscal, l'EMEBI n'est pas automatique.",
+      "items": [
+        "**Réponse sur demande** : Vous ne répondez à l'enquête EMEBI QUE si l'administration douanière vous a présélectionné et vous a envoyé la notification d'enquête annuelle (courrier de l'Insee/Douane).",
+        "**Les Seuils indicatifs** : L'administration sélectionne généralement les entreprises dépassant le seuil de **460 000 €** d'expéditions (ventes) ou de **460 000 €** d'introductions (achats) par an."
+      ]
+    },
+    {
+      "type": "table",
+      "content": "Vocabulaire spécifique UE vs Hors UE",
+      "headers": [
+        "Flux",
+        "Terme au sein de l'UE (Intracommunautaire)",
+        "Terme Hors UE (Extracommunautaire)"
+      ],
+      "rows": [
+        [
+          "Entrée de marchandise",
+          "**Introduction**",
+          "**Importation**"
+        ],
+        [
+          "Sortie de marchandise",
+          "**Expédition**",
+          "**Exportation**"
+        ]
+      ],
+      "keywords": [
+        "Introduction",
+        "Expédition",
+        "Importation",
+        "Exportation"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Terminologie Douanière",
+      "content": "Employez la bonne sémantique ! Si un sujet porte sur un échange France-Allemagne, n'écrivez jamais \"l'entreprise importe les marchandises\" ni qu'elle fait \"le dédouanement\". En UE, on parle d'**Introductions** (achats) et d'**Expéditions** (ventes), tracées par la nomenclature douanière à **8 chiffres (NC8)**, et non par le code TARIC à 10 chiffres (réservé aux vraies importations hors UE).",
+      "keywords": [
+        "Introductions",
+        "Expéditions",
+        "NC8",
+        "TARIC",
+        "8 chiffres"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "La DEB n'existe plus ! Vos copies doivent parler d'**EMEBI** (Volet statistique sur demande) et d'État Récapitulatif TVA (Volet fiscal obligatoire dès le 1er euro en expédition). N'oubliez pas les termes \"Introduction / Expédition\" et retenez que le code espèce utilisé pour ces déclarations est la NC à 8 chiffres.",
+      "keywords": [
+        "EMEBI",
+        "État Récapitulatif",
+        "1er euro",
+        "NC8",
+        "Introduction / Expédition"
+      ]
+    }
+  ]
+}

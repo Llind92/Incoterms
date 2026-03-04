@@ -14,6 +14,7 @@ export interface QuizQuestion {
   correctAnswerIndex: number;
   explanation: string;
   source?: string;
+  moduleId?: string;
 }
 
 const formatRichText = (text: string) => {

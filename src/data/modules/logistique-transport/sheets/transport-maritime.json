@@ -1,0 +1,214 @@
+{
+  "id": "transport-maritime",
+  "title": "Le Transport Maritime",
+  "subtitle": "B/L, conteneurs, liner terms et tarification",
+  "examFrequency": "very_high",
+  "tags": [
+    "B/L",
+    "connaissement",
+    "liner terms",
+    "conteneur",
+    "UP",
+    "LCL",
+    "FCL"
+  ],
+  "relatedSheets": [
+    "assurance-transport",
+    "incoterms2020Data"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "Le transport maritime est le mode principal pour les marchandises pondéreuses ou volumineuses sur de longues distances. Il repose sur la conteneurisation pour limiter les ruptures de charge et sécuriser les expéditions.",
+      "keywords": [
+        "transport maritime",
+        "conteneurisation",
+        "rupture de charge"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Les conteneurs maritimes et modes d'expédition"
+    },
+    {
+      "type": "table",
+      "content": "Dimensions et capacités des conteneurs standards :",
+      "headers": [
+        "Type de conteneur",
+        "Dimensions (L x l x h)",
+        "Poids chargeable max approx."
+      ],
+      "rows": [
+        [
+          "**20' (20 pieds)**",
+          "5,92 x 2,35 x 2,39 m",
+          "22 100 kg"
+        ],
+        [
+          "**40' (40 pieds)**",
+          "12,05 x 2,35 x 2,39 m",
+          "27 400 kg"
+        ],
+        [
+          "**40' HC (High Cube)**",
+          "12,05 x 2,35 x 2,89 m",
+          "29 600 kg"
+        ]
+      ],
+      "keywords": [
+        "20 pieds",
+        "40 pieds",
+        "High Cube",
+        "dimensions conteneur"
+      ]
+    },
+    {
+      "type": "comparison",
+      "label": "FCL vs LCL (Modes de chargement)",
+      "content": "Selon le volume à expédier, on distingue le conteneur complet du groupage :",
+      "items": [
+        "**FCL (Full Container Load)** : Conteneur complet. Un seul chargeur empote la marchandise pour un ou plusieurs réceptionnaires.",
+        "**LCL (Less than Container Load)** : Groupage. Les marchandises de plusieurs chargeurs sont regroupées dans un même conteneur par un transitaire ou groupeur pour optimiser les coûts."
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — FCL/LCL à l'arrivée",
+      "content": "Attention aux combinaisons FCL/LCL au départ et à l'arrivée. Par exemple, un **LCL/FCL** signifie que plusieurs vendeurs (LCL) ont regroupé leurs marchandises au départ pour un seul et même acheteur à l'arrivée qui recevra le conteneur complet (FCL).",
+      "keywords": [
+        "FCL/LCL",
+        "LCL/FCL",
+        "LCL/LCL",
+        "FCL/FCL"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Le Document de Transport : Connaissement (B/L)"
+    },
+    {
+      "type": "bullet_list",
+      "content": "Le Bill of Lading (B/L) ou Connaissement Maritime a 3 fonctions clés : preuve de prise en charge, preuve du contrat, et **titre représentatif de la marchandise**. Ses formes :",
+      "items": [
+        "**À personne dénommée (Straight consigned)** : Non négociable. La marchandise n'est remise qu'à la personne désignée.",
+        "**À ordre (To order)** : Négociable par endossement. Transfère la propriété. Très utilisé dans le cadre du crédit documentaire (CREDOC).",
+        "**Au porteur (Blank endorsed)** : Transférable de la main à la main."
+      ],
+      "keywords": [
+        "Bill of Lading",
+        "B/L",
+        "connaissement",
+        "à ordre",
+        "titre représentatif"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Mentions obligatoires du B/L",
+      "content": "Pour être conforme (notamment en CREDOC), un B/L doit être **Clean** (sans réserves du transporteur sur l'état de la marchandise) et impérativement porter la mention **On Board** (ou Shipped on board) attestant que la marchandise est physiquement chargée sur le navire. Un B/L « Received for shipment » sera refusé par la banque.",
+      "keywords": [
+        "Clean",
+        "On Board",
+        "Shipped on board",
+        "Received for shipment"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Tarification : Fret et Unité Payante (UP)"
+    },
+    {
+      "type": "formula",
+      "label": "Règle de l'Unité Payante (UP) Maritime",
+      "content": "En groupage (LCL), le fret se calcule à l'Unité Payante (UP). L'équivalence maritime est **1 Tonne = 1 m³**. L'UP retenue est toujours la valeur la plus à l'avantage du transporteur (la plus élevée entre la masse en tonnes et le volume en m³). UP = Max(Poids brut en T, Volume en m³)."
+    },
+    {
+      "type": "numbered_list",
+      "content": "Étapes de calcul du coût de transport LCL :",
+      "items": [
+        "Calculer le volume total en m³",
+        "Calculer le poids brut total en Tonnes",
+        "Déterminer l'UP : prendre la valeur maximale entre les m³ et les Tonnes",
+        "Calculer le « Fret de base » = UP × Tarif à l'UP",
+        "Appliquer le correctif **BAF** (Bunker Adjustment Factor) en pourcentage sur le fret de base, pour obtenir le Fret corrigé",
+        "Appliquer le correctif **CAF** (Currency Adjustment Factor) en pourcentage sur le fret corrigé, pour obtenir le Fret ajusté net"
+      ],
+      "keywords": [
+        "Unité Payante",
+        "BAF",
+        "CAF",
+        "Fret de base"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Calcul de la CAF",
+      "content": "La CAF (surcharge monétaire) se calcule toujours **sur le fret corrigé** (c'est-à-dire le Fret de base *incluant* la BAF), et non sur le fret de base seul. Ne pas additionner les pourcentages BAF + CAF !",
+      "keywords": [
+        "CAF",
+        "fret corrigé",
+        "BAF"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Les Liner Terms"
+    },
+    {
+      "type": "comparison",
+      "label": "Répartition des frais de manutention navire",
+      "content": "Les Liner Terms (conditions de ligne) fixent ce qui est inclus dans le fret maritime coté par la compagnie. Si le terme n'inclut pas une manutention, elle doit être ajoutée budgétairement.",
+      "items": [
+        "**Sous palan (Tackle)** : Le fret comprend le transport principal et la mise sous la grue du navire. Le chargement/déchargement reste à la charge du client.",
+        "**Bord (Free in/out)** : Le fret ne couvre que le transport de port à port. Le chargement (In) et déchargement (Out) sont exclus et payés à part (souvent facturés sous forme de THC - Terminal Handling Charges).",
+        "**Quai (Liner terms)** : Le fret inclut le transport ET les opérations de manutention (chargement au départ, déchargement à l'arrivée)."
+      ]
+    },
+    {
+      "type": "table",
+      "content": "Frais annexes fréquents (Surcharges)",
+      "headers": [
+        "Acronyme",
+        "Signification",
+        "Application (Examen)"
+      ],
+      "rows": [
+        [
+          "**THC**",
+          "Terminal Handling Charges",
+          "Frais de manutention portuaire des conteneurs (FCL). Inclus dans FOB au départ."
+        ],
+        [
+          "**ISPS**",
+          "International Ship and Port facility Security",
+          "Surtaxe de sûreté. Appliquée au port de départ (incluse dans FOB) ou d'arrivée."
+        ],
+        [
+          "**LSS**",
+          "Low Sulphur Surcharge",
+          "Taxe carburant propre. À prévoir dans les cotisations de type CFR ou CPT."
+        ]
+      ],
+      "keywords": [
+        "THC",
+        "ISPS",
+        "LSS",
+        "surcharges"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Le candidat doit toujours analyser : 1) Si l'expédition est en FCL (achat à la boîte) ou LCL (calcul de l'UP), 2) Si le B/L porte les mentions 'Clean On Board', 3) L'Incoterm pour imputer correctement les Liner Terms ou les surcharges (THC) dans les tableaux de prix de revient.",
+      "keywords": [
+        "FCL",
+        "LCL",
+        "UP",
+        "Clean On Board",
+        "THC",
+        "Liner Terms"
+      ]
+    }
+  ]
+}

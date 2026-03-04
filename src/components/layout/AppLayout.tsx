@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import { Home, BookOpen, Calculator, PlayCircle, Settings, PenTool } from 'lucide-react';
+import { Home, BookOpen, Calculator, PlayCircle, Settings, PenTool, Wrench } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export const AppLayout: React.FC = () => {
@@ -23,12 +23,21 @@ export const AppLayout: React.FC = () => {
                     </div>
 
                     {/* Navigation Links */}
-                    <nav className="p-3 space-y-2 mt-4">
+                    <nav className="p-3 space-y-1 mt-4">
                         <NavItem to="/" icon={<Home size={20} />} label={t('nav.dashboard')} exact />
                         <NavItem to="/course" icon={<BookOpen size={20} />} label={t('nav.course')} />
+                        <NavItem to="/quiz" icon={<PlayCircle size={20} />} label={t('nav.quiz')} />
+
+                        {/* Séparateur — Outils */}
+                        <div className="pt-4 pb-2">
+                            <span className="hidden md:block px-3 text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                                {t('nav.tools', 'Outils')}
+                            </span>
+                            <div className="md:hidden w-8 mx-auto border-t border-slate-200 dark:border-slate-700" />
+                        </div>
+
                         <NavItem to="/calculator" icon={<Calculator size={20} />} label={t('nav.calculator')} />
                         <NavItem to="/practice" icon={<PenTool size={20} />} label={t('nav.practice')} />
-                        <NavItem to="/quiz" icon={<PlayCircle size={20} />} label={t('nav.quiz')} />
                     </nav>
                 </div>
 
@@ -42,9 +51,8 @@ export const AppLayout: React.FC = () => {
             <nav className="sm:hidden fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-t border-slate-200/50 dark:border-slate-800/50 flex justify-around p-3 z-50 pb-[env(safe-area-inset-bottom)] transition-colors duration-200">
                 <MobileNavItem to="/" icon={<Home size={22} />} label={t('nav.dashboard')} exact />
                 <MobileNavItem to="/course" icon={<BookOpen size={22} />} label={t('nav.course')} />
-                <MobileNavItem to="/calculator" icon={<Calculator size={22} />} label="Calcul" />
-                <MobileNavItem to="/practice" icon={<PenTool size={22} />} label="Casco" />
                 <MobileNavItem to="/quiz" icon={<PlayCircle size={22} />} label="Quiz" />
+                <MobileNavItem to="/calculator" icon={<Wrench size={22} />} label={t('nav.tools', 'Outils')} />
                 <MobileNavItem to="/settings" icon={<Settings size={22} />} label={t('nav.settings')} />
             </nav>
 

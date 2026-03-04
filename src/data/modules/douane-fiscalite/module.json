@@ -1,0 +1,8 @@
+{
+  "id": "douane-fiscalite",
+  "order": 2,
+  "title": "Douane & Fiscalité",
+  "description": "Triptyque EOV, dette douanière, régimes particuliers, EMEBI",
+  "icon": "Shield",
+  "color": "emerald"
+}

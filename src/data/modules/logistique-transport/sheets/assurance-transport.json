@@ -1,0 +1,186 @@
+{
+  "id": "assurance-transport",
+  "title": "L'Assurance Transport",
+  "subtitle": "Avaries, garanties ICC, procédure PCRD et indemnisation",
+  "examFrequency": "very_high",
+  "tags": [
+    "assurance",
+    "ICC",
+    "PCRD",
+    "DTS",
+    "avarie",
+    "ad valorem"
+  ],
+  "relatedSheets": [
+    "transport-maritime",
+    "transport-aerien",
+    "transport-routier"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Généralités sur le risque transport",
+      "content": "Pendant le transport international, la marchandise est exposée à des risques de perte, vol ou avarie. La responsabilité des transporteurs est strictement limitée par des conventions internationales (plafonds d'indemnisation). C'est pourquoi l'assurance transport marchandises (« ad valorem ») est primordiale pour obtenir une réparation intégrale du préjudice.",
+      "keywords": [
+        "ad valorem",
+        "plafond d'indemnisation",
+        "risque transport"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Les types d'avaries"
+    },
+    {
+      "type": "bullet_list",
+      "content": "On distingue deux grandes catégories de sinistres maritimes :",
+      "items": [
+        "**L'avarie commune** : Propre au maritime. C'est le sacrifice volontaire ou la dépense extraordinaire engagée par le capitaine pour sauver le navire et la cargaison (ex: jeter des conteneurs à la mer). Les frais sont répartis proportionnellement entre tous les propriétaires (armateur et chargeurs sauvés).",
+        "**L'avarie particulière** : Dommages matériels accidentels subis par une marchandise spécifique (casse, mouille, vol). Ne concerne que le propriétaire de cette marchandise."
+      ],
+      "keywords": [
+        "avarie commune",
+        "avarie particulière",
+        "sacrifice volontaire"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Les Polices et les Garanties ICC"
+    },
+    {
+      "type": "table",
+      "content": "Les Institute Cargo Clauses (ICC) de Londres standardisent les garanties au niveau mondial :",
+      "headers": [
+        "Garantie",
+        "Couverture",
+        "Correspondance Incoterms"
+      ],
+      "rows": [
+        [
+          "**ICC (A)**",
+          "**Tous Risques** (Sauf exclusions standards : vice propre, défaut d'emballage, retard).",
+          "Couverture obligatoire imposée par l'Incoterm **CIP** (2020)"
+        ],
+        [
+          "**ICC (B)**",
+          "**Événements Majeurs + périls spécifiques** (Entrée d'eau de mer, séisme).",
+          "Couverture intermédiaire"
+        ],
+        [
+          "**ICC (C)**",
+          "**Événements Majeurs Uniquement** (Incendie, naufrage, déraillement, collision).",
+          "Couverture minimale exigée par l'Incoterm **CIF**"
+        ]
+      ],
+      "keywords": [
+        "ICC (A)",
+        "ICC (C)",
+        "Tous Risques",
+        "CIP",
+        "CIF"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Calcul de la Prime d'Assurance"
+    },
+    {
+      "type": "formula",
+      "label": "Formules de calcul",
+      "content": "L'assurance correspond en général à un pourcentage (taux de prime) appliqué sur la valeur assurée (souvent CIF ou CIP, ou CFR/CPT majoré de 10 ou 20%).\n\nSi le taux s'applique sur la valeur CFR/CPT :\n**Prime = Taux × CFR (ou CPT) × Coefficient de majoration**\n\nSi le taux s'applique sur la valeur CIF/CIP (qui inclut elle-même la prime) :\n**Prime = Valeur CIF protégée - Valeur CFR**\nOù CIF = CFR ÷ (1 - [Taux × Coefficient de majoration])"
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Calcul de la Valeur Assurée",
+      "content": "« Le coût de l'assurance est de 0,5% de CIP majoré de 10% ». L'erreur fatale est de calculer 0,5% de CPT * 1,10. Vous devez obligatoirement utiliser la formule CIP = CPT / (1 - (1,10 * 0,005)). Le coût de l'assurance sera la différence CIP - CPT.",
+      "keywords": [
+        "CIP",
+        "CPT",
+        "coefficient de majoration",
+        "taux de prime"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Indemnités Plafonnées des Transporteurs (DTS)"
+    },
+    {
+      "type": "table",
+      "content": "Sans assurance ad valorem, l'indemnisation légale en cas de faute du transporteur est limitée par des Droits de Tirage Spéciaux (DTS). Le DTS est une monnaie de compte du FMI.",
+      "headers": [
+        "Mode de Transport",
+        "Convention",
+        "Limite d'indemnisation"
+      ],
+      "rows": [
+        [
+          "**Aérien**",
+          "Varsovie / Montréal",
+          "**17 DTS** ou **22 DTS** / kg brut"
+        ],
+        [
+          "**Routier**",
+          "CMR",
+          "**8,33 DTS** / kg brut manquant ou avarié"
+        ],
+        [
+          "**Maritime**",
+          "Bruxelles / La Haye / Visby",
+          "**2 DTS** / kg ou **666,67 DTS** / colis (le + fort)"
+        ]
+      ],
+      "keywords": [
+        "DTS",
+        "8,33 DTS",
+        "17 DTS",
+        "Droits de Tirage Spéciaux",
+        "plafond"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Calcul d'indemnisation (Ad Valorem vs DTS)",
+      "content": "On vous demande souvent de démontrer l'intérêt de l'assurance. Vous devez calculer l'indemnisation légale (Ex: Route -> Poids perdu × 8,33 × Taux de conversion DTS/EUR) et la comparer à la valeur réelle de la marchandise. La différence justifie le paiement de la prime pour une assurance tous risques.",
+      "keywords": [
+        "indemnisation légale",
+        "comparaison",
+        "valeur réelle"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Gestion du Sinistre : La procédure PCRD"
+    },
+    {
+      "type": "bullet_list",
+      "content": "En cas d'avarie constatée à l'arrivée, le réceptionnaire doit impérativement respecter la règle des 4 actions, sous peine de perdre son droit de recours :",
+      "items": [
+        "**P - Préservation** : Prendre les mesures d'urgence pour limiter l'aggravation des dommages (ex: bâcher la marchandise, la placer au frais).",
+        "**C - Constatation** : Faire appel à un expert amiable (commissaire d'avaries) pour chiffrer les dégâts de manière opposable.",
+        "**R - Réserves** : Formuler des réserves écrites, précises et significatives sur le document de transport à la livraison, confirmées par LRAR dans les délais légaux (3 jours en route CMR).",
+        "**D - Déclaration** : Informer l'assureur pour ouvrir le dossier de sinistre."
+      ],
+      "keywords": [
+        "PCRD",
+        "Préservation",
+        "Constatation",
+        "Réserves",
+        "Déclaration"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "L'assurance transport pallie la responsabilité plafonnée (en DTS) des transporteurs. Mémorisez les plafonds (**8,33 DTS/kg** en routier), la différence entre **ICC(A) Tous risques (CIP)** et **ICC(C) Minimale (CIF)**, et maîtrisez la formule mathématique d'inclusion de la prime dans la valeur CIF/CIP. La procédure **PCRD** assure vos droits.",
+      "keywords": [
+        "8,33 DTS",
+        "ICC(A)",
+        "ICC(C)",
+        "CIP",
+        "CIF",
+        "PCRD"
+      ]
+    }
+  ]
+}

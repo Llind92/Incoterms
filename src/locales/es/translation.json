@@ -13,6 +13,7 @@
             "quiz": "Cuestionario de Práctica",
             "settings": "Ajustes",
             "practice": "Entrenamiento",
+            "tools": "Herramientas",
             "back": "Volver"
         },
         "dashboard": {
@@ -50,7 +51,9 @@
             "insurance_min_coverage": "Cobertura mínima :",
             "academic_notes": "Notas Pedagógicas (BTS CI)",
             "no_selection_title": "Ningún Incoterm seleccionado",
-            "no_selection_desc": "Haga clic en una regla en el menú izquierdo para ver los detalles."
+            "no_selection_desc": "Haga clic en una regla en el menú izquierdo para ver los detalles.",
+            "index_title": "Módulos E5 — MOI",
+            "index_subtitle": "Elija un módulo para acceder a las fichas de curso"
         },
         "calculator": {
             "title": "Calculadora de Precios de Exportación",

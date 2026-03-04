@@ -1,0 +1,131 @@
+{
+  "id": "risque-pays",
+  "title": "Le Risque Pays",
+  "subtitle": "Risques politique, économique et notation COFACE",
+  "examFrequency": "high",
+  "tags": [
+    "risque politique",
+    "risque économique",
+    "catastrophe naturelle",
+    "notation",
+    "COFACE",
+    "blocage de transfert"
+  ],
+  "relatedSheets": [
+    "assurance-credit-export",
+    "financements-export"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "Le risque pays (ou risque souverain) désigne la probabilité qu'un sinistre financier (non-paiement, non-transfert de fonds) survienne lors d'une opération d'exportation en raison du contexte macro-économique, politique, social ou naturel du pays de l'acheteur (et non en raison de la santé financière de l'acheteur lui-même).",
+      "keywords": [
+        "risque pays",
+        "probabilité",
+        "contexte macro-économique",
+        "pays de l'acheteur"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "1. Les Composantes du Risque Pays"
+    },
+    {
+      "type": "bullet_list",
+      "content": "Un impayé \"Risque Pays\" peut trouver sa source dans trois grandes catégories d'événements (force majeure) :",
+      "items": [
+        "**Le Risque Politique** : Décision d'un gouvernement étranger empêchant l'exécution du contrat (Guerre, révolution, embargo, nationalisation de l'entreprise cliente, retrait de licence d'importation).",
+        "**Le Risque de Non-Transfert (Blocage des fonds)** : Le client étranger a bien payé en monnaie locale auprès de sa banque, mais la Banque Centrale de son pays, par manque de devises étrangères, bloque le transfert des fonds vers la France.",
+        "**Le Risque Catastrophique** : Séisme, ouragan, inondation majeure, éruption volcanique détruisant l'usine du client ou les infrastructures portuaires."
+      ],
+      "keywords": [
+        "Risque Politique",
+        "Non-Transfert",
+        "Risque Catastrophique",
+        "embargo",
+        "Banque Centrale"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "2. La Notation du Risque Pays (COFACE & Bpifrance)"
+    },
+    {
+      "type": "table",
+      "content": "Les assureurs-crédit publics (Bpifrance) et privés (COFACE, Euler Hermes, Atradius) évaluent en permanence l'environnement des affaires des pays. Par exemple, la notation COFACE s'échelonne sur 8 crans :",
+      "headers": [
+        "Note",
+        "Niveau de Risque",
+        "Exemples de Pays (Indicatif)"
+      ],
+      "rows": [
+        [
+          "**A1**",
+          "Très faible",
+          "Norvège, Suisse, Allemagne"
+        ],
+        [
+          "**A2 / A3 / A4**",
+          "Faible à Convenable",
+          "France, Japon, Espagne"
+        ],
+        [
+          "**B / C**",
+          "Significatif à Élevé",
+          "Brésil, Turquie, Afrique du Sud"
+        ],
+        [
+          "**D / E**",
+          "Très élevé à Extrême",
+          "Afghanistan, Syrie, Yémen"
+        ]
+      ],
+      "keywords": [
+        "COFACE",
+        "Bpifrance",
+        "notation",
+        "A1",
+        "C",
+        "D",
+        "E"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Risque Commercial vs Pays",
+      "content": "Le BTS CI adore tester votre capacité à distinguer l'origine d'un impayé. Si l'importateur brésilien fait faillite (dépôt de bilan), c'est un risque **Commercial**. S'il ne peut pas vous payer parce que l'État brésilien a gelé les sorties de devises, c'est un risque **Pays**. Cette nuance est cruciale pour choisir la bonne assurance-crédit.",
+      "keywords": [
+        "Risque Commercial",
+        "faillite",
+        "gelé les sorties",
+        "origine de l'impayé"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "3. Se protéger contre le Risque Pays"
+    },
+    {
+      "type": "comparison",
+      "label": "Les instruments de couverture",
+      "content": "L'entreprise ne peut pas utiliser une simple assurance-transport ou une couverture de change pour contrer un risque pays. Elle doit recourir à :",
+      "items": [
+        "**Le Paiement d'Avance** : Demander un virement SWIFT 100% à la commande (souvent impossible commercialement).",
+        "**Le Crédit Documentaire Confirmé** : La banque française (notificatrice) ajoute son engagement de paiement à celui de la banque étrangère. Si le pays étranger bloque les fonds, c'est la banque française qui paiera l'exportateur.",
+        "**L'Assurance-Crédit Export** : Souscrire une police d'assurance (ex: Bpifrance Assurance Export pour les grands contrats, ou COFACE Globe pour les flux courants) qui inclut expressément la garantie du « Risque Politique ». Sans cette mention, seul le risque commercial est couvert."
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Dès qu'un sujet vous demande d'évaluer une zone géographique lointaine ou instable, cherchez la cotation COFACE (souvent fournie en annexe). Si la note est C, D ou E, vous DEVEZ recommander de sécuriser le paiement par un **CREDOC Irrévocable et Confirmé** ou par une **Assurance-Crédit Risque Politique**.",
+      "keywords": [
+        "cotation COFACE",
+        "C, D ou E",
+        "CREDOC Irrévocable et Confirmé",
+        "Assurance-Crédit"
+      ]
+    }
+  ]
+}

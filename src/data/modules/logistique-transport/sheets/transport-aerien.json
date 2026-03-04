@@ -1,0 +1,196 @@
+{
+  "id": "transport-aerien",
+  "title": "Le Transport Aérien",
+  "subtitle": "LTA, poids taxable, tarification IATA et ULD",
+  "examFrequency": "high",
+  "tags": [
+    "LTA",
+    "AWB",
+    "IATA",
+    "groupage",
+    "ULD",
+    "poids taxable"
+  ],
+  "relatedSheets": [
+    "transport-maritime",
+    "transport-routier"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "Le transport aérien est le mode le plus rapide et sûr, idéal pour les marchandises à forte valeur ajoutée, périssables ou urgentes. Il est régi par la convention IATA (International Air Transport Association) et souffre d'un coût très élevé et d'une forte empreinte carbone.",
+      "keywords": [
+        "IATA",
+        "transport aérien",
+        "valeur ajoutée"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Le Document de Transport : LTA (AWB)"
+    },
+    {
+      "type": "bullet_list",
+      "content": "La Lettre de Transport Aérien (LTA) ou Air Waybill (AWB) matérialise le contrat de transport. Contrairement au B/L maritime :",
+      "items": [
+        "**Non négociable** : Elle n'est pas un titre représentatif de la marchandise.",
+        "**Preuve de prise en charge** : Émise au moment où la compagnie aérienne reçoit la marchandise.",
+        "**MAWB vs HAWB** : En cas de groupage, la compagnie émet une Master AWB (MAWB) pour le groupeur, qui émet à son tour des House AWB (HAWB) pour chaque chargeur individuel."
+      ],
+      "keywords": [
+        "LTA",
+        "AWB",
+        "non négociable",
+        "MAWB",
+        "HAWB"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — AWB vs B/L dans le CREDOC",
+      "content": "Puisque la LTA n'est pas négociable, la marchandise est remise au destinataire désigné sur simple présentation de son identité, sans avoir besoin du document original. En crédit documentaire, ce n'est donc pas une garantie forte pour la banque (elle ne peut pas retenir la marchandise).",
+      "keywords": [
+        "CREDOC",
+        "non négociable",
+        "garantie"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Les Unités de Chargement (ULD)"
+    },
+    {
+      "type": "table",
+      "content": "Les Unit Load Devices (ULD) désignent les palettes et conteneurs spécifiques à l'aérien, dont les formes épousent le fuselage des avions.",
+      "headers": [
+        "Type",
+        "Description",
+        "Exemple"
+      ],
+      "rows": [
+        [
+          "**Palettes Avion**",
+          "Plaques d'aluminium résistantes sécurisées par des filets. Supposent des marchandises filmées.",
+          "Palettes de 10 pieds"
+        ],
+        [
+          "**Conteneurs Aériens**",
+          "Boîtes rigides aux pans coupés adaptées aux soutes (inférieures ou pont principal).",
+          "AKE (LD3) de 4,3 m3"
+        ],
+        [
+          "**Spécialisés**",
+          "Idéal pour denrées sous température dirigée ou animaux vivants.",
+          "Isothermes ou stalles"
+        ]
+      ],
+      "keywords": [
+        "ULD",
+        "AKE",
+        "LD3",
+        "fuselage",
+        "filets"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Règle de taxation : Le poids taxable aérien"
+    },
+    {
+      "type": "formula",
+      "label": "Le poids taxable",
+      "content": "Dans l'aérien, le transporteur taxe selon le principe d'équivalence : **1 Tonne = 6 m³** (soit approximativement 167 kg pour 1 m³). Le poids taxable retenu pour facturation est **le plus élevé** entre le poids réel (brut) et le poids théorique (volume / 6)."
+    },
+    {
+      "type": "bullet_list",
+      "content": "Pour calculer le poids taxable :",
+      "items": [
+        "**Poids Réel** : Masse brute de la marchandise expédiée (en T ou en kg).",
+        "**Volume** : Longueur x largeur x hauteur de l'ensemble (en m³).",
+        "**Poids Théorique** : Volume (en m³) divisé par 6 (pour obtenir des Tonnes).",
+        "**Conclusion** : Max(Poids Réel, Poids Théorique) converti en kg."
+      ],
+      "keywords": [
+        "poids taxable",
+        "poids théorique",
+        "poids réel",
+        "1 tonne = 6 m³"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "La Tarification IATA : Le Fret Aérien"
+    },
+    {
+      "type": "comparison",
+      "label": "Les différents types de tarifs du fret",
+      "content": "Il existe plusieurs grilles de tarification dans l'aérien, selon que l'on paie au kilo, à l'ULD ou sous accords spécifiques :",
+      "items": [
+        "**Tarif Général (Normal/Tranches)** : Tarif fixé par kg, dégressif selon des tranches de poids (ex: <45kg, 45-100kg, 100-300kg).",
+        "**Tarif Minimum (M)** : Forfait minimum facturé si le poids de l'envoi est très faible.",
+        "**Tarif ULD (Pivot)** : Forfait fixe appliqué pour la location d'un conteneur/palette jusqu'à un *poids pivot*. Tout kg supplémentaire (excédentaire) est facturé en sus.",
+        "**Tarifs Spéciaux (Co-Rates / Class Rates)** : Tarifs spécifiques (Commodity rates) préférentiels ou tarifs de classe avec majoration (animaux vivants) ou minoration (presse)."
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Règle du « Payant pour »",
+      "content": "La règle du \"Payant Pour\" s'applique aux tarifs par tranches de poids (dégressifs). Si le poids taxable de l'envoi est proche de la tranche supérieure, il est souvent mathématiquement plus avantageux de **payer pour le poids minimum de la tranche supérieure** à un tarif au kilo plus bas, plutôt que de payer au poids exact à un tarif plus élevé. Il faut toujours tester les deux calculs et garder le moins cher.",
+      "keywords": [
+        "Payant pour",
+        "tranche supérieure",
+        "avantageux"
+      ]
+    },
+    {
+      "type": "table",
+      "content": "Taxes et surcharges aériennes courantes (Facturées en sus du fret)",
+      "headers": [
+        "Acronyme",
+        "Signification",
+        "Application"
+      ],
+      "rows": [
+        [
+          "**MYC / FSC**",
+          "Fuel Surcharge",
+          "Surcharge carburant compensant la variation du kérosène moyennée mensuellement."
+        ],
+        [
+          "**SCA / SCC / SSC**",
+          "Security Surcharge",
+          "Taxe de sûreté (frais de passage aux rayons X ou scanners)."
+        ],
+        [
+          "**IRC / WRS**",
+          "War Risk Surcharge",
+          "Taxe risque de guerre perçue par la compagnie aérienne depuis 2001."
+        ],
+        [
+          "**AWA**",
+          "AWB Fee",
+          "Frais d'émission de la Lettre de Transport Aérien (LTA)."
+        ]
+      ],
+      "keywords": [
+        "FSC",
+        "MYC",
+        "SCA",
+        "IRC",
+        "surcharges"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Le candidat au BTS CI doit impérativement savoir calculer le **poids théorique (Volume / 6)**, le comparer au poids réel pour déterminer le **poids taxable**, et appliquer systématiquement la méthode mathématique de la **Règle du Payant Pour** si l'énoncé propose des tranches de tarifs.",
+      "keywords": [
+        "poids taxable",
+        "Volume / 6",
+        "Payant Pour",
+        "surcharges"
+      ]
+    }
+  ]
+}

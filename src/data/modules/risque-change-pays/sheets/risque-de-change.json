@@ -1,0 +1,135 @@
+{
+  "id": "risque-de-change",
+  "title": "Le Risque de Change",
+  "subtitle": "Position de change, cotation et calcul de gain/perte",
+  "examFrequency": "very_high",
+  "tags": [
+    "risque de change",
+    "position longue",
+    "position courte",
+    "cotation au certain",
+    "cours comptant",
+    "cours à terme"
+  ],
+  "relatedSheets": [
+    "couverture-change",
+    "risque-pays"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "Le risque de change est le risque de variation du cours d'une devise par rapport à la monnaie nationale (l'Euro pour la France), entre la date de conclusion du contrat commercial et la date du règlement financier effectif. Il ne concerne QUE les facturations libellées en devises étrangères.",
+      "keywords": [
+        "risque de change",
+        "variation du cours",
+        "devise",
+        "monnaie nationale"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "La Position de Change de l'Entreprise"
+    },
+    {
+      "type": "comparison",
+      "label": "Position Longue vs Position Courte",
+      "content": "Une entreprise détenant des créances ou des dettes en devises est dite « en position de change ». Son risque dépend de sa posture (Exportateur ou Importateur).",
+      "items": [
+        "**Position Longue (Exportateur)** : L'entreprise détient une créance (elle va recevoir des devises). Son risque est la **baisse** (dépréciation) de la devise. Si la devise baisse, elle recevra moins d'Euros.",
+        "**Position Courte (Importateur)** : L'entreprise détient une dette (elle doit payer en devises). Son risque est la **hausse** (appréciation) de la devise. Si la devise monte, elle devra décaisser plus d'Euros pour acheter les devises."
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Systèmes de Cotation des Devises"
+    },
+    {
+      "type": "table",
+      "content": "Les cours de change sur le marché des devises (Forex) s'expriment selon deux méthodes :",
+      "headers": [
+        "Cotation",
+        "Définition",
+        "Exemple",
+        "Zone d'application"
+      ],
+      "rows": [
+        [
+          "**Au Certain**",
+          "1 unité de monnaie nationale = X unités de devise étrangère.",
+          "1 EUR = 1,12 USD",
+          "Zone Euro, Royaume-Uni, Australie"
+        ],
+        [
+          "**À l'Incertain**",
+          "1 unité de devise étrangère = X unités de monnaie nationale.",
+          "1 USD = 0,89 EUR",
+          "Majorité des pays hors zone Euro (USA, Japon)"
+        ]
+      ],
+      "keywords": [
+        "Au Certain",
+        "À l'Incertain",
+        "Forex",
+        "EUR/USD"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Achat ou Vente de devises ?",
+      "content": "Lorsqu'une banque vous donne une fourchette de cotation (ex: 1 EUR = 1,1100 / 1,1150 USD), appliquez la règle d'or : « La banque gagne toujours ». En cotation au certain (EUR/USD), si vous êtes EXPORTATEUR (vous vendez des USD à la banque), la banque divise par le cours le plus HAUT (1,1150) pour vous donner moins d'Euros. Si vous êtes IMPORTATEUR (vous achetez des USD à la banque), la banque divise par le cours le plus BAS (1,1100) pour vous faire payer plus d'Euros.",
+      "keywords": [
+        "Règle d'or",
+        "La banque gagne toujours",
+        "cotation au certain",
+        "fourchette"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Cours Comptant (Spot) et Cours à Terme (Forward)"
+    },
+    {
+      "type": "bullet_list",
+      "content": "Le marché des changes propose deux grands types de cours :",
+      "items": [
+        "**Le Cours Comptant (Spot)** : C'est le cours applicable immédiatement (livraison des devises sous 48h). C'est le cours du jour J.",
+        "**Le Cours à Terme (Forward)** : C'est le cours négocié aujourd'hui pour une livraison différée de devises (ex: dans 3 mois). Il intègre un différentiel de taux d'intérêt entre les deux devises (Report ou Déport)."
+      ],
+      "keywords": [
+        "Cours Comptant",
+        "Spot",
+        "Cours à Terme",
+        "Forward",
+        "Report",
+        "Déport"
+      ]
+    },
+    {
+      "type": "formula",
+      "label": "Calcul de la Perte ou du Gain de Change",
+      "content": "En fin d'opération (si l'entreprise ne s'est pas couverte), un écart de change apparaît entre ce qui était prévu à la facturation (Cours Spot de J0) et ce qui s'est réellement passé au paiement (Cours Spot de J+60).\n\nExportateur (Créance en USD, cotation au certain) :\nSi le cours monte (1 EUR = 1,20 USD vs 1,10 USD avant) -> Il reçoit moins d'Euros -> **Perte de change**.\nSi le cours baisse (1 EUR = 1,05 USD vs 1,10 USD avant) -> Il reçoit plus d'Euros -> **Gain de change**."
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Risque nul ?",
+      "content": "Si un cas vous demande d'évaluer le risque de change d'une entreprise française facturant à son client américain 10 000 EUROS... La réponse est : Le risque de change est **NUL** pour l'entreprise française. C'est l'Américain qui supporte le risque. Piège classique !",
+      "keywords": [
+        "NUL",
+        "facturation en Euros"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Retenez la posture : L'exportateur est en position **longue** (il craint la baisse de la devise). L'importateur est en position **courte** (il craint la hausse de la devise). En cotation \"au certain\" (zone Euro), c'est l'inverse mathématiquement : l'exportateur craint que le chiffre du cours (ex: EUR/USD) ne monte. Enfin, n'oubliez jamais la marge de la banque lors de vos conversions.",
+      "keywords": [
+        "position longue",
+        "position courte",
+        "marge de la banque",
+        "baisse de la devise",
+        "hausse de la devise"
+      ]
+    }
+  ]
+}

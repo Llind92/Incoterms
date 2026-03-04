@@ -1,0 +1,8 @@
+{
+  "id": "incoterms-supply-chain",
+  "order": 5,
+  "title": "Incoterms & Supply Chain",
+  "description": "Les 11 Incoterms CCI 2020, cascade des prix, valeur en douane",
+  "icon": "Globe",
+  "color": "cyan"
+}

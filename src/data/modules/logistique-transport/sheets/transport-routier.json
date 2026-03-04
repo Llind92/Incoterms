@@ -1,0 +1,133 @@
+{
+  "id": "transport-routier",
+  "title": "Le Transport Routier",
+  "subtitle": "CMR, lettre de voiture, poids taxable et indemnisation",
+  "examFrequency": "medium",
+  "tags": [
+    "CMR",
+    "lettre de voiture",
+    "cabotage",
+    "poids taxable",
+    "DTS"
+  ],
+  "relatedSheets": [
+    "transport-maritime",
+    "transport-aerien",
+    "assurance-transport"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "Le transport routier international est régi par la Convention de Genève de 1956 (Convention relative au contrat de transport international de Marchandises par Route, ou CMR). Il offre une grande flexibilité (« porte-à-porte ») et réduit le nombre de ruptures de charge.",
+      "keywords": [
+        "Convention de Genève",
+        "CMR",
+        "porte-à-porte",
+        "ruptures de charge"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Le Document de Transport : Lettre de Voiture CMR"
+    },
+    {
+      "type": "bullet_list",
+      "content": "La Lettre de Voiture internationale CMR matérialise le contrat de transport routier. Ses caractéristiques :",
+      "items": [
+        "**Non négociable** : Ne représente pas un titre de propriété de la marchandise.",
+        "**Établie en 3 exemplaires originaux** : Pour l'expéditeur, pour le transporteur (qui accompagne la marchandise), et pour le destinataire.",
+        "**Mentions obligatoires** : Coordonnées (expéditeur/transporteur/destinataire), lieux de chargement/livraison, caractéristiques des colis, plaques d'immatriculation."
+      ],
+      "keywords": [
+        "Lettre de voiture",
+        "CMR",
+        "non négociable",
+        "3 exemplaires"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Règle de taxation : Le poids taxable routier"
+    },
+    {
+      "type": "formula",
+      "label": "Le poids taxable en transport routier",
+      "content": "L'équivalence dans le transport routier est **1 Tonne = 3 m³** (contrairement à l'aérien où 1T=6m³ et au maritime où 1T=1m³). Le poids taxable est le plus élevé entre le poids réel (brut) mis en Tonnes et le poids théorique (Volume en m³ / 3)."
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Calcul du Poids Théorique",
+      "content": "Pour calculer le poids théorique routier, vous devez diviser le volume total en m³ par 3 pour obtenir un résultat directement en **Tonnes**, et non en kilos. Si votre volume est de 11,76 m³, le poids théorique est de 11,76 / 3 = 3,92 Tonnes.",
+      "keywords": [
+        "Volume en m³",
+        "diviser par 3",
+        "Tonnes"
+      ]
+    },
+    {
+      "type": "table",
+      "content": "Calculatrice de comparaison des poids taxables",
+      "headers": [
+        "Mode de Transport",
+        "Règle d'équivalence",
+        "Calcul du Poids Théorique"
+      ],
+      "rows": [
+        [
+          "**Routier**",
+          "1 Tonne = 3 m³",
+          "Volume (m³) ÷ 3"
+        ],
+        [
+          "**Aérien**",
+          "1 Tonne = 6 m³",
+          "Volume (m³) ÷ 6"
+        ],
+        [
+          "**Maritime**",
+          "1 Tonne = 1 m³",
+          "Volume (m³)"
+        ]
+      ],
+      "keywords": [
+        "Routier",
+        "Aérien",
+        "Maritime",
+        "équivalence"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Limites de responsabilité et Indemnisation"
+    },
+    {
+      "type": "comparison",
+      "label": "Indemnisation légale en cas de sinistre",
+      "content": "En cas d'avarie ou de perte reconnue sous sa responsabilité, la convention CMR limite l'indemnisation versée par le transporteur.",
+      "items": [
+        "**Plafond d'indemnisation CMR** : Fixé à **8,33 DTS** (Droits de Tirage Spéciaux) par kilogramme de poids brut manquant ou avarié.",
+        "**Intérêt d'une assurance tiers-chargeur** : L'indemnisation légale étant souvent inférieure à la valeur réelle « ad valorem » de la marchandise, il est recommandé de souscrire une assurance tous risques complémentaire."
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Surcharges Routières",
+      "content": "Dans une facture de transport routier, faites attention à toujours imputer la **Surcharge Gazole** (répercussion des prix du carburant) et les éventuelles taxes kilométriques ou éco-taxes dans le coût total du transport lors de l'élaboration de votre tableau de prix de revient.",
+      "keywords": [
+        "Surcharge Gazole",
+        "prix de revient"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Retenez l'équivalence **1T = 3m³**, la lettre de voiture **CMR** (non négociable), et le plafond d'indemnisation de **8,33 DTS/kg**.",
+      "keywords": [
+        "1T = 3m³",
+        "CMR",
+        "8,33 DTS"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "remise-documentaire",
+  "title": "La Remise Documentaire (REMDOC)",
+  "subtitle": "RUE 522, D/P (Paiement) vs D/A (Acceptation)",
+  "examFrequency": "high",
+  "tags": [
+    "REMDOC",
+    "D/P",
+    "D/A",
+    "RUE 522",
+    "banque remettante",
+    "banque présentatrice"
+  ],
+  "relatedSheets": [
+    "credoc-mecanisme",
+    "virement-swift"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "La remise documentaire (REMDOC) est une technique de paiement par laquelle un exportateur mandate sa banque (banque remettante) pour remettre les documents représentatifs de la marchandise à l'acheteur via une banque correspondante (banque présentatrice), contre paiement (D/P) ou acceptation d'une traite (D/A). Elle est régie par les **RUE 522** (Règles Uniformes relatives aux Encaissements) de la CCI.",
+      "keywords": [
+        "remise documentaire",
+        "RUE 522",
+        "banque remettante",
+        "banque présentatrice"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Les 4 acteurs de la Remise Documentaire"
+    },
+    {
+      "type": "bullet_list",
+      "content": "Le circuit documentaire fait intervenir quatre parties distinctes (à ne pas confondre avec le CREDOC) :",
+      "items": [
+        "**Le commettant (Donneur d'ordre)** : L'exportateur / Vendeur qui initie la procédure.",
+        "**La banque remettante** : La banque du vendeur, qui reçoit les documents et les transmet à la banque de l'acheteur.",
+        "**La banque présentatrice** : La banque de l'acheteur, qui présente les documents au tiré et encaisse les fonds.",
+        "**Le tiré** : L'importateur / Acheteur à qui l'on réclame le paiement."
+      ],
+      "keywords": [
+        "commettant",
+        "banque remettante",
+        "banque présentatrice",
+        "tiré"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Les deux modes de remise : D/P et D/A"
+    },
+    {
+      "type": "table",
+      "content": "La remise des documents à l'acheteur s'effectue selon deux modalités d'encaissement (mentionnées dans la liasse) :",
+      "headers": [
+        "Type",
+        "Signification",
+        "Mécanisme"
+      ],
+      "rows": [
+        [
+          "**D/P**",
+          "Documents against Payment (Documents contre paiement)",
+          "La banque présentatrice ne remet les documents à l'importateur que s'il **paye immédiatement** le montant de la facture (paiement à vue)."
+        ],
+        [
+          "**D/A**",
+          "Documents against Acceptance (Documents contre acceptation)",
+          "La banque remet les documents à l'importateur s'il **accepte une traite** (lettre de change) prévoyant un paiement différé (ex: à 60 jours)."
+        ]
+      ],
+      "keywords": [
+        "D/P",
+        "D/A",
+        "paiement",
+        "acceptation",
+        "traite"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Risques du D/A",
+      "content": "Le mode **D/A** est très risqué pour l'exportateur ! En effet, l'acheteur récupère les documents (donc la marchandise) en signant simplement une traite. S'il fait faillite ou refuse de payer à l'échéance des 60 jours, le vendeur a perdu sa marchandise ET son argent. Les banques ne garantissent **aucun** paiement dans une remise documentaire.",
+      "keywords": [
+        "D/A",
+        "risqué",
+        "aucun",
+        "faillite"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Comparaison : REMDOC vs CREDOC"
+    },
+    {
+      "type": "comparison",
+      "label": "Quelle technique choisir ?",
+      "content": "Il est crucial pour le BTS CI de savoir recommander la bonne technique selon la confiance et le coût.",
+      "items": [
+        "**Engagement bancaire** : NUL en remise documentaire (les banques sont de simples boîtes aux lettres). FORT en crédit documentaire (engagement irrévocable de la banque émettrice).",
+        "**Coût** : Faible (quelques dizaines/centaines d'euros pour la REMDOC) contre très élevé (commissions en pourcentage pour le CREDOC).",
+        "**Cible** : REMDOC = Client de confiance, relation établie, zone géographique stable. CREDOC = Nouveau client, risque d'impayé fort, risque pays élevé."
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — \"Banque notificatrice\"",
+      "content": "Le terme \"banque notificatrice\" est exclusif au **crédit documentaire**. En remise documentaire, parlez de **banque présentatrice**. De même, au lieu de \"bénéficiaire\", parlez de **commettant**.",
+      "keywords": [
+        "banque notificatrice",
+        "banque présentatrice",
+        "commettant"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "La Remise Documentaire (RUE 522) est un compromis situé entre le virement simple (trop de risque vendeur) et le CREDOC (trop coûteux). Elle utilise la force de rétention des documents (D/P) ou la reconnaissance de dette (D/A) pour inciter au paiement, mais **n'offre aucune garantie bancaire**. Le B/L devra idéalement être émis à l'ordre de la banque pour garder le contrôle de la marchandise.",
+      "keywords": [
+        "RUE 522",
+        "D/P",
+        "D/A",
+        "aucune garantie bancaire",
+        "rétention des documents"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "id": "triptyque-eov",
+  "title": "Le Triptyque Douanier (EOV)",
+  "subtitle": "Espèce, Origine et Valeur (Art. 70 CDU, TARIC)",
+  "examFrequency": "very_high",
+  "tags": [
+    "espèce tarifaire",
+    "origine",
+    "valeur en douane",
+    "SH",
+    "nomenclature combinée",
+    "CDU",
+    "TARIC",
+    "EOV"
+  ],
+  "relatedSheets": [
+    "dette-douaniere",
+    "emebi",
+    "incoterms2020Data"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "Toute déclaration en douane (sur le DAU ou son équivalent dématérialisé) repose sur le triptyque « Espèce, Origine, Valeur » (ou EOV). Ces trois éléments permettent à l'administration douanière de déterminer le traitement tarifaire applicable à une marchandise, le montant des droits de douane, et d'assurer le contrôle du commerce extérieur.",
+      "keywords": [
+        "triptyque",
+        "EOV",
+        "Espèce",
+        "Origine",
+        "Valeur",
+        "DAU"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "1. L'Espèce Tarifaire (Code Douanier)"
+    },
+    {
+      "type": "bullet_list",
+      "content": "L'espèce tarifaire est la dénomination de la marchandise selon la nomenclature douanière. Elle se base sur un système de codification international :",
+      "items": [
+        "**Le SH (Système Harmonisé)** : Code à 6 chiffres utilisé mondialement, géré par l'OMD.",
+        "**La NC (Nomenclature Combinée)** : Code à 8 chiffres (SH + 2) spécifique à l'Union Européenne. Utilisée pour la déclaration d'échanges intracommunautaires (DEB/EMEBI).",
+        "**Le TARIC (Tarif Intégré des Communautés Européennes)** : Code complet à 10 chiffres (NC + 2) indispensable pour l'importation. Il détermine les droits de douane, taxes et mesures de politique commerciale (anti-dumping, quotas)."
+      ],
+      "keywords": [
+        "Système Harmonisé",
+        "SH",
+        "Nomenclature Combinée",
+        "NC8",
+        "TARIC",
+        "10 chiffres"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Renseignement Tarifaire Contraignant (RTC)",
+      "content": "Si une entreprise a un doute sur le code douanier (espèce) à appliquer à son produit complexe, elle peut demander un RTC (Renseignement Tarifaire Contraignant) à l'administration. Ce RTC la sécurise et lie la douane pour une durée de 3 ans (depuis le CDU). Ne confondez pas RTC (Espèce) avec RCO (Renseignement Contraignant sur l'Origine).",
+      "keywords": [
+        "RTC",
+        "Renseignement Tarifaire Contraignant",
+        "3 ans",
+        "RCO"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "2. L'Origine de la marchandise"
+    },
+    {
+      "type": "table",
+      "content": "L'origine détermine l'application de taux réduits de droits de douane en cas d'accords préférentiels, ou l'application de droits anti-dumping. Ne confondez jamais « origine » avec « provenance ».",
+      "headers": [
+        "Type d'Origine",
+        "Définition",
+        "Exemple / Justificatif"
+      ],
+      "rows": [
+        [
+          "**Origine Non Préférentielle**",
+          "Sert pour appliquer le Tarif Douanier Commun (TDC) normal et les quotas.",
+          "Certificat d'origine de droit commun visé par la CCI."
+        ],
+        [
+          "**Origine Préférentielle**",
+          "Accord de libre-échange permettant une exonération ou réduction des droits.",
+          "Certificat EUR.1, EUR-MED, ou Déclaration sur facture (Statut EA/EE)"
+        ],
+        [
+          "**Provenance**",
+          "Lieu géographique d'où la marchandise a été expédiée en dernier.",
+          "Une veste expédiée de Suisse (provenance) mais fabriquée en Chine (origine)."
+        ]
+      ],
+      "keywords": [
+        "origine",
+        "provenance",
+        "EUR.1",
+        "TDC",
+        "préférentielle"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "3. La Valeur en Douane (Article 70 du CDU)"
+    },
+    {
+      "type": "comparison",
+      "label": "Base de calcul de la Valeur en Douane (VD)",
+      "content": "L'article 70 du CDU (Code des Douanes de l'Union) définit la VD à l'importation comme étant la valeur transactionnelle (prix payé ou à payer pour les marchandises) augmentée des frais liés à l'acheminement de la marchandise jusqu'au premier point d'entrée sur le territoire douanier de l'UE.",
+      "items": [
+        "**À INTÉGRER (À RAJOUTER)** : Frais de transport, d'assurance et de manutention engagés jusqu'au premier point d'introduction dans l'UE.",
+        "**À EXCLURE (À DÉDUIRE)** : Frais de transport ou de manutention engagés APRÈS le point d'introduction dans l'UE."
+      ]
+    },
+    {
+      "type": "formula",
+      "label": "Valeur en Douane selon les Incoterms",
+      "content": "Le point de frontière de l'UE (par exemple : Le Havre maritime ou Roissy CDG aérien) dicte le calcul :\nVD = Valeur FOB (export) + Fret Extérieur UE + Assurance Extérieure UE.\nVD = Valeur CIF ou CIP (jusqu'à la frontière UE).\nVD = DAP (Destination en UE) - Frais de transport intérieur (si facturés distinctement)."
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Transporteur unique et DAP",
+      "content": "Si une facture est établie en DAP Lyon et que le transporteur unique facture 2000 € de Shanghai à Lyon sans distinguer la part du fret extérieur (Shanghai -> Fos) et intérieur (Fos -> Lyon), alors l'intégralité du fret est taxée. Pour déduire le fret post-acheminement de la VD, il **doit être distinctement précisé** sur la facture.",
+      "keywords": [
+        "Distinctement",
+        "DAP",
+        "fret post-acheminement",
+        "Valeur en Douane"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Le triptyque Espèce (TARIC 10 chiffres, RTC), Origine (Préférentielle EUR.1 vs Non Préférentielle), et Valeur (Valeur frontière UE selon l'Art. 70 CDU) est le socle de toute déclaration douanière. Ne confondez pas origine et provenance, et n'oubliez jamais de déduire les frais intérieurs de la VD (s'ils sont distingués).",
+      "keywords": [
+        "TARIC",
+        "10 chiffres",
+        "RTC",
+        "EUR.1",
+        "Valeur frontière",
+        "Art. 70 CDU"
+      ]
+    }
+  ]
+}

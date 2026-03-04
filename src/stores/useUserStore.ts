@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { tauriStorage } from '../lib/persistence';
+import type { ModuleId, ModuleProgress } from '../types/modules';
 
 // Typage des statistiques et de la progression
 export interface UserStats {
@@ -8,6 +9,7 @@ export interface UserStats {
     totalAnswered: number;
     modulesCompleted: string[];
     lastQuizDate: string | null;
+    moduleProgress: Partial<Record<ModuleId, ModuleProgress>>;
 }
 
 // Séparation de l'état (State)
@@ -21,6 +23,8 @@ interface UserState {
 // Séparation des actions (Actions)
 interface UserActions {
     addScore: (correct: number, total: number) => void;
+    addModuleScore: (moduleId: ModuleId, correct: number, total: number) => void;
+    markSheetViewed: (moduleId: ModuleId, sheetId: string) => void;
     markModuleCompleted: (moduleId: string) => void;
     setLanguage: (lang: 'fr' | 'es') => void;
     setTheme: (theme: 'light' | 'dark' | 'system') => void;
@@ -36,6 +40,16 @@ const initialStats: UserStats = {
     totalAnswered: 0,
     modulesCompleted: [],
     lastQuizDate: null,
+    moduleProgress: {},
+};
+
+const getModuleProgress = (stats: UserStats, moduleId: ModuleId): ModuleProgress => {
+    return stats.moduleProgress[moduleId] ?? {
+        questionsAnswered: 0,
+        questionsCorrect: 0,
+        sheetsViewed: [],
+        lastActivityDate: null,
+    };
 };
 
 // Création du store persisté via Tauri Store Plugin
@@ -58,6 +72,47 @@ export const useUserStore = create<UserStore>()(
                         lastQuizDate: new Date().toISOString(),
                     },
                 })),
+
+            addModuleScore: (moduleId, correct, total) =>
+                set((state) => {
+                    const prev = getModuleProgress(state.stats, moduleId);
+                    return {
+                        stats: {
+                            ...state.stats,
+                            totalCorrect: state.stats.totalCorrect + correct,
+                            totalAnswered: state.stats.totalAnswered + total,
+                            lastQuizDate: new Date().toISOString(),
+                            moduleProgress: {
+                                ...state.stats.moduleProgress,
+                                [moduleId]: {
+                                    ...prev,
+                                    questionsAnswered: prev.questionsAnswered + total,
+                                    questionsCorrect: prev.questionsCorrect + correct,
+                                    lastActivityDate: new Date().toISOString(),
+                                },
+                            },
+                        },
+                    };
+                }),
+
+            markSheetViewed: (moduleId, sheetId) =>
+                set((state) => {
+                    const prev = getModuleProgress(state.stats, moduleId);
+                    if (prev.sheetsViewed.includes(sheetId)) return state;
+                    return {
+                        stats: {
+                            ...state.stats,
+                            moduleProgress: {
+                                ...state.stats.moduleProgress,
+                                [moduleId]: {
+                                    ...prev,
+                                    sheetsViewed: [...prev.sheetsViewed, sheetId],
+                                    lastActivityDate: new Date().toISOString(),
+                                },
+                            },
+                        },
+                    };
+                }),
 
             markModuleCompleted: (moduleId) =>
                 set((state) => {
@@ -93,6 +148,10 @@ export const useUserStore = create<UserStore>()(
                 theme: state.theme,
             }),
             onRehydrateStorage: () => (state) => {
+                // Migration : s'assurer que moduleProgress existe après hydratation
+                if (state && !state.stats.moduleProgress) {
+                    state.stats.moduleProgress = {};
+                }
                 state?.setHasHydrated(true);
             },
         }

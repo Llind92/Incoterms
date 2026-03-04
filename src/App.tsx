@@ -7,6 +7,8 @@ import { DashboardView } from './views/DashboardView';
 import { QuizView } from './views/QuizView';
 import { PriceCalculator } from './components/shared/PriceCalculator';
 import { CourseView } from './views/CourseView';
+import { CourseIndexView } from './views/CourseIndexView';
+import { ModuleCourseView } from './views/ModuleCourseView';
 import { SettingsView } from './views/SettingsView';
 import { CascadePracticeView } from './views/CascadePracticeView';
 import { useUserStore } from './stores/useUserStore';
@@ -37,9 +39,18 @@ function App() {
                         <Route index element={<DashboardView />} />
                         <Route path="calculator" element={<PriceCalculator />} />
                         <Route path="quiz" element={<QuizView />} />
-                        <Route path="course" element={<CourseView />} />
                         <Route path="practice" element={<CascadePracticeView />} />
                         <Route path="settings" element={<SettingsView />} />
+
+                        {/* Cours — index des modules */}
+                        <Route path="course" element={<CourseIndexView />} />
+
+                        {/* Cours — Incoterms (vue dédiée existante) */}
+                        <Route path="course/incoterms-supply-chain" element={<CourseView />} />
+
+                        {/* Cours — Vue dynamique par module */}
+                        <Route path="course/:moduleId" element={<ModuleCourseView />} />
+                        <Route path="course/:moduleId/:sheetId" element={<ModuleCourseView />} />
 
                         {/* Fallback (404 catch-all) */}
                         <Route path="*" element={<Navigate to="/" replace />} />

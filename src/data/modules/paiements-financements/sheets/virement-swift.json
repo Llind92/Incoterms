@@ -1,0 +1,116 @@
+{
+  "id": "virement-swift",
+  "title": "Le Virement International",
+  "subtitle": "Le réseau SWIFT (MT103), SEPA et répartition des frais",
+  "examFrequency": "medium",
+  "tags": [
+    "SWIFT",
+    "MT103",
+    "MT700",
+    "virement",
+    "SEPA",
+    "OUR",
+    "BEN",
+    "SHA"
+  ],
+  "relatedSheets": [
+    "remise-documentaire",
+    "credoc-mecanisme"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "Le virement international est l'ordre donné par un débiteur (l'importateur) à sa banque de transférer des fonds sur le compte de son créancier (l'exportateur). C'est le moyen de paiement le plus simple, rapide et le moins cher, mais il n'offre aucune garantie de paiement à l'exportateur (sauf s'il est exigé d'avance).",
+      "keywords": [
+        "virement international",
+        "aucune garantie",
+        "débiteur",
+        "créancier"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Les réseaux de transfert"
+    },
+    {
+      "type": "table",
+      "content": "Deux grands réseaux cohabitent selon la zone géographique de l'acheteur :",
+      "headers": [
+        "Réseau",
+        "Zone Géographique",
+        "Caractéristiques"
+      ],
+      "rows": [
+        [
+          "**SEPA** (Single Euro Payments Area)",
+          "Union Européenne + Islande, Norvège, Suisse...",
+          "Exécuté en 1 jour ouvrable, coût nul ou très faible, transfert en Euros uniquement. Code IBAN requis."
+        ],
+        [
+          "**SWIFT** (Society for Worldwide Interbank Financial Telecommunication)",
+          "Reste du monde (International)",
+          "Messagerie interbancaire sécurisée. Exécution en 2 à 5 jours. Frais variables. Réseau mondial d'identification des banques (code BIC ou SWIFT)."
+        ]
+      ],
+      "keywords": [
+        "SEPA",
+        "SWIFT",
+        "IBAN",
+        "BIC",
+        "messagerie interbancaire"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Types de messages SWIFT",
+      "content": "La messagerie SWIFT utilise des codes normalisés pour ses messages. Le **MT103** (Message Type 103) est le message standard pour un virement international (transfert de fonds). Ne le confondez pas avec le **MT700** qui est le message d'ouverture spécifique d'un Crédit Documentaire (CREDOC).",
+      "keywords": [
+        "MT103",
+        "MT700",
+        "CREDOC",
+        "virement"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "La Répartition des Frais Bancaires (SWIFT)"
+    },
+    {
+      "type": "bullet_list",
+      "content": "Contrairement au SEPA (frais partagés par défaut), un virement SWIFT implique des frais de transfert importants (commissions de change, frais de correspondants). L'ordre de virement doit préciser qui paie quoi :",
+      "items": [
+        "**OUR (À la charge du donneur d'ordre)** : L'importateur paie tous les frais bancaires (sa banque + banque du vendeur). L'exportateur reçoit le montant exact facturé.",
+        "**BEN (À la charge du bénéficiaire)** : L'exportateur supporte tous les frais. Ils seront déduits du montant reçu (il recevra moins que le montant facturé).",
+        "**SHA (Shared / Partagés)** : Mode par défaut. L'importateur paie les frais de sa banque, l'exportateur paie les frais de la sienne. L'exportateur reçoit la somme amputée de ses propres frais de banque."
+      ],
+      "keywords": [
+        "OUR",
+        "BEN",
+        "SHA",
+        "frais bancaires",
+        "partagés"
+      ]
+    },
+    {
+      "type": "comparison",
+      "label": "Sécurité du paiement (Vendeur)",
+      "content": "La sécurité pour l'exportateur dépend exclusivement de la date du virement :",
+      "items": [
+        "**Virement d'avance (Cash in advance)** : Sécurité 100%. L'exportateur expédie la marchandise uniquement après réception des fonds. (Souvent inacceptable pour l'acheteur car il prend tous les risques).",
+        "**Virement à réception (ou à 60 jours)** : Sécurité 0%. L'exportateur expédie d'abord la marchandise et espère que l'acheteur émettra son ordre de virement. Risque total d'impayé."
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Le virement SWIFT est rapide et peu coûteux mais ne garantit jamais le paiement (sauf si fait d'avance). Mémorisez que **MT103** = Virement SWIFT, et retenez la règle de facturation **OUR** pour être certain que le vendeur recevra le montant net intégral de sa facture sans déduction de frais.",
+      "keywords": [
+        "MT103",
+        "OUR",
+        "garantit jamais",
+        "virement d'avance"
+      ]
+    }
+  ]
+}

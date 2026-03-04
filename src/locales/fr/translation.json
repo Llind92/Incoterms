@@ -13,6 +13,7 @@
             "quiz": "Quiz d'Entraînement",
             "settings": "Réglages",
             "practice": "Entraînement",
+            "tools": "Outils",
             "back": "Retour"
         },
         "dashboard": {
@@ -50,7 +51,9 @@
             "insurance_min_coverage": "Couverture minimum :",
             "academic_notes": "Notes Pédagogiques (BTS CI)",
             "no_selection_title": "Aucun Incoterm sélectionné",
-            "no_selection_desc": "Cliquez sur une règle dans le menu de gauche pour afficher les détails."
+            "no_selection_desc": "Cliquez sur une règle dans le menu de gauche pour afficher les détails.",
+            "index_title": "Modules E5 — MOI",
+            "index_subtitle": "Choisissez un module pour accéder aux fiches de cours"
         },
         "calculator": {
             "title": "Calculateur de Prix Export",

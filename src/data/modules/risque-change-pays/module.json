@@ -1,0 +1,8 @@
+{
+  "id": "risque-change-pays",
+  "order": 4,
+  "title": "Risque de Change & Risque Pays",
+  "description": "Couverture à terme, options de change, assurance-crédit export",
+  "icon": "TrendingUp",
+  "color": "amber"
+}

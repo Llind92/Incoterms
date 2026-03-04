@@ -1,0 +1,150 @@
+{
+  "id": "dette-douaniere",
+  "title": "Calcul de la Dette Douanière",
+  "subtitle": "Cascade de calcul : Valeur en Douane, Droits et TVA",
+  "examFrequency": "very_high",
+  "tags": [
+    "droits de douane",
+    "TVA",
+    "accises",
+    "CDU",
+    "liquidation douanière",
+    "VD",
+    "DD",
+    "assiette",
+    "anti-dumping",
+    "SPG"
+  ],
+  "relatedSheets": [
+    "triptyque-eov",
+    "emebi"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "La dette douanière désigne l'obligation pour une personne de payer les droits à l'importation (ou à l'exportation) et les taxes (TVA, accises) applicables à des marchandises spécifiques selon la législation douanière en vigueur. Son calcul s'appelle la « liquidation douanière » et respecte une cascade mathématique très stricte.",
+      "keywords": [
+        "dette douanière",
+        "liquidation douanière",
+        "droits à l'importation",
+        "taxes"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "La Cascade de Liquidation Douanière"
+    },
+    {
+      "type": "numbered_list",
+      "content": "En examen, vous devez TOUJOURS respecter cet ordre de calcul des 4 grandes étapes :",
+      "items": [
+        "**Valeur en Douane (VD)** : Valeur de la marchandise au premier point d'entrée dans l'UE (cf. Art 70 CDU).",
+        "**Droits de Douane (DD)** : Se calculent SUR la Valeur en Douane. [DD = VD × Taux de droits de douane].",
+        "**Assiette de la TVA** : Base soumise à la TVA. Elle inclut la VD + les DD + les frais de transport post-acheminement jusqu'au lieu de destination final dans l'UE.",
+        "**TVA à payer** : Se calcule SUR l'Assiette de la TVA. [TVA = Assiette TVA × Taux de TVA (ex: 20%)]."
+      ],
+      "keywords": [
+        "Valeur en Douane",
+        "Droits de Douane",
+        "Assiette de la TVA",
+        "TVA à payer",
+        "cascade"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — L'Assiette de la TVA",
+      "content": "L'erreur la plus fréquente (et lourdement sanctionnée) est d'oublier d'intégrer les Droits de Douane (DD) OU le transport intérieur (post-acheminement UE) avant de calculer la TVA. La fórmula exacte est : Assiette TVA = VD + DD + Frais accessoires UE + Taxes parafiscales éventuelles.",
+      "keywords": [
+        "Assiette TVA",
+        "transport intérieur",
+        "post-acheminement",
+        "DD"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Types de Droits de Douane"
+    },
+    {
+      "type": "table",
+      "content": "Les droits de douane fixés par le TARIC peuvent prendre différentes formes :",
+      "headers": [
+        "Type de Droit",
+        "Mode de Calcul",
+        "Exemple d'application"
+      ],
+      "rows": [
+        [
+          "**Ad Valorem**",
+          "Pourcentage (%) appliqué sur la Valeur en Douane.",
+          "8 % de la VD de 50 000 € = 4 000 € de droits."
+        ],
+        [
+          "**Spécifique**",
+          "Montant fixe par unité de mesure (poids, volume, quantité).",
+          "25 € par Hectolitre, ou 10 € par 100 kg nets."
+        ],
+        [
+          "**Mixte / Composé**",
+          "Combinaison d'un droit ad valorem et d'un droit spécifique.",
+          "8 % + 2 € par kg."
+        ]
+      ],
+      "keywords": [
+        "Ad Valorem",
+        "Spécifique",
+        "Mixte",
+        "pourcentage",
+        "unité de mesure"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Mesures de Politique Commerciale"
+    },
+    {
+      "type": "bullet_list",
+      "content": "Le calcul de la dette peut être modifié par des politiques protectionnistes ou préférentielles européennes :",
+      "items": [
+        "**Droits Anti-Dumping** : Surtaxe punitive appliquée à des produits importés à un prix inférieur à leur valeur normale (souvent Chine/Asie) pour protéger l'industrie européenne. S'additionne aux DD classiques.",
+        "**SPG (Système de Préférences Généralisées)** : Réduction ou suppression des droits de douane accordée unilatéralement par l'UE aux pays en développement (PVD) pour les aider.",
+        "**Contingents Tarifaires (Quotas)** : Quantité maximum de marchandise pouvant être importée à taux réduit ou nul sur une période donnée. Une fois le contingent épuisé, le taux plein du TDC s'applique."
+      ],
+      "keywords": [
+        "Anti-Dumping",
+        "SPG",
+        "Contingents Tarifaires",
+        "Quotas",
+        "PVD"
+      ]
+    },
+    {
+      "type": "formula",
+      "label": "Exemple chiffré complet (Liquidation)",
+      "content": "Hypothèses : VD = 10 000 €. Taux DD = 5 %. Frais post-acheminement UE = 500 €. Taux TVA = 20 %.\n\n1) Droits de Douane (DD) = 10 000 × 5% = **500 €**\n2) Assiette TVA = 10 000 (VD) + 500 (DD) + 500 (Post-acheminement) = **11 000 €**\n3) Montant TVA = 11 000 × 20% = **2 200 €**\n4) Dette Douanière (à payer à l'import) = DD + TVA = 500 + 2200 = **2 700 €**"
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Autoliquidation de la TVA (TVAI)",
+      "content": "Depuis le 1er janvier 2022 en France, la TVA à l'importation (TVAI) est **obligatoirement autoliquidée** sur la déclaration de TVA (CA3) pour tous les assujettis. L'entreprise ne décaisse plus la TVA à la douane lors du dédouanement (elle l'inscrit en douane, puis en CA3 en TVA collectée/déductible). L'énoncé peut vous piéger en demandant « Quel montant l'entreprise doit-elle décaisser le jour du dédouanement ? » : la réponse sera **seulement les Droits de Douane (DD)**, soit 500 € dans l'exemple ci-dessus.",
+      "keywords": [
+        "Autoliquidation",
+        "TVAI",
+        "CA3",
+        "décaisser le jour du dédouanement"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "La cascade de calculs est incontournable. Retenez que l'Assiette de la TVA est la \"grosse boîte\" qui englobe la VD, les Droits de Douane et les frais intérieurs UE. Enfin, n'oubliez pas le piège de l'autoliquidation de la TVA depuis 2022 : on la calcule, mais on ne la paye plus à la douane.",
+      "keywords": [
+        "cascade de calculs",
+        "Assiette de la TVA",
+        "autoliquidation de la TVA"
+      ]
+    }
+  ]
+}

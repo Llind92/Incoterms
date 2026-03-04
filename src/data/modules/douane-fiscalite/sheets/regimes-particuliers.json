@@ -1,0 +1,131 @@
+{
+  "id": "regimes-particuliers",
+  "title": "Les Régimes Douaniers Particuliers",
+  "subtitle": "PA, PP, Transit et Entrepôt (Suspension de droits)",
+  "examFrequency": "high",
+  "tags": [
+    "perfectionnement actif",
+    "perfectionnement passif",
+    "transit",
+    "entrepôt",
+    "admission temporaire",
+    "CDU"
+  ],
+  "relatedSheets": [
+    "triptyque-eov",
+    "dette-douaniere"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "Sous le CDU (Code des Douanes de l'Union), les « Régimes particuliers » (anciennement régimes économiques) permettent d'importer, de stocker, de transformer ou de transporter des marchandises tierces (hors UE) en suspension des droits de douane, de la TVA et des mesures de politique commerciale. Leur but est de favoriser la compétitivité des entreprises européennes sur les marchés internationaux.",
+      "keywords": [
+        "Régimes particuliers",
+        "suspension",
+        "TVA",
+        "droits de douane",
+        "compétitivité",
+        "CDU"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "1. Les Régimes de Stockage et Transit"
+    },
+    {
+      "type": "comparison",
+      "label": "Gérer les flux logistiques internationaux",
+      "content": "Ces régimes sont indispensables pour les entreprises spécialisées dans le négoce ou ayant des chaînes d'approvisionnement longues.",
+      "items": [
+        "**Transit Externe (T1)** : Permet la circulation de marchandises non-Union (tierces) d'un point à un autre du territoire douanier de l'UE en suspension des droits et taxes (ex: Arrivée au Havre et acheminement vers la douane intérieure de Lyon pour le dédouanement).",
+        "**Entrepôt Douanier** : Permet de stocker des marchandises non-Union pour une durée illimitée en suspension des droits et taxes. L'entreprise ne paie la dette douanière qu'au fur et à mesure de la sortie des marchandises sur le marché européen.",
+        "**Zones Franches** : Parties du territoire douanier européen où les marchandises non-Union qui y sont introduites sont considérées comme n'étant pas sur le territoire douanier de l'UE (suspension D&T)."
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Transit T1 vs T2",
+      "content": "Ne confondez pas le Transit Externe (T1) destiné aux marchandises non-Union en suspension de droits, avec le Transit Interne (T2) qui facilite la circulation de marchandises de l'Union européennes à travers un pays tiers (ex: Passer de la France vers l'Allemagne en transitant par la Suisse).",
+      "keywords": [
+        "T1",
+        "T2",
+        "Transit Externe",
+        "Transit Interne"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "2. Les Régimes de Transformation (Fonction industrielle)"
+    },
+    {
+      "type": "table",
+      "content": "Deux régimes majeurs permettent d'optimiser l'outil de production européen face à la mondialisation : le PA et le PP.",
+      "headers": [
+        "Régime",
+        "Mécanisme",
+        "Avantage & Logique"
+      ],
+      "rows": [
+        [
+          "**Perfectionnement Actif (PA)**",
+          "On IMPORTE des matières premières hors UE, on les transforme dans l'UE, puis on REXPORT les produits finis hors UE.",
+          "Suspension totale des droits et TVA à l'importation. Protège l'emploi industriel en Europe."
+        ],
+        [
+          "**Perfectionnement Passif (PP)**",
+          "On EXPORTE temporairement des composants de l'UE vers un pays hors UE (main-d'œuvre moins chère) pour assemblage, puis on RÉIMPORTE le produit fini dans l'UE.",
+          "À la réimportation, on ne paie les droits de douane que sur la « valeur ajoutée » à l'étranger, pas sur l'ensemble du produit fini."
+        ]
+      ],
+      "keywords": [
+        "Perfectionnement Actif",
+        "Perfectionnement Passif",
+        "PA",
+        "PP",
+        "suspension",
+        "valeur ajoutée"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — PA et Mise à la consommation",
+      "content": "En Perfectionnement Actif, si l'entreprise décide finalement de ne pas réexporter le produit fini hors UE mais de le vendre sur le marché européen (Mise en libre pratique), elle devra alors payer rétroactivement les droits de douane et la TVA suspendus sur la matière première importée initialement + des intérêts de retard.",
+      "keywords": [
+        "Mise en libre pratique",
+        "rétroactivement",
+        "intérêts de retard"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "3. Les Régimes d'Utilisation Spécifique"
+    },
+    {
+      "type": "bullet_list",
+      "content": "L'Admission Temporaire (AT) et autres utilisations :",
+      "items": [
+        "**Admission Temporaire (AT)** : Permet d'importer temporairement des marchandises non-Union destinées à être réexportées sans avoir subi de transformation, en exonération totale ou partielle de droits. Idéal pour les salons professionnels, foires, ou pour du matériel professionnel prêté.",
+        "**Le Carnet ATA** : C'est le passeport de la marchandise. Il fluidifie considérablement l'Admission Temporaire car il vaut à la fois document douanier et garantie de paiement auprès de 78 pays.",
+        "**Destination Particulière** : Tolérance permettant la mise en libre pratique de certaines marchandises en exonération de droits ou à un taux réduit en raison de leur utilisation spécifique (ex: pièces d'aéronautique civile)."
+      ],
+      "keywords": [
+        "Admission Temporaire",
+        "Carnet ATA",
+        "salons",
+        "Destination Particulière"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Identifiez le besoin de l'entreprise : Elle stocke ? Proposez l'entrepôt douanier pour optimiser la trésorerie. Elle fabrique en France pour l'export ? Proposez le PA (Perfectionnement Actif). Elle fait assembler au Maroc pour vendre en France ? Proposez le PP (Perfectionnement Passif). Elle participe à un salon à New York ? Proposez l'Admission Temporaire via Carnet ATA.",
+      "keywords": [
+        "entrepôt",
+        "PA",
+        "PP",
+        "Carnet ATA"
+      ]
+    }
+  ]
+}

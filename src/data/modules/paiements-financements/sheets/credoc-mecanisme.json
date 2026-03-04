@@ -1,0 +1,136 @@
+{
+  "id": "credoc-mecanisme",
+  "title": "Le Crédit Documentaire (CREDOC)",
+  "subtitle": "Mécanisme, acteurs et variantes — RUU 600",
+  "examFrequency": "very_high",
+  "tags": ["CREDOC", "RUU 600", "L/C", "crédit documentaire", "banque émettrice", "banque notificatrice"],
+  "relatedSheets": ["remise-documentaire", "virement-swift"],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition",
+      "content": "Le crédit documentaire (Letter of Credit — L/C) est un engagement irrévocable d'une banque (banque émettrice) de payer le vendeur (bénéficiaire) contre remise de documents conformes, dans les délais et conditions spécifiés. Il est régi par les RUU 600 (Règles et Usances Uniformes, révision 2007) de la CCI.",
+      "keywords": ["crédit documentaire", "L/C", "banque émettrice", "bénéficiaire", "irrévocable", "RUU 600"]
+    },
+    {
+      "type": "heading",
+      "content": "Les 4 acteurs du CREDOC"
+    },
+    {
+      "type": "numbered_list",
+      "content": "Acteurs principaux du mécanisme CREDOC :",
+      "items": [
+        "**Donneur d'ordre** (Applicant) : l'acheteur/importateur qui demande l'ouverture du crédit",
+        "**Banque émettrice** (Issuing Bank) : banque de l'acheteur, qui émet le CREDOC et s'engage à payer",
+        "**Banque notificatrice** (Advising Bank) : banque du vendeur dans le pays d'export, qui notifie (transmet) le crédit au bénéficiaire",
+        "**Bénéficiaire** (Beneficiary) : le vendeur/exportateur qui recevra le paiement contre documents conformes"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "Mécanisme en 8 étapes"
+    },
+    {
+      "type": "numbered_list",
+      "content": "Déroulement chronologique :",
+      "items": [
+        "Contrat commercial entre acheteur et vendeur (Incoterm, conditions de paiement par CREDOC)",
+        "L'acheteur demande à sa banque (banque émettrice) d'ouvrir un crédit documentaire en faveur du vendeur",
+        "La banque émettrice émet le CREDOC et le transmet à la banque notificatrice (pays du vendeur)",
+        "La banque notificatrice vérifie l'authenticité et notifie le crédit au vendeur (bénéficiaire)",
+        "Le vendeur expédie la marchandise et rassemble les documents requis (B/L, facture, certificat d'origine, packing list, certificat d'assurance si CIF/CIP)",
+        "Le vendeur remet les documents à la banque notificatrice dans le délai de présentation (21 jours max après expédition, sauf mention contraire)",
+        "La banque notificatrice transmet les documents à la banque émettrice qui vérifie leur conformité",
+        "Si documents conformes : la banque émettrice débite le compte de l'acheteur et effectue le paiement via la banque notificatrice au vendeur"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Les réserves documentaires",
+      "content": "Les **réserves** (discrepancies) sont la cause n°1 de non-paiement en CREDOC. En examen BTS CI, il faut repérer les incohérences entre le crédit et les documents présentés : erreur de nom, Incoterm différent, date d'expédition dépassée, documents manquants. La banque émettrice a **5 jours ouvrables** (Art. 14b RUU 600) pour examiner les documents et notifier les réserves. Au-delà, elle ne peut plus les invoquer.",
+      "keywords": ["réserves", "discrepancies", "5 jours ouvrables", "Art. 14b", "RUU 600"]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Dates critiques du CREDOC",
+      "content": "Un CREDOC comporte 3 dates à surveiller : (1) la **date limite d'expédition** (latest shipment date) — la marchandise doit être expédiée avant cette date, sinon les documents seront refusés ; (2) la **date de validité** (expiry date) — les documents doivent être présentés avant cette date ; (3) le **délai de présentation** — 21 jours maximum après la date du document de transport (Art. 14c RUU 600), sauf stipulation contraire dans le crédit. En examen, vérifier systématiquement ces 3 dates.",
+      "keywords": ["date d'expédition", "date de validité", "délai de présentation", "21 jours", "Art. 14c"]
+    },
+    {
+      "type": "heading",
+      "content": "Types de CREDOC"
+    },
+    {
+      "type": "table",
+      "content": "Variantes du crédit documentaire :",
+      "headers": ["Type", "Caractéristique", "Risque vendeur"],
+      "rows": [
+        ["**Irrévocable** (défaut RUU 600)", "Ne peut être modifié/annulé sans accord du bénéficiaire", "Faible — engagement ferme de la banque émettrice"],
+        ["**Irrévocable et confirmé**", "La banque notificatrice ajoute son propre engagement de paiement", "Très faible — double garantie bancaire"],
+        ["**Transférable**", "Le bénéficiaire peut transférer tout ou partie du crédit à un second bénéficiaire", "Moyen — utile pour le négoce international"],
+        ["**Revolving**", "Se renouvelle automatiquement après chaque utilisation (expéditions répétées)", "Faible — même garantie que l'irrévocable"],
+        ["**Stand-by (SBLC)**", "Garantie de paiement en cas de défaillance (n'est pas un mode de paiement principal)", "Variable — fonctionne comme une garantie bancaire"]
+      ],
+      "keywords": ["irrévocable", "confirmé", "transférable", "revolving", "stand-by"]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — CREDOC irrévocable et confirmé",
+      "content": "En examen, quand le sujet dit « le vendeur souhaite sécuriser au maximum le paiement face à un acheteur situé dans un pays à risque », la réponse attendue est **CREDOC irrévocable et confirmé**. La confirmation ajoute l'engagement de la banque du vendeur (pays sûr) à celui de la banque émettrice (pays à risque). C'est la double sécurité bancaire. Ne pas confondre avec le stand-by qui est une garantie, pas un moyen de paiement.",
+      "keywords": ["irrévocable et confirmé", "confirmation", "risque pays", "double sécurité"]
+    },
+    {
+      "type": "heading",
+      "content": "Documents requis (liste type)"
+    },
+    {
+      "type": "bullet_list",
+      "content": "Documents habituellement exigés dans un CREDOC :",
+      "items": [
+        "**Facture commerciale** (Commercial Invoice) — doit correspondre exactement aux termes du crédit",
+        "**Document de transport** : Connaissement maritime (B/L), LTA (AWB), CMR selon le mode de transport",
+        "**Liste de colisage** (Packing List)",
+        "**Certificat d'origine** (souvent visé par la CCI ou les douanes)",
+        "**Certificat d'assurance** (obligatoire si Incoterm CIF ou CIP — couverture minimum 110 % CIF)",
+        "**Certificat de conformité / d'inspection** (SGS, Bureau Veritas, selon le pays importateur)"
+      ],
+      "keywords": ["facture commerciale", "B/L", "LTA", "packing list", "certificat d'origine", "110 %"]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Le B/L et le CREDOC",
+      "content": "En CREDOC maritime, le connaissement (B/L) doit impérativement être un B/L « shipped on board » (embarqué à bord) et non un simple « received for shipment ». Il doit être émis au nom de la banque émettrice ou « à ordre » (to order). Un B/L « on deck » (en pontée) ou « en mauvais état apparent » (clause de réserve du transporteur) sera refusé comme non conforme.",
+      "keywords": ["B/L", "shipped on board", "received for shipment", "à ordre", "to order"]
+    },
+    {
+      "type": "heading",
+      "content": "Coût du CREDOC"
+    },
+    {
+      "type": "formula",
+      "label": "Commissions bancaires types",
+      "content": "Commission d'ouverture : 0,5 % à 3 % du montant du crédit (selon risque pays et durée). Commission de confirmation (si confirmé) : 0,5 % à 2 % supplémentaire. Commission de modification (amendement) : forfait 50 à 150 EUR par amendement. En examen, le coût total du CREDOC peut représenter 2 à 5 % du montant de la transaction."
+    },
+    {
+      "type": "heading",
+      "content": "CREDOC vs Remise Documentaire"
+    },
+    {
+      "type": "comparison",
+      "label": "Comparaison des deux techniques documentaires",
+      "content": "Différences clés entre CREDOC et Remise Documentaire (REMDOC) :",
+      "items": [
+        "**Sécurité vendeur** : CREDOC = Très haute (engagement bancaire irrévocable) | REMDOC = Moyenne (pas d'engagement bancaire, simple mandat d'encaissement)",
+        "**Coût** : CREDOC = Élevé (1-5 % du montant) | REMDOC = Faible (forfait de quelques centaines d'euros)",
+        "**Complexité** : CREDOC = Élevée (vérifications strictes, conformité documentaire) | REMDOC = Modérée (contrôle allégé)",
+        "**Usage** : CREDOC = Gros montants, pays à risque, nouveaux clients | REMDOC = Relations établies, pays sûrs, montants modérés"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Le CREDOC est le moyen de paiement le plus sécurisé du commerce international (après le paiement d'avance). Il repose sur le principe d'**autonomie** : la banque paie sur la base des documents, indépendamment du contrat commercial sous-jacent. La conformité documentaire est donc la clé absolue du mécanisme.",
+      "keywords": ["autonomie", "conformité documentaire", "sécurisé"]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": "couverture-change",
+  "title": "La Couverture du Risque de Change",
+  "subtitle": "Couverture naturelle, Change à Terme et Options",
+  "examFrequency": "very_high",
+  "tags": [
+    "change à terme",
+    "option de change",
+    "couverture naturelle",
+    "prime",
+    "terme sec"
+  ],
+  "relatedSheets": [
+    "risque-de-change",
+    "risque-pays"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "Puisque les taux de change fluctuent, une entreprise réalisant des opérations en devises doit se couvrir pour figer ou garantir sa marge commerciale. Les techniques de couverture peuvent être internes (naturelles) ou externes (financières, via les banques).",
+      "keywords": [
+        "couverture",
+        "figer la marge",
+        "techniques internes",
+        "techniques externes"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "1. Les Techniques Internes (Couverture Naturelle)"
+    },
+    {
+      "type": "bullet_list",
+      "content": "Ces techniques évitent de payer des frais bancaires, elles reposent sur l'organisation de l'entreprise :",
+      "items": [
+        "**La Facturation en Euros** : La solution parfaite. Le risque de change est transféré à 100% sur le client étranger.",
+        "**Le Termaillage (Leads & Lags)** : Accélérer (Leads) ou retarder (Lags) un encaissement/décaissement en fonction de l'anticipation d'évolution de la devise.",
+        "**La Couverture Naturelle (Matching)** : L'entreprise fait coïncider ses flux entrants (ventes en USD) et sortants (achats en USD) dans la même devise. Elle détient un compte en devises (compte USD) et ne convertit en Euros que le solde net."
+      ],
+      "keywords": [
+        "Facturation en Euros",
+        "Termaillage",
+        "Leads & Lags",
+        "Couverture Naturelle",
+        "Matching",
+        "compte en devises"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "2. Les Techniques Externes (Financières)"
+    },
+    {
+      "type": "comparison",
+      "label": "Quels produits financiers utiliser ?",
+      "content": "L'entreprise achète une couverture auprès de sa banque. Le choix dépend du coût et de la probabilité de réalisation de la vente.",
+      "items": [
+        "**Le Change à Terme (Forward ou « Terme Sec »)** : L'entreprise s'engage AUJOURD'HUI à acheter/vendre des devises à une DATE PRÉCISE (ex: dans 3 mois) à un COURS FIXÉ AUJOURD'HUI. Avantage : Coût nul/très faible, fige la trésorerie avec certitude. Inconvénient : Engagement irrévocable (si le client étranger annule la vente, l'entreprise devra quand même livrer les devises à la banque).",
+        "**L'Option de Change** : L'entreprise paie une PRIME (immédiatement) pour obtenir le DROIT (et non l'obligation) d'acheter (Call) ou de vendre (Put) des devises à un cours fixé (Prix d'Exercice) à une date future. Avantage : Souplesse totale. Si la devise évolue favorablement, l'entreprise abandonne l'option et échange au cours Spot. Inconvénient : Coût très élevé (la prime est perdue dans tous les cas).",
+        "**Le Swap de change** : Combinaison d'une opération au comptant (achat Spot) et d'une opération à terme inverse (vente Forward). Souvent utilisé pour des besoins de trésorerie temporaires en devises."
+      ]
+    },
+    {
+      "type": "table",
+      "content": "Options de Change : Quel produit acheter ?",
+      "headers": [
+        "Vous êtes...",
+        "Vous craignez...",
+        "Vous achetez une option de..."
+      ],
+      "rows": [
+        [
+          "**Exportateur** (Vous allez recevoir des USD)",
+          "La **baisse** de l'USD",
+          "Option de VENTE (Put)"
+        ],
+        [
+          "**Importateur** (Vous devez payer en USD)",
+          "La **hausse** de l'USD",
+          "Option d'ACHAT (Call)"
+        ]
+      ],
+      "keywords": [
+        "Put",
+        "Call",
+        "Option de Vente",
+        "Option d'Achat"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Comparaison Terme vs Option",
+      "content": "Le grand classique du BTS CI : on vous demande de calculer le résultat net avec une couverture à Terme, puis avec une Option. À la fin, n'oubliez JAMAIS de retrancher le coût de la prime d'Option dans votre calcul de rentabilité finale ! Une option permet de profiter d'une évolution favorable du cours Spot à l'échéance, MAIS son bénéfice est rongé par la prime payée le premier jour.",
+      "keywords": [
+        "prime d'Option",
+        "rentabilité",
+        "Terme vs Option"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Si la vente est 100% certaine et que l'entreprise veut figer sa marge sans payer de frais -> Recommandez le **Change à Terme**. Si l'entreprise répond à un appel d'offres (incertitude de remporter le contrat) ou veut pouvoir profiter d'évolutions favorables du marché en acceptant de payer cher -> Recommandez l'**Option de Change** (Put pour un export, Call pour un import).",
+      "keywords": [
+        "Change à Terme",
+        "Option de Change",
+        "appel d'offres",
+        "Put",
+        "Call"
+      ]
+    }
+  ]
+}

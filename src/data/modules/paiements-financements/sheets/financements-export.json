@@ -1,0 +1,132 @@
+{
+  "id": "financements-export",
+  "title": "Les Financements Export",
+  "subtitle": "Affacturage, MCNE, Crédits Acheteur/Fournisseur",
+  "examFrequency": "high",
+  "tags": [
+    "affacturage",
+    "forfaitage",
+    "crédit acheteur",
+    "crédit fournisseur",
+    "MCNE",
+    "préfinancement",
+    "escompte"
+  ],
+  "relatedSheets": [
+    "assurance-credit-export",
+    "risque-pays"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "L'exportation génère un besoin en fonds de roulement (BFR). Les financements export permettent à l'entreprise soit de financer son cycle de fabrication (avant l'embarquement), soit de mobiliser (transformer en trésorerie) ses créances clients nées d'un délai de paiement accordé à l'acheteur étranger.",
+      "keywords": [
+        "financements export",
+        "mobiliser",
+        "créances clients",
+        "BFR"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "1. Le Financement Avant Expédition"
+    },
+    {
+      "type": "bullet_list",
+      "content": "Lorsque l'entreprise doit fabriquer un bien spécifique pour l'export (machine outil spéciale), elle supporte des coûts longs :",
+      "items": [
+        "**Le Préfinancement Export** : Crédit de trésorerie accordé par la banque (ou Bpifrance) à l'exportateur pour financer l'achat de matières premières et la fabrication, en attendant le paiement du client.",
+        "**Les Acomptes** : L'exportateur exige un acompte à la commande (ex: 30%) qui viendra autofinancer le début de la production."
+      ],
+      "keywords": [
+        "Préfinancement Export",
+        "Bpifrance",
+        "Acomptes"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "2. Les Financements Court Terme (Post-Expédition)"
+    },
+    {
+      "type": "comparison",
+      "label": "Mobiliser une créance (< 1 an)",
+      "content": "L'exportateur a accordé 60 jours à son client. Il veut récupérer la trésorerie tout de suite :",
+      "items": [
+        "**L'Escompte Commercial** : Si l'exportateur détient une traite (lettre de change) acceptée par son client, il la remet à sa banque qui lui avance les fonds déduction faite des agios. La banque garde un recours contre l'exportateur en cas d'impayé.",
+        "**La MCNE (Mobilisation de Créance Née sur l'Étranger)** : C'est comme un Dailly (cession de factures à la banque). L'exportateur signe un billet à ordre au profit de sa banque pour mobiliser les factures export. Permet de financer des ventes en simple compte ouvert (sans traite).",
+        "**L'Affacturage (Factoring) international** : L'exportateur cède ses factures à une société spécialisée (le Factor) qui lui avance les montants (moins une commission d'affacturage + commission de financement). Avantage = le Factor gère le recouvrement et peut (si affacturage sans recours) garantir le risque d'impayé 100%."
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Recours ou Sans Recours ?",
+      "content": "Dans une question type BTS CI, vérifiez si l'affacturage proposé est « Sans Recours ». S'il est avec recours (ou s'il s'agit d'escompte ou MCNE), la banque/le factor se retournera contre l'exportateur si l'acheteur ne paie pas. Seul l'affacturage « Sans Recours » libère définitivement le vendeur du risque commercial.",
+      "keywords": [
+        "Sans Recours",
+        "Avec Recours",
+        "risque commercial"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "3. Les Financements Moyen/Long Terme (> 1 an)"
+    },
+    {
+      "type": "table",
+      "content": "Pour les gros contrats d'équipement ou d'infrastructure (biens d'équipement), la durée du crédit est longue (2 à 10 ans).",
+      "headers": [
+        "Type de Crédit",
+        "Gagnant / Fonctionnement",
+        "Exemple"
+      ],
+      "rows": [
+        [
+          "**Crédit Fournisseur**",
+          "L'exportateur octroie un crédit à long terme à son acheteur. L'exportateur mobilise ensuite ces créances auprès de sa banque.",
+          "Vente de machines avec 12 traites échelonnées sur 3 ans."
+        ],
+        [
+          "**Crédit Acheteur**",
+          "La banque de l'exportateur prête **directement** les fonds à l'acheteur étranger. L'acheteur paie l'exportateur au comptant avec l'argent de la banque.",
+          "La Société Générale française prête 5M€ au Ministère béninois pour payer le vendeur français (avantage exportateur : paiement comptant sans dette au bilan)."
+        ],
+        [
+          "**Le Forfaitage (Forfaiting)**",
+          "Achat par une banque (le forfaitaire) de créances à terme sur l'étranger (traites avalisées), **sans recours** contre l'exportateur.",
+          "Cession d'une traite de 500 k€ à échéance 2 ans à une banque suisse, sans risque."
+        ]
+      ],
+      "keywords": [
+        "Crédit Fournisseur",
+        "Crédit Acheteur",
+        "Forfaitage",
+        "sans recours",
+        "paiement comptant"
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Le Crédit Acheteur",
+      "content": "Le Crédit Acheteur est la solution reine pour l'exportateur. On vous demandera souvent dans les études de cas de justifier pourquoi. Réponse attendue : Le vendeur est payé **au comptant** (pas d'impact sur son bilan ou son BFR), et c'est la banque qui supporte à 100% le risque de non-paiement de l'acheteur étranger.",
+      "keywords": [
+        "Crédit Acheteur",
+        "au comptant",
+        "bilan",
+        "risque"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Séparez les besoins. Si l'entreprise fabrique sur mesure : Préfinancement. Si elle a accordé 60 jours : MCNE ou Affacturage (court terme). Si elle vend une usine clés en main : Crédit acheteur/fournisseur (long terme). Toujours vérifier la composante \"risque d'impayé\" : l'outil de financement est-il avec ou sans recours ?",
+      "keywords": [
+        "Préfinancement",
+        "MCNE",
+        "Affacturage",
+        "Crédit acheteur"
+      ]
+    }
+  ]
+}

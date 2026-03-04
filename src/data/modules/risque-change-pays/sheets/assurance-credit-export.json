@@ -1,0 +1,114 @@
+{
+  "id": "assurance-credit-export",
+  "title": "L'Assurance-Crédit Export",
+  "subtitle": "Bpifrance (Prospection, Change) et COFACE",
+  "examFrequency": "high",
+  "tags": [
+    "Bpifrance",
+    "COFACE",
+    "assurance prospection",
+    "garantie risque export",
+    "risque commercial"
+  ],
+  "relatedSheets": [
+    "financements-export",
+    "risque-pays"
+  ],
+  "blocks": [
+    {
+      "type": "key_definition",
+      "label": "Définition Générale",
+      "content": "L'assurance-crédit export protège l'entreprise contre le risque de non-paiement de ses factures à l'international (risque commercial et/ou risque pays). Elle est complétée en France par des assurances publiques (gérées par Bpifrance Assurance Export au nom de l'État) qui soutiennent les entreprises dans leur développement international (Prospection, Change).",
+      "keywords": [
+        "assurance-crédit",
+        "Bpifrance",
+        "risque commercial",
+        "risque pays"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "1. L'Assurance-Crédit (Couverture de l'Impayé)"
+    },
+    {
+      "type": "bullet_list",
+      "content": "L'entreprise confie la protection de son chiffre d'affaires à un assureur privé (COFACE, Euler Hermes, Atradius) :",
+      "items": [
+        "**Prévention** : L'assureur étudie la solvabilité des acheteurs étrangers et accorde une limite de garantie (en-cours maximum autorisé).",
+        "**Recouvrement** : En cas de retard de paiement, l'assureur se charge des démarches amiables et judiciaires à l'étranger.",
+        "**Indemnisation** : Si le recouvrement échoue, l'assureur verse une indemnité (souvent 90% du montant HT de la créance garantie)."
+      ],
+      "keywords": [
+        "Prévention",
+        "Recouvrement",
+        "Indemnisation",
+        "limite de garantie"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "2. L'Assurance Prospection (Bpifrance)"
+    },
+    {
+      "type": "comparison",
+      "label": "Soutenir la démarche commerciale",
+      "content": "L'État français (via Bpifrance) aide les PME/ETI à conquérir de nouveaux marchés en prenant en charge le risque d'échec financier de la prospection.",
+      "items": [
+        "**Mécanisme (L'Avance)** : Bpifrance verse une avance de trésorerie pour couvrir les dépenses de prospection (salons, voyages, recrutement VIE, marketing) engagées pendant une \"Période de Prospection\" (1 à 3 ans).",
+        "**Remboursement (Remboursement forfaitaire)** : À l'issue de la \"Période de Remboursement\" (3 à 5 ans), si l'entreprise a généré suffisamment de chiffre d'affaires sur la zone ciblée, elle rembourse l'avance. L'atout majeur : en cas d'échec partiel ou total (CA insuffisant), l'entreprise conserve l'avance (elle se transforme en subvention)."
+      ]
+    },
+    {
+      "type": "exam_trap",
+      "label": "PIÈGE EXAMEN — Assurance Prospection",
+      "content": "En BTS CI, justifiez toujours la pertinence de l'Assurance Prospection Bpifrance par ce mot clé : \"L'Amortissement de l'échec\". L'État prend le risque. C'est l'argument ultime pour convaincre un dirigeant frileux d'attaquer un nouveau marché éloigné.",
+      "keywords": [
+        "Amortissement de l'échec",
+        "Assurance Prospection",
+        "Bpifrance"
+      ]
+    },
+    {
+      "type": "heading",
+      "content": "3. Les autres Garanties Publiques (Bpifrance)"
+    },
+    {
+      "type": "table",
+      "content": "D'autres dispositifs existent pour des besoins spécifiques lors de grands contrats d'exportation :",
+      "headers": [
+        "Type de Garantie",
+        "Fonction",
+        "Bénéficiaire visé"
+      ],
+      "rows": [
+        [
+          "**Garantie du Risque de Change**",
+          "Garantit le cours d'une devise sur le long terme (jusqu'à 10 ans) pendant la période de négociation d'un contrat puis de son exécution.",
+          "Exportateurs d'équipements lourds, appels d'offres internationaux complexes."
+        ],
+        [
+          "**Assurance Caution Export**",
+          "Bpifrance couvre la banque de l'entreprise si la caution est appelée par l'acheteur étranger de manière abusive.",
+          "Entreprises devant fournir des cautions (soumission, restitution d'acompte, bonne fin) dans des pays risqués."
+        ]
+      ],
+      "keywords": [
+        "Garantie du Risque de Change",
+        "Assurance Caution",
+        "appels d'offres",
+        "long terme"
+      ]
+    },
+    {
+      "type": "key_definition",
+      "label": "À retenir pour l'examen",
+      "content": "Ne confondez pas la **COFACE** (Assurance privée contre l'impayé client / Risque commercial) et **Bpifrance Assurance Export** (Organisme public étatique pour l'Assurance Prospection ou la Garantie de Change à long terme). Mémorisez le principe gagnant-gagnant de l'Assurance Prospection (avance remboursable uniquement en cas de succès).",
+      "keywords": [
+        "COFACE",
+        "Bpifrance",
+        "impayé client",
+        "Assurance Prospection"
+      ]
+    }
+  ]
+}
