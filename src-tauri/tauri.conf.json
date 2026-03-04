@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "IncoMaster",
-  "version": "1.0.0",
+  "version": "1.4.0",
   "identifier": "fr.bts.incomaster",
   "build": {
     "frontendDist": "../dist",
@@ -28,6 +28,9 @@
   "bundle": {
     "active": true,
     "targets": "all",
+    "macOS": {
+      "signingIdentity": "-"
+    },
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",

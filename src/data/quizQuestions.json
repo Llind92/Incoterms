@@ -1303,5 +1303,95 @@
     "correctAnswerIndex": 0,
     "explanation": "PIÈGE CLASSIQUE BTS CI : Les THC d'arrivée (Terminal Handling Charges au port de destination) NE SONT PAS incluses dans le prix CIF.\nSous CIF (Cost, Insurance and Freight), le vendeur paie :\n- Le fret maritime jusqu'au port de destination (Alger).\n- L'assurance maritime.\nMais les frais de manutention au port de DESTINATION (THC arrivée, déchargement) sont à la charge de l'ACHETEUR.\nCalcul : CIF Alger = FOB + Fret / (1 - taux × 1,10) = (185 000 + 3 200) / (1 - 0,005 × 1,10) = 188 200 / 0,9945 = 189 239,82 EUR.\nLes THC arrivée (450 EUR) sont HORS CIF et à la charge de BUILDCO ALGÉRIE.\nNote : Les THC DÉPART (au port d'embarquement) sont incluses entre FCA et FOB dans la cascade maritime.",
     "source": "Entraînement IncoMaster"
+  },
+  {
+    "id": "cours_emballage_responsabilite",
+    "type": "multiple_choice",
+    "difficulty": "easy",
+    "question": "Qui est responsable de l'emballage des marchandises pour le transport international, quel que soit l'Incoterm négocié ?",
+    "options": [
+      "Le vendeur, dans tous les cas",
+      "L'acheteur, sauf en DDP",
+      "Le transporteur principal",
+      "Celui qui organise le transport principal"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "L'emballage est TOUJOURS à la charge du vendeur, peu importe l'Incoterm. En cas d'emballage défectueux ou jugé insuffisant, le vendeur sera toujours tenu responsable des dégâts et aucune assurance ne prendra en charge les détériorations. C'est une obligation fondamentale du vendeur dans les 11 Incoterms 2020.",
+    "source": "Entraînement IncoMaster"
+  },
+  {
+    "id": "cours_fob_risque_transport",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "L'entreprise Orchestra achète en FOB port de départ. Ses 30 cartons arrivent entièrement endommagés à destination. Peut-elle prétendre à une nouvelle livraison gratuite de la part du fournisseur ?",
+    "options": [
+      "Non, car le transfert des risques s'est effectué au port de départ (marchandise à bord) et les risques du transport principal sont à la charge d'Orchestra",
+      "Oui, car le vendeur est toujours responsable de la qualité des marchandises livrées",
+      "Oui, uniquement si les réserves ont été émises dans les 3 jours",
+      "Non, mais uniquement si le transporteur maritime a émis des réserves au départ"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "En FOB, le transfert des risques s'effectue au port de départ, marchandise mise à bord du navire. Les risques du transport principal sont donc à la charge de l'acheteur (Orchestra). L'acheteur ne peut pas demander une nouvelle livraison gratuite car la responsabilité du transport où les avaries ont été subies est la sienne. C'est pourquoi il est recommandé de souscrire une assurance transport en complément.",
+    "source": "Annale Officielle BTS CI"
+  },
+  {
+    "id": "cours_dpu_dechargement_sinistre",
+    "type": "multiple_choice",
+    "difficulty": "medium",
+    "question": "Vente DPU Dakar. Une caisse tombe et se brise PENDANT le déchargement du camion au lieu de destination à Dakar. Qui est responsable de ce dommage ?",
+    "options": [
+      "Le vendeur, car en DPU le risque ne se transfère qu'APRÈS le déchargement complet à destination",
+      "L'acheteur, car la marchandise est déjà arrivée à destination",
+      "Le transporteur routier, car c'est lui qui effectue le déchargement",
+      "Les deux parties à parts égales"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "DPU (Delivered at Place Unloaded) est le SEUL Incoterm où le vendeur assume le risque JUSQU'AU déchargement complet à destination. Le risque ne se transfère à l'acheteur qu'une fois la marchandise déchargée. Si la casse survient PENDANT le déchargement, c'est le vendeur qui supporte le risque. C'est un piège fréquent en examen BTS CI.",
+    "source": "Entraînement IncoMaster"
+  },
+  {
+    "id": "cours_assurance_circulaire",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "Le prix CFR d'une expédition est de 20 000 EUR. L'assurance est de 0,5 % de CIF majoré de 10 %. Quel est le montant exact de la prime d'assurance ?",
+    "options": [
+      "110,61 EUR (formule exacte : CIF = CFR / (1 - 1,1 × taux))",
+      "110,00 EUR (approximation : Ass = CFR × 1,1 × taux)",
+      "100,00 EUR (0,5 % × 20 000)",
+      "121,00 EUR (0,55 % × 22 000)"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Quand l'assurance est calculée sur un pourcentage de CIF majoré, on obtient une formule circulaire (CIF = CFR + Assurance, mais Assurance dépend de CIF). La résolution algébrique donne : CIF = CFR / (1 - 1,1 × Tp) = 20 000 / (1 - 1,1 × 0,005) = 20 000 / 0,9945 = 20 110,61 EUR. L'assurance = 20 110,61 - 20 000 = 110,61 EUR. Cette formule exacte est celle attendue aux annales BTS CI.",
+    "source": "Annale Officielle BTS CI"
+  },
+  {
+    "id": "cours_valeur_douane_deduction",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "Une marchandise est vendue DAP Strasbourg. Le prix DAP est de 50 000 EUR. Le transport Le Havre → Strasbourg coûte 600 EUR et le déchargement à Strasbourg 150 EUR. Quelle est la valeur en douane UE ?",
+    "options": [
+      "49 250 EUR (DAP moins les frais post-entrée UE)",
+      "50 000 EUR (prix DAP complet)",
+      "50 750 EUR (DAP + frais portuaires)",
+      "49 400 EUR (DAP moins transport uniquement)"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "La valeur en douane UE = CIF au premier point d'entrée UE (Le Havre). Pour un Incoterm 'D' avec destination au-delà du port d'entrée, il faut DÉDUIRE les frais postérieurs à l'entrée. VD = 50 000 - 600 (transport interne) - 150 (déchargement) = 49 250 EUR. Règle d'or : tout ce qui se passe APRÈS l'entrée dans l'UE est EXCLU de la valeur en douane (Art. 72 CDU).",
+    "source": "Entraînement IncoMaster"
+  },
+  {
+    "id": "cours_dts_vs_assurance",
+    "type": "calculation",
+    "difficulty": "hard",
+    "question": "32 colis de 71,875 kg chacun sont perdus lors d'un transport maritime. L'indemnisation maximale du transporteur est de 835 DTS/colis ou 2,5 DTS/kg (Convention de Hambourg). 1 DTS = 1,24 EUR. Quel est le montant maximum d'indemnisation par le transporteur ?",
+    "options": [
+      "33 132,80 EUR (835 × 32 × 1,24 car 26 720 DTS > 5 750 DTS)",
+      "7 130,00 EUR (2,5 × 2 300 × 1,24)",
+      "26 720,00 EUR (835 × 32 sans conversion)",
+      "39 744,00 EUR (835 × 32 × 1,48)"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Poids total = 71,875 × 32 = 2 300 kg. Indemnisation au kg : 2,5 × 2 300 = 5 750 DTS. Indemnisation au colis : 835 × 32 = 26 720 DTS. On retient la plus élevée des deux : 26 720 DTS. Conversion : 26 720 × 1,24 = 33 132,80 EUR. C'est un calcul fréquent aux épreuves E5 du BTS CI.",
+    "source": "Annale Officielle BTS CI"
   }
 ]

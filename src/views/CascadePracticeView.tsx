@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calculator, RotateCcw, CheckCircle2, XCircle, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { calculateIncoterms } from '../core/calculatorLogic';
 
 // ---------------------------------------------------------------------------
 // TYPES ET INTERFACES
@@ -15,11 +16,17 @@ interface ScenarioData {
     exportCustoms: number;
     fobHandling: number; // Uniquement pour Maritime (THC)
     mainFreight: number;
+    bafPct: number;
+    cafPct: number;
     insuranceRate: number; // en pourcentage (ex: 0.5)
+    insuranceSurcharge: number;
+    exchangeRate: number;
+    exchangeCurrency: string;
 }
 
 interface UserInputs {
     step1: string; // FCA ou FOB
+    stepConverti: string; // FOB Converti
     step2: string; // CPT ou CFR
     step3: string; // CIP ou CIF
 }
@@ -34,6 +41,11 @@ const generateRandomScenario = (): { mode: TransportMode; data: ScenarioData } =
     // Génération de coûts réalistes avec des arrondis propres
     const baseExw = Math.floor(Math.random() * 40) * 1000 + 10000; // Entre 10k et 50k
 
+    const applyExchange = Math.random() > 0.5;
+    const exchangeRate = applyExchange ? Number((Math.random() * 0.8 + 0.5).toFixed(2)) : 1;
+    const currencies = ['USD', 'GBP', 'JPY', 'CNY', 'CAD'];
+    const exchangeCurrency = applyExchange ? currencies[Math.floor(Math.random() * currencies.length)] : 'EUR';
+
     return {
         mode,
         data: {
@@ -43,7 +55,12 @@ const generateRandomScenario = (): { mode: TransportMode; data: ScenarioData } =
             exportCustoms: Math.floor(Math.random() * 3 + 1) * 50, // 50 à 200
             fobHandling: mode === 'maritime' ? Math.floor(Math.random() * 4 + 2) * 100 : 0, // 200 à 600
             mainFreight: Math.floor(Math.random() * 30 + 10) * 100, // 1000 à 4000
+            bafPct: mode === 'maritime' ? Math.floor(Math.random() * 5) : 0,
+            cafPct: mode === 'maritime' ? Math.floor(Math.random() * 5) : 0,
             insuranceRate: Number((Math.random() * 0.7 + 0.3).toFixed(2)), // 0.3% à 1.0%
+            insuranceSurcharge: 10,
+            exchangeRate,
+            exchangeCurrency,
         }
     };
 };
@@ -61,7 +78,7 @@ export const CascadePracticeView: React.FC = () => {
     // ---------------------------------------------------------------------------
     const [mode, setMode] = useState<TransportMode>('multimodal');
     const [scenario, setScenario] = useState<ScenarioData | null>(null);
-    const [inputs, setInputs] = useState<UserInputs>({ step1: '', step2: '', step3: '' });
+    const [inputs, setInputs] = useState<UserInputs>({ step1: '', stepConverti: '', step2: '', step3: '' });
     const [isValidated, setIsValidated] = useState(false);
 
     // Initialisation
@@ -73,41 +90,43 @@ export const CascadePracticeView: React.FC = () => {
         const generated = generateRandomScenario();
         setMode(generated.mode);
         setScenario(generated.data);
-        setInputs({ step1: '', step2: '', step3: '' });
+        setInputs({ step1: '', stepConverti: '', step2: '', step3: '' });
         setIsValidated(false);
     };
 
     if (!scenario) return null;
 
     // ---------------------------------------------------------------------------
-    // MOTEUR DE CALCUL (LA VÉRITÉ ABSOLUE)
+    // MOTEUR DE CALCUL (LA VÉRITÉ ABSOLUE PAR calculateIncoterms)
     // ---------------------------------------------------------------------------
-    let trueStep1 = 0; // FCA ou FOB
-    let trueStep2 = 0; // CPT ou CFR
-    let trueStep3 = 0; // CIP ou CIF
+    const engineResult = calculateIncoterms({
+        mode: mode === 'maritime' ? 'MARITIME' : 'MULTIMODAL',
+        valeurMarchandise: scenario.exw,
+        emballageExport: scenario.exportPackaging,
+        dedouanementPreAch: scenario.preCarriage + scenario.exportCustoms,
+        miseABord: scenario.fobHandling,
+        tauxChange: scenario.exchangeRate,
+        fretBase: scenario.mainFreight,
+        bafPct: scenario.bafPct,
+        cafPct: scenario.cafPct,
+        tauxAssurancePct: scenario.insuranceRate,
+        majorationAssurancePct: scenario.insuranceSurcharge,
+    });
 
-    if (mode === 'multimodal') {
-        trueStep1 = scenario.exw + scenario.exportPackaging + scenario.preCarriage + scenario.exportCustoms; // FCA
-        trueStep2 = trueStep1 + scenario.mainFreight; // CPT
-        // CIP = CPT / (1 - (1.10 * Taux/100))
-        const insuranceCoef = 1.10 * (scenario.insuranceRate / 100);
-        trueStep3 = trueStep2 / (1 - insuranceCoef);
-    } else {
-        trueStep1 = scenario.exw + scenario.exportPackaging + scenario.preCarriage + scenario.exportCustoms + scenario.fobHandling; // FOB
-        trueStep2 = trueStep1 + scenario.mainFreight; // CFR
-        // CIF = CFR / (1 - (1.10 * Taux/100))
-        const insuranceCoef = 1.10 * (scenario.insuranceRate / 100);
-        trueStep3 = trueStep2 / (1 - insuranceCoef);
-    }
+    const trueStep1 = mode === 'multimodal' ? engineResult.fca : engineResult.fob;
+    const trueStepConverti = engineResult.baseConvertie;
+    const trueStep2 = mode === 'multimodal' ? engineResult.cpt : engineResult.cfr;
+    const trueStep3 = mode === 'multimodal' ? engineResult.cip : engineResult.cif;
 
     // ---------------------------------------------------------------------------
     // VALIDATION DES INPUTS
     // ---------------------------------------------------------------------------
     const isStep1Correct = Math.abs(Number(inputs.step1) - trueStep1) <= 1.0;
+    const isStepConvertiCorrect = scenario.exchangeRate !== 1 ? Math.abs(Number(inputs.stepConverti) - trueStepConverti) <= 1.0 : true;
     const isStep2Correct = Math.abs(Number(inputs.step2) - trueStep2) <= 1.0;
     const isStep3Correct = Math.abs(Number(inputs.step3) - trueStep3) <= 1.0;
 
-    const allCorrect = isStep1Correct && isStep2Correct && isStep3Correct;
+    const allCorrect = isStep1Correct && isStepConvertiCorrect && isStep2Correct && isStep3Correct;
 
     // Lignes de l'énoncé
     const statementLines = [
@@ -116,8 +135,11 @@ export const CascadePracticeView: React.FC = () => {
         { label: t('calculator.pre_carriage'), value: scenario.preCarriage },
         { label: t('calculator.export_customs'), value: scenario.exportCustoms },
         ...(mode === 'maritime' ? [{ label: t('calculator.fob_handling'), value: scenario.fobHandling }] : []),
+        ...(scenario.exchangeRate !== 1 ? [{ label: t('practice.exchange_rate_applied'), value: `1 EUR = ${scenario.exchangeRate} ${scenario.exchangeCurrency}` }] : []),
         { label: t('calculator.main_freight'), value: scenario.mainFreight },
-        { label: t('calculator.insurance_rate'), value: `${scenario.insuranceRate}%` },
+        ...(scenario.bafPct > 0 ? [{ label: t('practice.baf'), value: `${scenario.bafPct}%` }] : []),
+        ...(scenario.cafPct > 0 ? [{ label: t('practice.caf'), value: `${scenario.cafPct}%` }] : []),
+        { label: t('calculator.insurance_rate'), value: `${scenario.insuranceRate}% (Maj: ${scenario.insuranceSurcharge}%)` },
     ];
 
     // Noms des étapes selon le mode
@@ -241,6 +263,37 @@ export const CascadePracticeView: React.FC = () => {
                                     </div>
                                 </div>
 
+                                {/* INPUT CONVERTI (Optionnel) */}
+                                {scenario.exchangeRate !== 1 && (
+                                    <>
+                                        <div className="flex justify-center text-slate-300 dark:text-slate-600">
+                                            <ArrowRight className="rotate-90" size={20} />
+                                        </div>
+                                        <div>
+                                            <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2 transition-colors">
+                                                {t('practice.convert_to', { currency: scenario.exchangeCurrency, rate: scenario.exchangeRate })}
+                                            </label>
+                                            <div className="relative flex items-center">
+                                                <span className="absolute left-4 font-bold text-slate-400 dark:text-slate-500 transition-colors">{t('practice.value_equals')}</span>
+                                                <input
+                                                    type="number"
+                                                    value={inputs.stepConverti}
+                                                    onChange={(e) => setInputs({ ...inputs, stepConverti: e.target.value })}
+                                                    disabled={isValidated}
+                                                    className="w-full pl-24 pr-12 py-3 bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white font-mono focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all disabled:opacity-75"
+                                                    placeholder="Ex: 20000.00"
+                                                />
+                                                <div className="absolute right-4 text-slate-400 font-medium">{scenario.exchangeCurrency}</div>
+                                                {isValidated && (
+                                                    <div className="absolute -right-8">
+                                                        {isStepConvertiCorrect ? <CheckCircle2 className="text-green-500" /> : <XCircle className="text-red-500" />}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </>
+                                )}
+
                                 <div className="flex justify-center text-slate-300 dark:text-slate-600">
                                     <ArrowRight className="rotate-90" size={20} />
                                 </div>
@@ -260,7 +313,7 @@ export const CascadePracticeView: React.FC = () => {
                                             className="w-full pl-20 pr-12 py-3 bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white font-mono focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all disabled:opacity-75"
                                             placeholder="Ex: 18400.00"
                                         />
-                                        <div className="absolute right-4 text-slate-400 font-medium">€</div>
+                                        <div className="absolute right-4 text-slate-400 font-medium">{scenario.exchangeRate !== 1 ? scenario.exchangeCurrency : '€'}</div>
                                         {isValidated && (
                                             <div className="absolute -right-8">
                                                 {isStep2Correct ? <CheckCircle2 className="text-green-500" /> : <XCircle className="text-red-500" />}
@@ -288,7 +341,7 @@ export const CascadePracticeView: React.FC = () => {
                                             className="w-full pl-20 pr-12 py-3 bg-slate-50 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 rounded-xl text-slate-900 dark:text-white font-mono focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all disabled:opacity-75"
                                             placeholder="Ex: 18550.45"
                                         />
-                                        <div className="absolute right-4 text-slate-400 font-medium">€</div>
+                                        <div className="absolute right-4 text-slate-400 font-medium">{scenario.exchangeRate !== 1 ? scenario.exchangeCurrency : '€'}</div>
                                         {isValidated && (
                                             <div className="absolute -right-8">
                                                 {isStep3Correct ? <CheckCircle2 className="text-green-500" /> : <XCircle className="text-red-500" />}
@@ -347,23 +400,35 @@ export const CascadePracticeView: React.FC = () => {
                                                 </div>
                                             </div>
 
+                                            {scenario.exchangeRate !== 1 && (
+                                                <div className="bg-white/60 dark:bg-slate-900/40 p-4 rounded-lg border border-slate-200 dark:border-slate-700/50 overflow-x-auto text-sm transition-colors">
+                                                    <div className="text-slate-500 dark:text-slate-400 mb-1">
+                                                        {t('practice.conversion_formula', { currency: scenario.exchangeCurrency, step: step1Name, rate: scenario.exchangeRate })}
+                                                    </div>
+                                                    <div className="font-mono text-slate-900 dark:text-white font-medium text-xs sm:text-sm break-all sm:break-normal">
+                                                        <span className="font-bold text-blue-600 dark:text-blue-400">{t('practice.converted_value')}</span> = {trueStep1} × {scenario.exchangeRate} = <span className={isStepConvertiCorrect ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400 font-bold'}>{formatter.format(trueStepConverti).replace(/€|US\$|[A-Z]{3}/g, '').trim()} {scenario.exchangeCurrency}</span>
+                                                    </div>
+                                                </div>
+                                            )}
+
                                             {/* Step 2 Correction */}
                                             <div className="bg-white/60 dark:bg-slate-900/40 p-4 rounded-lg border border-slate-200 dark:border-slate-700/50 overflow-x-auto text-sm transition-colors">
                                                 <div className="text-slate-500 dark:text-slate-400 mb-1">
-                                                    {step2Name} = {step1Name} + Fret Principal
+                                                    {step2Name} = {t('practice.step2_formula', { baf: scenario.bafPct, caf: scenario.cafPct })}
                                                 </div>
                                                 <div className="font-mono text-slate-900 dark:text-white font-medium text-xs sm:text-sm break-all sm:break-normal">
-                                                    <span className="font-bold text-blue-600 dark:text-blue-400">{step2Name}</span> = {trueStep1} + {scenario.mainFreight} = <span className={isStep2Correct ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400 font-bold'}>{formatter.format(trueStep2)}</span>
+                                                    <span className="font-bold text-blue-600 dark:text-blue-400">{step2Name}</span> = {(scenario.exchangeRate !== 1 ? trueStepConverti : trueStep1)} + {engineResult.fretTotal} = <span className={isStep2Correct ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400 font-bold'}>{formatter.format(trueStep2).replace(/€|US\$|[A-Z]{3}/g, '').trim()} {scenario.exchangeRate !== 1 ? scenario.exchangeCurrency : '€'}</span>
                                                 </div>
                                             </div>
 
                                             {/* Step 3 Correction */}
                                             <div className="bg-white/60 dark:bg-slate-900/40 p-4 rounded-lg border border-slate-200 dark:border-slate-700/50 overflow-x-auto text-sm transition-colors">
                                                 <div className="text-slate-500 dark:text-slate-400 mb-1">
-                                                    {step3Name} = {step2Name} / (1 - (1.10 × Assurance))
+                                                    {t('practice.insurance_formula_1', { step: step2Name, surcharge: scenario.insuranceSurcharge, rate: scenario.insuranceRate })}<br />
+                                                    {t('practice.insurance_formula_2', { curr: step3Name, prev: step2Name })}
                                                 </div>
                                                 <div className="font-mono text-slate-900 dark:text-white font-medium text-xs sm:text-sm break-all sm:break-normal">
-                                                    <span className="font-bold text-blue-600 dark:text-blue-400">{step3Name}</span> = {trueStep2} / (1 - (1.10 × {scenario.insuranceRate / 100})) = <span className={isStep3Correct ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400 font-bold'}>{formatter.format(trueStep3)}</span>
+                                                    <span className="font-bold text-blue-600 dark:text-blue-400">{step3Name}</span> = {trueStep2} + {engineResult.assurance} = <span className={isStep3Correct ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400 font-bold'}>{formatter.format(trueStep3).replace(/€|US\$|[A-Z]{3}/g, '').trim()} {scenario.exchangeRate !== 1 ? scenario.exchangeCurrency : '€'}</span>
                                                 </div>
                                             </div>
                                         </div>

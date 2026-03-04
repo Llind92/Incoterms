@@ -54,11 +54,30 @@ export interface CascadeInputs {
    */
   mainFreightCost: number;
   /**
+   * Taux BAF — Bunker Adjustment Factor (en décimal, ex: 0.03 pour 3%).
+   * S'applique sur le fret de base. Maritime uniquement.
+   * Défaut : 0 si non applicable.
+   */
+  bafRate: number;
+  /**
+   * Taux CAF — Currency Adjustment Factor (en décimal, ex: 0.02 pour 2%).
+   * S'applique en CASCADE sur (fret de base + BAF). Maritime uniquement.
+   * ATTENTION : BAF et CAF ne sont PAS additifs.
+   */
+  cafRate: number;
+  /**
    * Taux de la prime d'assurance transport (en décimal).
    * Ex: 0.008 pour 0,8%.
-   * ATTENTION : s'applique sur la valeur CIF/CIP majorée de 10%.
+   * S'applique sur la valeur CIF/CIP majorée du coefficient de surcharge.
    */
   insuranceRate: number;
+  /**
+   * Coefficient de majoration de la valeur assurée (en décimal).
+   * Ex: 1.10 pour +10% (standard), 1.12 pour +12%, 1.14 pour +14%, etc.
+   * Couvre le bénéfice escompté de l'acheteur.
+   * Défaut : 1.10 (majoration standard de 10%).
+   */
+  insuranceSurchargeCoeff: number;
   /** Frais portuaires à destination (THC arrivée, manutention) */
   destinationPortFees: number;
   /** Coût du déchargement à destination (DPU uniquement) */
@@ -166,6 +185,12 @@ export function validateInputs(inputs: CascadeInputs): void {
     errors.push("Le coefficient de marge doit être ≥ 1 (ex: 1.20 pour +20%).");
   if (inputs.insuranceRate < 0 || inputs.insuranceRate > 0.2)
     errors.push("Le taux d'assurance doit être compris entre 0 et 20%.");
+  if (inputs.insuranceSurchargeCoeff < 1 || inputs.insuranceSurchargeCoeff > 1.5)
+    errors.push("Le coefficient de majoration assurance doit être entre 1.00 et 1.50 (ex: 1.10 pour +10%).");
+  if (inputs.bafRate < 0 || inputs.bafRate > 0.5)
+    errors.push("Le taux BAF doit être compris entre 0 et 50%.");
+  if (inputs.cafRate < 0 || inputs.cafRate > 0.5)
+    errors.push("Le taux CAF doit être compris entre 0 et 50%.");
   if (inputs.importDutyRate < 0 || inputs.importDutyRate > 2)
     errors.push("Le taux des droits de douane doit être compris entre 0 et 200%.");
 
@@ -308,54 +333,71 @@ export function calcPriceCFR(
 }
 
 /**
- * Calcule la valeur à assurer selon la règle académique BTS CI.
+ * Calcule le fret total avec surcharges BAF et CAF en cascade.
  *
- * FORMULE BTS CI (RÈGLE ABSOLUE) :
- *   Valeur à assurer = Valeur CIF × (1 + 0,10)
- *                    = Valeur CIF × 1,10
+ * RÈGLE CRITIQUE (Examen BTS CI — Transport Maritime) :
+ *   Les surcharges BAF et CAF ne sont PAS additives.
+ *   BAF s'applique sur le fret de base,
+ *   puis CAF s'applique sur (Fret de base + BAF).
  *
- * La majoration de 10% représente le bénéfice escompté (profit margin)
- * que l'acheteur perdrait en cas de sinistre. Elle garantit que l'acheteur
- * est intégralement indemnisé, y compris son profit attendu.
+ * Exemple : Fret = 9 300, BAF = 3%, CAF = 2%
+ *   BAF = 9 300 × 0,03 = 279
+ *   Sous-total = 9 300 + 279 = 9 579
+ *   CAF = 9 579 × 0,02 = 191,58
+ *   Fret total = 9 300 + 279 + 191,58 = 9 770,58
  *
- * SOURCE : Art. 128 du Code des Douanes de l'Union (CDU) et usage commercial
- * international. Formule exigée aux épreuves BTS CI.
- *
- * @param valueCIFBase - Valeur CIF de base (marchandise + fret + assurance NON incluse)
- * @returns Valeur à assurer (base de calcul de la prime)
+ * @param baseFreight - Fret de base (transport principal)
+ * @param bafRate     - Taux BAF (décimal, ex: 0.03 pour 3%)
+ * @param cafRate     - Taux CAF (décimal, ex: 0.02 pour 2%)
+ * @returns Fret total après surcharges
  */
-export function calcInsurableValue(valueCIFBase: number): number {
-  const PROFIT_MARGIN_FACTOR = 1.10;
-  return roundCurrency(valueCIFBase * PROFIT_MARGIN_FACTOR);
+export function calcFreightWithSurcharges(
+  baseFreight: number,
+  bafRate: number,
+  cafRate: number
+): number {
+  const baf = roundCurrency(baseFreight * bafRate);
+  const subtotal = baseFreight + baf;
+  const caf = roundCurrency(subtotal * cafRate);
+  return roundCurrency(baseFreight + baf + caf);
 }
 
 /**
- * Calcule la prime d'assurance transport.
+ * Calcule le prix CIF/CIP exact avec la FORMULE CIRCULAIRE.
  *
- * FORMULE :
- *   Prime d'assurance = Valeur à assurer × Taux d'assurance
- *                     = (Valeur CIF × 1,10) × taux
+ * FORMULE EXACTE (conforme aux annales BTS CI) :
+ *   CIF = CFR / (1 - coeff × taux)
  *
- * FORMULE DÉVELOPPÉE (telle qu'attendue en examen BTS CI) :
- *   Valeur CIF finale = Valeur FOB + Fret + (Valeur CIF × 1,10 × taux)
+ * Dérivation :
+ *   CIF = CFR + Assurance
+ *   Assurance = CIF × coeff × taux  (formule circulaire)
+ *   CIF = CFR + CIF × coeff × taux
+ *   CIF - CIF × coeff × taux = CFR
+ *   CIF × (1 - coeff × taux) = CFR
+ *   CIF = CFR / (1 - coeff × taux)
  *
- * Cette formule est circulaire (CIF apparaît des deux côtés).
- * La résolution algébrique donne :
- *   CIF = (FOB + Fret) / (1 - 1,10 × taux)
- *
- * En pratique BTS CI, on utilise la valeur CFR/CPT comme approximation
- * de la "Valeur CIF base" (valeur avant assurance), ce qui est l'usage
- * académique standard.
- *
- * @param insurableValue - Valeur à assurer = Valeur CIF base × 1.10
- * @param insuranceRate  - Taux d'assurance (décimal, ex: 0.008 pour 0,8%)
- * @returns Prime d'assurance
+ * @param priceBeforeInsurance - Prix CFR (maritime) ou CPT (multimodal)
+ * @param insuranceRate        - Taux d'assurance (décimal, ex: 0.005 pour 0,5%)
+ * @param surchargeCoeff       - Coefficient de majoration (ex: 1.10 pour +10%)
+ * @returns { priceCIForCIP, insurancePremium, insurableValue }
  */
-export function calcInsurancePremium(
-  insurableValue: number,
-  insuranceRate: number
-): number {
-  return roundCurrency(insurableValue * insuranceRate);
+export function calcExactInsurance(
+  priceBeforeInsurance: number,
+  insuranceRate: number,
+  surchargeCoeff: number
+): { priceCIForCIP: number; insurancePremium: number; insurableValue: number } {
+  if (insuranceRate === 0) {
+    return {
+      priceCIForCIP: roundCurrency(priceBeforeInsurance),
+      insurancePremium: 0,
+      insurableValue: roundCurrency(priceBeforeInsurance * surchargeCoeff),
+    };
+  }
+  const divider = Math.max(0.001, 1 - surchargeCoeff * insuranceRate);
+  const priceCIForCIP = roundCurrency(priceBeforeInsurance / divider);
+  const insurancePremium = roundCurrency(priceCIForCIP - priceBeforeInsurance);
+  const insurableValue = roundCurrency(priceCIForCIP * surchargeCoeff);
+  return { priceCIForCIP, insurancePremium, insurableValue };
 }
 
 /**
@@ -544,18 +586,28 @@ export function calculateFullCascade(inputs: CascadeInputs): CascadeResult {
   const priceFOB = calcPriceFOB(priceFCA, inputs.originPortFees);
 
   // 5. GROUPE C (sans assurance) : CPT (tous modes), CFR (maritime)
-  const priceCPT = calcPriceCPT(priceFCA, inputs.mainFreightCost);
-  const priceCFR = calcPriceCFR(priceFOB, inputs.mainFreightCost);
+  // Fret total = fret de base + surcharges BAF/CAF en cascade
+  const totalFreight = calcFreightWithSurcharges(
+    inputs.mainFreightCost,
+    inputs.bafRate,
+    inputs.cafRate
+  );
+  const priceCPT = calcPriceCPT(priceFCA, totalFreight);
+  const priceCFR = calcPriceCFR(priceFOB, totalFreight);
 
-  // 6. CALCUL ASSURANCE
-  // La valeur CIF de base = CFR (approximation académique BTS CI standard)
+  // 6. CALCUL ASSURANCE — FORMULE EXACTE CIRCULAIRE
+  // CIF = CFR / (1 - coeff × taux)  (conforme annales BTS CI)
+  const surchargeCoeff = inputs.insuranceSurchargeCoeff;
+  const cifResult = calcExactInsurance(priceCFR, inputs.insuranceRate, surchargeCoeff);
+  const cipResult = calcExactInsurance(priceCPT, inputs.insuranceRate, surchargeCoeff);
+
   const valueCIFBase = priceCFR;
-  const insurableValue = calcInsurableValue(valueCIFBase);
-  const insurancePremium = calcInsurancePremium(insurableValue, inputs.insuranceRate);
+  const insurableValue = cifResult.insurableValue;
+  const insurancePremium = cifResult.insurancePremium;
 
   // 7. GROUPE C (avec assurance) : CIF (maritime), CIP (tous modes)
-  const priceCIF = calcPriceCIF(priceCFR, insurancePremium);
-  const priceCIP = calcPriceCIP(priceCPT, insurancePremium);
+  const priceCIF = cifResult.priceCIForCIP;
+  const priceCIP = cipResult.priceCIForCIP;
 
   // 8. VALEUR EN DOUANE (UE)
   // Base légale : Art. 70 CDU — valeur CIF au premier port d'entrée UE
@@ -650,14 +702,14 @@ export function buildCascadeSteps(
       label: "Prime d'assurance",
       cumulativeAmount: result.insurancePremium,
       incrementAmount: result.insurancePremium,
-      formula: `(${result.valueCIFBase} × 1,10) × ${(inputs.insuranceRate * 100).toFixed(3)}% = ${result.insurableValue} × ${inputs.insuranceRate}`,
+      formula: `CIF = ${result.valueCIFBase} / (1 - ${inputs.insuranceSurchargeCoeff} × ${(inputs.insuranceRate * 100).toFixed(3)}%) = ${result.priceCIF} → Prime = ${result.insurancePremium}`,
     },
     {
       incotermCode: "CIF",
       label: "Prix CIF (Coût, Assurance, Fret — maritime)",
       cumulativeAmount: result.priceCIF,
       incrementAmount: roundCurrency(result.priceCIF - result.priceCFR),
-      formula: `${result.priceCFR} + ${result.insurancePremium} (prime assurance)`,
+      formula: `${result.priceCFR} / (1 - ${inputs.insuranceSurchargeCoeff} × ${inputs.insuranceRate}) = ${result.priceCIF}`,
     },
     {
       incotermCode: "CUSTOMS_VALUE",
@@ -717,17 +769,17 @@ export function convertIncotermPrice(
 
   if (fromIncoterm === "FOB" && toIncoterm === "CIF") {
     if (inputs.mainFreightCost === undefined || inputs.insuranceRate === undefined) return null;
+    const coeff = inputs.insuranceSurchargeCoeff ?? 1.10;
     const cfr = fromPrice + inputs.mainFreightCost;
-    const insurableVal = cfr * 1.10;
-    const premium = insurableVal * inputs.insuranceRate;
-    return roundCurrency(cfr + premium);
+    const divider = Math.max(0.001, 1 - coeff * inputs.insuranceRate);
+    return roundCurrency(cfr / divider);
   }
 
   if (fromIncoterm === "CFR" && toIncoterm === "CIF") {
     if (inputs.insuranceRate === undefined) return null;
-    const insurableVal = fromPrice * 1.10;
-    const premium = insurableVal * inputs.insuranceRate;
-    return roundCurrency(fromPrice + premium);
+    const coeff = inputs.insuranceSurchargeCoeff ?? 1.10;
+    const divider = Math.max(0.001, 1 - coeff * inputs.insuranceRate);
+    return roundCurrency(fromPrice / divider);
   }
 
   if (fromIncoterm === "CIF" && toIncoterm === "DAP") {
@@ -749,4 +801,294 @@ export function convertIncotermPrice(
 
   // Conversion non prise en charge directement
   return null;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// SPRINT BACKEND v2 — Moteur de calcul expert standalone (BTS CI strict)
+// ─────────────────────────────────────────────────────────────────────────────
+
+/** Arrondi bancaire à 2 décimales (évite les flottants JS) */
+const round2 = (n: number): number => Math.round((n + Number.EPSILON) * 100) / 100;
+
+// ── Interface d'entrée ──────────────────────────────────────────────────────
+
+export interface IncotermsInput {
+  /** Mode de transport */
+  mode: 'MARITIME' | 'MULTIMODAL';
+
+  // ── Coûts de base (Devise 1) ──
+  /** Valeur de la marchandise (coût de revient, prix catalogue…) */
+  valeurMarchandise: number;
+  /** Emballage adapté à l'export */
+  emballageExport: number;
+
+  // ── Frais de dédouanement & pré-acheminement (Devise 1) ──
+  /** Dédouanement export + pré-acheminement (ou séparés si besoin) */
+  dedouanementPreAch: number;
+
+  // ── Frais annexes départ — Maritime uniquement (Devise 1) ──
+  /** Entreposage portuaire */
+  entreposage?: number;
+  /** Frais de mise à bord (THC départ, manutention…) */
+  miseABord?: number;
+
+  /**
+   * Frais documentaires (B/L, LTA, etc.).
+   * NE font PAS partie du FOB.
+   * S'ajoutent au CFR APRÈS le fret (hors BAF/CAF).
+   * La devise dépend de `isBilledInBaseCurrency`.
+   */
+  fraisDocumentaires?: number;
+  /**
+   * Si VRAI (défaut), les frais documentaires sont en Devise 1 (base)
+   * et seront automatiquement convertis via tauxChange.
+   * Si FAUX, les frais sont déjà saisis en Devise 2 (devise d'arrivée).
+   * N'a d'effet que si `isCurrencyConverted === true`.
+   */
+  isBilledInBaseCurrency?: boolean;
+  /**
+   * @deprecated Utiliser `fraisDocumentaires` à la place.
+   * Conservé comme alias rétro-compatible : si `fraisDocumentaires` n'est
+   * pas fourni, la valeur de `fraisBL` sera utilisée à sa place.
+   */
+  fraisBL?: number;
+
+  // ── Conversion de devises ──
+  /** Taux de change : 1 Devise 1 = X Devise 2 (défaut 1) */
+  tauxChange?: number;
+  /**
+   * Active la conversion de devise.
+   * Si FAUX (défaut), tauxChange est ignoré et baseConvertie = base.
+   * Si VRAI, baseConvertie = base × tauxChange.
+   */
+  isCurrencyConverted?: boolean;
+
+  // ── Fret principal (Devise 2) ──
+  /** Fret de base (dans la devise cible) */
+  fretBase: number;
+
+  // ── Surcharges maritimes (%) ──
+  /** BAF — Bunker Adjustment Factor (ex: 3 pour 3%) */
+  bafPct?: number;
+  /** CAF — Currency Adjustment Factor (ex: 2 pour 2%) */
+  cafPct?: number;
+
+  // ── Assurance (%) ──
+  /** Taux d'assurance (ex: 1 pour 1%) */
+  tauxAssurancePct: number;
+  /** Majoration d'assurance (ex: 12 pour +12%, soit coefficient 1.12) */
+  majorationAssurancePct: number;
+  /**
+   * Méthode de calcul de l'assurance.
+   * - VRAI (défaut) = Formule circulaire CCI :
+   *     CIF = CFR / (1 - coeff × taux)
+   *     Assurance = CIF - CFR
+   * - FAUX = Formule linéaire (exception d'examen) :
+   *     Assurance = CFR × coeff × taux
+   *     CIF = CFR + Assurance
+   */
+  isInsuranceCircular?: boolean;
+
+  // ── Frais d'arrivée (Devise 2) — Optionnel ──
+  /** Post-acheminement intérieur destination */
+  postAcheminement?: number;
+  /** Frais de déchargement destination */
+  dechargementDestination?: number;
+  /** Droits de douane import + frais dédouanement */
+  douaneImport?: number;
+}
+
+// ── Interface de sortie ─────────────────────────────────────────────────────
+
+export interface IncotermsResult {
+  // ── Devise 1 ──
+  exw: number;
+  fca: number;
+  /** Maritime uniquement */
+  fob: number;
+
+  // ── Point de conversion ──
+  tauxChange: number;
+  isCurrencyConverted: boolean;
+  /** FOB (maritime) ou FCA (multimodal) converti en Devise 2 */
+  baseConvertie: number;
+
+  // ── Devise 2 ──
+  /** Détail du fret **/
+  fretBase: number;
+  bafAmount: number;
+  cafAmount: number;
+  fretTotal: number;
+
+  /** Frais documentaires (B/L, LTA…) ajoutés au CFR hors BAF/CAF */
+  fraisDocumentaires: number;
+  /** Frais documentaires convertis en Devise 2 (après conversion si applicable) */
+  fraisDocumentairesConverted: number;
+  /** Les frais doc sont-ils facturés en devise de base ? */
+  isBilledInBaseCurrency: boolean;
+
+  cfr: number;
+  /** Méthode d'assurance utilisée */
+  isInsuranceCircular: boolean;
+  assurance: number;
+  cif: number;
+
+  /** Multimodal aliases */
+  cpt: number;
+  cip: number;
+
+  // ── Frais arrivée (Devise 2) — si fournis ──
+  dap: number;
+  dpu: number;
+  ddp: number;
+}
+
+/**
+ * Calcule la cascade complète des Incoterms 2020.
+ *
+ * RÈGLES MATHÉMATIQUES (BTS CI strict — v2) :
+ *
+ * 1. EXW = Valeur + Emballage
+ * 2. FCA = EXW + Dédouanement/Pré-acheminement
+ * 3. FOB = FCA + Entreposage + Mise à Bord  (maritime)
+ *    ⚠ B/L (frais documentaires) n'est PLUS dans le FOB.
+ *
+ * 4. Conversion : si isCurrencyConverted → base × tauxChange ; sinon = base
+ *
+ * 5. Fret Maritime Total :
+ *    BAF_Amount = Fret de base × (BAF% / 100)
+ *    CAF_Amount = (Fret de base + BAF_Amount) × (CAF% / 100)
+ *    Fret_Total = Fret de base + BAF_Amount + CAF_Amount
+ *
+ * 6. CFR = Base convertie + Fret_Total + Frais documentaires
+ *    ⚠ Les frais documentaires ne subissent PAS la BAF/CAF.
+ *
+ * 7. Assurance (double méthode) :
+ *    a) Circulaire CCI (défaut) :
+ *       CIF = CFR / (1 - coeff × taux)
+ *       Assurance = CIF - CFR
+ *    b) Linéaire (exception examen) :
+ *       Assurance = CFR × coeff × taux
+ *       CIF = CFR + Assurance
+ *
+ * 8. DAP / DPU / DDP en cascade
+ */
+export function calculateIncoterms(input: IncotermsInput): IncotermsResult {
+  // ── Valeurs par défaut ──
+  const tc = input.tauxChange ?? 1;
+  const isCurrencyConverted = input.isCurrencyConverted ?? false;
+  const isInsuranceCircular = input.isInsuranceCircular ?? true;
+  const isBilledInBaseCurrency = input.isBilledInBaseCurrency ?? true;
+  const entreposage = input.entreposage ?? 0;
+  const miseABord = input.miseABord ?? 0;
+  // Rétro-compatibilité : fraisDocumentaires a priorité sur fraisBL
+  const fraisDocumentaires = input.fraisDocumentaires ?? input.fraisBL ?? 0;
+  const bafPct = input.bafPct ?? 0;
+  const cafPct = input.cafPct ?? 0;
+  const postAch = input.postAcheminement ?? 0;
+  const dechargement = input.dechargementDestination ?? 0;
+  const douaneImp = input.douaneImport ?? 0;
+
+  // ═══════════════════════════════════════
+  // ÉTAPE 1 — EXW (Devise 1)
+  // ═══════════════════════════════════════
+  const exw = round2(input.valeurMarchandise + input.emballageExport);
+
+  // ═══════════════════════════════════════
+  // ÉTAPE 2 — FCA (Devise 1)
+  // ═══════════════════════════════════════
+  const fca = round2(exw + input.dedouanementPreAch);
+
+  // ═══════════════════════════════════════
+  // ÉTAPE 3 — FOB (Maritime, Devise 1)
+  // Le B/L NE fait PLUS partie du FOB.
+  // ═══════════════════════════════════════
+  let fob = 0;
+  if (input.mode === 'MARITIME') {
+    fob = round2(fca + entreposage + miseABord);
+  }
+
+  // ═══════════════════════════════════════
+  // ÉTAPE 4 — BASCULE DE DEVISE
+  // Conditionnelle : uniquement si isCurrencyConverted === true
+  // ═══════════════════════════════════════
+  const baseDevise1 = input.mode === 'MARITIME' ? fob : fca;
+  const baseConvertie = isCurrencyConverted
+    ? round2(baseDevise1 * tc)
+    : baseDevise1;
+
+  // ═══════════════════════════════════════
+  // ÉTAPE 5 — Fret + Surcharges (Devise 2)
+  // BAF sur fret de base, puis CAF sur (fret + BAF)
+  // ═══════════════════════════════════════
+  const bafAmount = round2(input.fretBase * (bafPct / 100));
+  const fretCorrigeBaf = round2(input.fretBase + bafAmount);
+  const cafAmount = round2(fretCorrigeBaf * (cafPct / 100));
+  const fretTotal = round2(input.fretBase + bafAmount + cafAmount);
+
+  // ═══════════════════════════════════════
+  // ÉTAPE 6 — CFR / CPT (Devise 2)
+  // Frais documentaires ajoutés ICI, hors BAF/CAF.
+  // Si isCurrencyConverted ET isBilledInBaseCurrency : conversion des frais doc.
+  // ═══════════════════════════════════════
+  const fraisDocConverted = (isCurrencyConverted && isBilledInBaseCurrency)
+    ? round2(fraisDocumentaires * tc)
+    : fraisDocumentaires;
+  const cfr = round2(baseConvertie + fretTotal + fraisDocConverted);
+
+  // ═══════════════════════════════════════
+  // ÉTAPE 7 — ASSURANCE (Double méthode)
+  // ═══════════════════════════════════════
+  const coeffMaj = 1 + input.majorationAssurancePct / 100;
+  const tauxAss = input.tauxAssurancePct / 100;
+
+  let assurance: number;
+  let cif: number;
+
+  if (isInsuranceCircular) {
+    // ── Méthode circulaire CCI (défaut) ──
+    // CIF = CFR / (1 - coeff × taux)
+    // Assurance = CIF - CFR
+    const diviseur = Math.max(0.0001, 1 - coeffMaj * tauxAss);
+    cif = round2(cfr / diviseur);
+    assurance = round2(cif - cfr);
+  } else {
+    // ── Méthode linéaire (exception d'examen) ──
+    // Assurance = CFR × coeff × taux
+    // CIF = CFR + Assurance
+    assurance = round2(cfr * coeffMaj * tauxAss);
+    cif = round2(cfr + assurance);
+  }
+
+  // ═══════════════════════════════════════
+  // ÉTAPES 8-10 — DAP / DPU / DDP (Devise 2)
+  // ═══════════════════════════════════════
+  const dap = round2(cif + postAch);
+  const dpu = round2(dap + dechargement);
+  const ddp = round2(dpu + douaneImp);
+
+  return {
+    exw,
+    fca,
+    fob,
+    tauxChange: isCurrencyConverted ? tc : 1,
+    isCurrencyConverted,
+    baseConvertie,
+    fretBase: input.fretBase,
+    bafAmount,
+    cafAmount,
+    fretTotal,
+    fraisDocumentaires,
+    fraisDocumentairesConverted: fraisDocConverted,
+    isBilledInBaseCurrency,
+    cfr,
+    isInsuranceCircular,
+    assurance,
+    cif,
+    cpt: input.mode === 'MULTIMODAL' ? cfr : 0,
+    cip: input.mode === 'MULTIMODAL' ? cif : 0,
+    dap,
+    dpu,
+    ddp,
+  };
 }
